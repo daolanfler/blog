@@ -1,0 +1,48 @@
+name: Build & Deploy to DO
+on:
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install dependencies 
+        run: |
+          yarn
+          yarn build
+        
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "dist/*"
+          target: "/var/www/vite.dagladefler.xyz/html/"
+          strip_components: 1
+      - name: Success bark notify
+        uses: daolanfler/bark-action@v1
+        with: 
+          host: ${{ secrets.BARK_HOST }}
+          key: ${{ secrets.BARK_KEY }}
+          title: 部署成功
+          body: ${{ github.repository }}[${{ github.sha }}]部署成功
+        if: ${{ success() }}
+      - name: Failed Bark notify
+        uses: daolanfler/bark-action@v1
+        with:
+          host: ${{ secrets.BARK_HOST }}
+          key: ${{ secrets.BARK_KEY }}
+          title: 部署失败
+          body: ${{ github.repository }}[${{ github.sha }}]部署失败
+        if: ${{ failure() }}
+         
