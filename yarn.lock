@@ -55,6 +55,11 @@
   resolved "https://registry.npm.taobao.org/@emmetio/scanner/download/@emmetio/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha1-Blsq9iM/50dNRII+PeuJckr0K18=
 
+"@iconify/vue@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.nlark.com/@iconify/vue/download/@iconify/vue-3.0.0.tgz#7e2fa8a515aea4e50313d41acdb3cc0b3492829d"
+  integrity sha1-fi+opRWupOUDE9QazbPMCzSSgp0=
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.nlark.com/@nodelib/fs.scandir/download/@nodelib/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
