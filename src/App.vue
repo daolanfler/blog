@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watch } from '@vue/runtime-core';
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import { colors } from './store';
 
 // watch(() => colors['--prism-scheme'],

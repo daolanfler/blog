@@ -545,6 +545,13 @@ csstype@^2.6.8:
   resolved "https://registry.nlark.com/csstype/download/csstype-2.6.18.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcsstype%2Fdownload%2Fcsstype-2.6.18.tgz#980a8b53085f34af313410af064f2bd241784218"
   integrity sha1-mAqLUwhfNK8xNBCvBk8r0kF4Qhg=
 
+debug@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.nlark.com/debug/download/debug-4.3.2.tgz?cache=0&sync_timestamp=1625374675284&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdebug%2Fdownload%2Fdebug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
+  integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
+  dependencies:
+    ms "2.1.2"
+
 defined@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/defined/download/defined-1.0.0.tgz#c98d9bcef75674188e110969151199e39b1fa693"
@@ -791,6 +798,11 @@ has-flag@^4.0.0:
   version "4.0.0"
   resolved "https://registry.nlark.com/has-flag/download/has-flag-4.0.0.tgz?cache=0&sync_timestamp=1626715879199&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fhas-flag%2Fdownload%2Fhas-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha1-lEdx/ZyByBJlxNaUGGDaBrtZR5s=
+
+has-pkg@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.nlark.com/has-pkg/download/has-pkg-0.0.1.tgz#f9d9139ed83e2487deae5eb4ac13182a2e903857"
+  integrity sha1-+dkTntg+JIferl60rBMYKi6QOFc=
 
 has-symbols@^1.0.1, has-symbols@^1.0.2:
   version "1.0.2"
@@ -1153,6 +1165,11 @@ modern-normalize@^1.1.0:
   version "1.1.0"
   resolved "https://registry.nlark.com/modern-normalize/download/modern-normalize-1.1.0.tgz#da8e80140d9221426bd4f725c6e11283d34f90b7"
   integrity sha1-2o6AFA2SIUJr1PclxuESg9NPkLc=
+
+ms@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.nlark.com/ms/download/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
 
 nanoid@^3.1.23:
   version "3.1.25"
@@ -1690,6 +1707,29 @@ universalify@^2.0.0:
   resolved "https://registry.npm.taobao.org/universalify/download/universalify-2.0.0.tgz?cache=0&sync_timestamp=1603180037346&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Funiversalify%2Fdownload%2Funiversalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=
 
+unplugin-vue-components@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.nlark.com/unplugin-vue-components/download/unplugin-vue-components-0.15.1.tgz#60833df9f54e5eedde7d916c2ba66e9a263798a7"
+  integrity sha1-YIM9+fVOXu3efZFsK6ZumiY3mKc=
+  dependencies:
+    "@rollup/pluginutils" "^4.1.1"
+    chokidar "^3.5.2"
+    debug "^4.3.2"
+    fast-glob "^3.2.7"
+    has-pkg "^0.0.1"
+    magic-string "^0.25.7"
+    minimatch "^3.0.4"
+    resolve "^1.20.0"
+    unplugin "^0.2.7"
+
+unplugin@^0.2.7:
+  version "0.2.11"
+  resolved "https://registry.nlark.com/unplugin/download/unplugin-0.2.11.tgz#f9f3f8b2b5a7c1b16325dbdea9568ee3652f6e49"
+  integrity sha1-+fP4srWnwbFjJdveqVaO42Uvbkk=
+  dependencies:
+    upath "^2.0.1"
+    webpack-virtual-modules "^0.4.3"
+
 upath@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/upath/download/upath-2.0.1.tgz?cache=0&sync_timestamp=1604768608808&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fupath%2Fdownload%2Fupath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
@@ -1870,6 +1910,11 @@ vue@^3.2.6:
     "@vue/compiler-dom" "3.2.12"
     "@vue/runtime-dom" "3.2.12"
     "@vue/shared" "3.2.12"
+
+webpack-virtual-modules@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.nlark.com/webpack-virtual-modules/download/webpack-virtual-modules-0.4.3.tgz?cache=0&sync_timestamp=1620993523325&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwebpack-virtual-modules%2Fdownload%2Fwebpack-virtual-modules-0.4.3.tgz#cd597c6d51d5a5ecb473eea1983a58fa8a17ded9"
+  integrity sha1-zVl8bVHVpey0c+6hmDpY+ooX3tk=
 
 with@^7.0.0:
   version "7.0.2"
