@@ -10,7 +10,7 @@ tags:
 
 最近有一个需求，需要用到 canvas drawImage。看了一下 MDN 上的 canvas 教程，刚开始写出来是这样的：
 
-```JavaScript
+```javascript
 var img = new Image()
 img.src = `${prefix}avatar.png`
 img.onload = function () {
@@ -24,7 +24,7 @@ img.onload = function () {
 
 load 事件会在资源以及它所依赖的资源完成加载时候触发。这里会不会出现图片很快就加载完成（比如缓存中，从缓存中加载，也是会触发 load 事件的），而这个时候 onload 还没有添加监听器？所以要先添加监听器：
 
-```JavaScript
+```javascript
 var img = new Image()
 img.onload = function() {
   ctx.drawImage(x, y, width, height)
@@ -34,7 +34,7 @@ img.src = `${prefix}avatar.png`
 
 这样画一张图片是够了，但是如果要求要等好几张图片都加载完之后呢。这里有一个方法：
 
-```JavaScript
+```javascript
 var img1 = new Image()
 var img2 = new Image()
 var img3 = new Image()

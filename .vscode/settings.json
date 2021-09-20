@@ -2,5 +2,6 @@
     "[vue]": {
         "editor.defaultFormatter": "johnsoncodehk.volar"
     },
-    "volar.codeLens.pugTools": false
+    "volar.codeLens.pugTools": false,
+    "typescript.tsdk": "node_modules/typescript/lib"
 }

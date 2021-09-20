@@ -7,6 +7,9 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "markdown-it-prism": "^2.2.1",
+    "prism-theme-vars": "^0.2.2",
+    "vite-plugin-md": "^0.11.1",
     "vue": "^3.2.6"
   },
   "devDependencies": {
@@ -17,7 +20,6 @@
     "tailwindcss": "^2.2.15",
     "typescript": "^4.3.2",
     "vite": "^2.5.4",
-    "vite-plugin-markdown": "^2.0.2",
     "vue-tsc": "^0.2.2"
   }
 }

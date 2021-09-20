@@ -8,18 +8,8 @@ declare module '*.vue' {
 }
 
 declare module '*.md' {
-  import { DefineComponent } from 'vue'
+  import { defineComponent } from 'vue'
 
-  type TableOfContents = {
-    level: string;
-    content: string;
-  }[]
-
-  const res: {
-    html?: string;
-    VueComponent: DefineComponent<{}, {}, any>;
-    attributes: Record<string, never>;
-    toc: TableOfContents; 
-  }
-  export = res
+  const Component: ReturnType<typeof defineComponent>
+  export default Component
 }
