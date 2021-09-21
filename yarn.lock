@@ -209,6 +209,11 @@
     "@vue/compiler-dom" "3.2.12"
     "@vue/shared" "3.2.12"
 
+"@vue/devtools-api@^6.0.0-beta.14":
+  version "6.0.0-beta.17"
+  resolved "https://registry.nlark.com/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.17.tgz#d4b9eb02c670d39a4532f4bb3c8517abce3fcb82"
+  integrity sha1-1LnrAsZw05pFMvS7PIUXq84/y4I=
+
 "@vue/reactivity@3.2.12", "@vue/reactivity@^3.2.6":
   version "3.2.12"
   resolved "https://registry.nlark.com/@vue/reactivity/download/@vue/reactivity-3.2.12.tgz#b482a737cbdc891f9b1ec3100f3c1804b56d080b"
@@ -1135,6 +1140,16 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.4"
 
+markdown-it-anchor@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.nlark.com/markdown-it-anchor/download/markdown-it-anchor-8.3.1.tgz#b48a2097c89f82e1625db772b8a6a03e9e637cdc"
+  integrity sha1-tIogl8ifguFiXbdyuKagPp5jfNw=
+
+markdown-it-attrs@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/markdown-it-attrs/download/markdown-it-attrs-4.0.0.tgz#eadae3ea0c7d17c5e83b98a4ec95a47f4e4960f5"
+  integrity sha1-6trj6gx9F8XoO5ik7JWkf05JYPU=
+
 markdown-it-prism@^2.2.1:
   version "2.2.1"
   resolved "https://registry.nlark.com/markdown-it-prism/download/markdown-it-prism-2.2.1.tgz#9335ae5084c270f461f5008e8f219f5e3b49175b"
@@ -1928,6 +1943,13 @@ vue-demi@*:
   version "0.11.4"
   resolved "https://registry.nlark.com/vue-demi/download/vue-demi-0.11.4.tgz?cache=0&sync_timestamp=1630868339719&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvue-demi%2Fdownload%2Fvue-demi-0.11.4.tgz#6101992fe4724cf5634018a16e953f3052e94e2a"
   integrity sha1-YQGZL+RyTPVjQBihbpU/MFLpTio=
+
+vue-router@4:
+  version "4.0.11"
+  resolved "https://registry.nlark.com/vue-router/download/vue-router-4.0.11.tgz?cache=0&sync_timestamp=1628495505697&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvue-router%2Fdownload%2Fvue-router-4.0.11.tgz#cd649a0941c635281763a20965b599643ddc68ed"
+  integrity sha1-zWSaCUHGNSgXY6IJZbWZZD3caO0=
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.14"
 
 vue-tsc@^0.2.2:
   version "0.2.3"

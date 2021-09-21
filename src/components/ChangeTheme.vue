@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
+import { useRoute, useRouter } from 'vue-router';
 import { isDark, toggleDark } from '../store';
+
+const router  = useRouter()
 
 </script>
 
 <template>
-  <div class="inline-flex mr-4">
+  <div class="inline-flex">
     <Icon
       class="text-2xl cursor-pointer align-middle"
       icon="ic:outline-dark-mode"
@@ -18,5 +21,7 @@ import { isDark, toggleDark } from '../store';
       v-else
       @click="toggleDark()"
     />
+
   </div>
+  
 </template>
