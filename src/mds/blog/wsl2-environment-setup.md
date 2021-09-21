@@ -15,7 +15,7 @@ tags:
 
 1. 在应用商店下载 Windows Terminal 界面现代化，和 [PowerToys](https://github.com/microsoft/PowerToys) 风格类似
 
-    ![Windows Terminal](/assets/windows-terminal.jpg)
+    ![Windows Terminal](../../assets/images/windows-terminal.jpg)
 
 2. 安装 zsh
 
