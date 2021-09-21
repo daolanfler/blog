@@ -12,6 +12,10 @@ const routes: RouteRecordRaw[] =[
     {
         path: '/snippets',
         component: () => import('../pages/snippets/index.vue')
+    },
+    {
+        path: '/post/:name',
+        component: () => import('../pages/post/index.vue')
     }
 ]
 

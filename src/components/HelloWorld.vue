@@ -33,6 +33,8 @@ import Test from '../mds/test.md'
 .markdown-body h2 {
   @apply text-2xl font-bold mb-6 mt-10;
 }
+
+
 .markdown-body p {
   @apply mb-5;
 }
