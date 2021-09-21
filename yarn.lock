@@ -249,6 +249,30 @@
   resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.2.12.tgz#304064a4b56fc6c7b9169d80e9ee62ecb4bf0a1c"
   integrity sha1-MEBkpLVvxse5Fp2A6e5i7LS/Chw=
 
+"@vueuse/components@^6.4.1":
+  version "6.4.1"
+  resolved "https://registry.nlark.com/@vueuse/components/download/@vueuse/components-6.4.1.tgz#725f71eca01eecb550ca2402c6b30fef59c57676"
+  integrity sha1-cl9x7KAe7LVQyiQCxrMP71nFdnY=
+  dependencies:
+    "@vueuse/core" "6.4.1"
+    "@vueuse/shared" "6.4.1"
+    vue-demi "*"
+
+"@vueuse/core@6.4.1", "@vueuse/core@^6.4.1":
+  version "6.4.1"
+  resolved "https://registry.nlark.com/@vueuse/core/download/@vueuse/core-6.4.1.tgz?cache=0&sync_timestamp=1631911935116&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vueuse%2Fcore%2Fdownload%2F%40vueuse%2Fcore-6.4.1.tgz#21416997a23bfb4924a5082ed6fa959027f80d04"
+  integrity sha1-IUFpl6I7+0kkpQgu1vqVkCf4DQQ=
+  dependencies:
+    "@vueuse/shared" "6.4.1"
+    vue-demi "*"
+
+"@vueuse/shared@6.4.1":
+  version "6.4.1"
+  resolved "https://registry.nlark.com/@vueuse/shared/download/@vueuse/shared-6.4.1.tgz?cache=0&sync_timestamp=1631911934670&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vueuse%2Fshared%2Fdownload%2F%40vueuse%2Fshared-6.4.1.tgz#5bc84be107cead84e11c21d2c57b1e9f2c376975"
+  integrity sha1-W8hL4QfOrYThHCHSxXsenyw3aXU=
+  dependencies:
+    vue-demi "*"
+
 acorn-node@^1.6.1:
   version "1.8.2"
   resolved "https://registry.npm.taobao.org/acorn-node/download/acorn-node-1.8.2.tgz#114c95d64539e53dede23de8b9d96df7c7ae2af8"
@@ -1899,6 +1923,11 @@ vscode-vue-languageservice@^0.27.0:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-pug-languageservice "^0.27.22"
     vscode-typescript-languageservice "^0.27.22"
+
+vue-demi@*:
+  version "0.11.4"
+  resolved "https://registry.nlark.com/vue-demi/download/vue-demi-0.11.4.tgz?cache=0&sync_timestamp=1630868339719&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvue-demi%2Fdownload%2Fvue-demi-0.11.4.tgz#6101992fe4724cf5634018a16e953f3052e94e2a"
+  integrity sha1-YQGZL+RyTPVjQBihbpU/MFLpTio=
 
 vue-tsc@^0.2.2:
   version "0.2.3"
