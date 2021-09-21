@@ -27,7 +27,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div>
+  <div class="px-8">
     <h1 class="text-3xl text-center font-bold mb-8">{{ md?.frontmatter.title }}</h1>
     <p class="text-right">{{ createDate }}</p>
     <markdown ref="md" />
