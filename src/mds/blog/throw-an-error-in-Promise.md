@@ -6,7 +6,7 @@ tags:
   - JavaScript
 ---
 
-# 在 Promsie 中抛出异常
+## 在 Promsie 中抛出异常 {#throw-err-in-promise}
 
 之前有一次想通过在 promise 中抛出异常，通过`try catch`捕获到异常，然后实现某种逻辑。当时搜了一下，有人说用 `setTimeout`，那个时候我对 `event loop`、`microtask & macrotask` 还没有什么概念。现在我也记不得当时的问题是什么了。反正搜到一个 [stackoverflow 问题](https://stackoverflow.com/questions/30715367/why-can-i-not-throw-inside-a-promise-catch-handlerå)。
 
@@ -59,7 +59,7 @@ do1()
 
 执行之后返回的是一个 `resolved promise` 。error 是一个 `uncaught Error`，而不是 `uncaught Error in promise`。
 
-# 参考链接
+## 参考链接 {#refrence}
 
 1. [Promise A+ 规范](https://promisesaplus.com/)
 2. 一篇关于 [task-microtask-queues-schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) 的博客

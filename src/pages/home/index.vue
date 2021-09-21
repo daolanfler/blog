@@ -3,16 +3,21 @@ import { reactive } from 'vue-demi';
 import blogList from '../../mds/blog/'
 
 const list = reactive(blogList)
+list.sort((a,b) => -new Date(a.date).valueOf() + new Date(b.date).valueOf())
 
 </script>
 
 <template>
-  <div>
-    <div v-for="item in list" :key="item.path">
-      <router-link class="text-lg" :to="{
+  <div class="pl-16">
+    <div v-for="item in list" :key="item.path" class="mb-4">
+      <router-link class="text-lg " :to="{
         path: `/post/${item.path}`
-      }">{{ item.title }}</router-link>
-      <div>
+      }">
+      <span class="text-lg font-semibold text-gray-700 dark:hover:text-white dark:text-gray-300 hover:text-black hover:underline"> 
+        {{ item.title }}
+      </span>
+      </router-link>
+      <div class="text-gray-400 mt-2 text-sm">
         {{item.date}}
       </div>
     </div>

@@ -5,7 +5,7 @@ tags:
     - 正则表达式
 ---
 
-## 名词
+## 名词 {#terms}
 
 以下都是预检查，类似于`(?:)`非捕获型分组，匹配到的内容不会被捕获
 
@@ -17,7 +17,7 @@ tags:
 
 `(?<!pattern)` look behind negative assert 反向否定预检查
 
-## 例子 1
+## 例子 1 {#example1}
 
 ```js
 
@@ -39,7 +39,7 @@ tags:
 ['95windows', index: 0, input: '95windows', groups: undefined]
 ```
 
-## 例子 2：千位分隔符 Look Ahead Positive Assert
+## 例子 2：千位分隔符 Look Ahead Positive Assert {#example2}
 
 ```javascript
 "12345678.32423432".replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
@@ -48,7 +48,7 @@ tags:
 // $1 表示(\d) 捕获到的分组
 ```
 
-## Reference
+## Reference {#reference}
 
 1. <https://segmentfault.com/q/1010000004651380>
 

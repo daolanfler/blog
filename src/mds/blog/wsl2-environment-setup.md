@@ -7,11 +7,11 @@ tags:
     - bash
 ---
 
-## 开启 wsl 与安装 Ubuntu
+## 开启 wsl 与安装 Ubuntu {#prepare}
 
 详见[官方文档](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#manual-installation-steps)，最好是 windows pro 专业版，linux 发行版直接从应用商店安装即可
 
-## shell 配置
+## shell 配置 {#shell-config}
 
 1. 在应用商店下载 Windows Terminal 界面现代化，和 [PowerToys](https://github.com/microsoft/PowerToys) 风格类似
 
@@ -76,7 +76,7 @@ tags:
 
     然后再 `.zshrc` 中设置 `ZSH_THEME="spaceship"`
 
-## proxy 配置
+## proxy 配置 {#proxy-config}
 
 在 Windows host 上开启了代理服务，如何在 wsl 上也能使用？在 `~/set_proxy`建一个 shell 脚本 ，内容如下：
 
@@ -157,7 +157,7 @@ source ~/.zshrc
 # 即可在命令行中使用 proxy 来设置、取消、print 代理设置
 ```
 
-## 常见问题
+## 常见问题 {#faq}
 
 1. proxy 设置不生效：可能是 windows 防火墙设置有问题
 2. 设置 Windows Terminal 中 wsl 默认启动路径为 home `"//wsl$/Ubuntu/home/<yourname>/"`
@@ -166,7 +166,7 @@ source ~/.zshrc
 5. windows 上的 docker 是可以在 wsl 里面运行的，需要将 docker desktop 中相关设置打开。
 6. windows 和 wsl 的 localhost 映射并不是相互的，详见[issue](https://github.com/microsoft/WSL/issues/5211#issuecomment-628565569)
 
-## 参考链接
+## 参考链接 {#reference}
 
 1. [shell 配置参考](https://segmentfault.com/a/1190000021409814)
 2. [proxy 配置参考](https://zinglix.xyz/2020/04/18/wsl2-proxy/)

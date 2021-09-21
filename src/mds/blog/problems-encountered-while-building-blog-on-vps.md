@@ -10,7 +10,7 @@ tags:
 
 这是一篇书签性质的文章
 
-## 购买 VPS 和域名
+## 购买 VPS 和域名 {#vps-and-dns}
 
 - VPS 使用的是[Digital Ocean](https://digitalocean.com) $5 一个月的配置:  
   `8 GB Memory / 4 Intel vCPUs / 160 GB Disk / NYC1 - Ubuntu 20.04 (LTS) x64`  
@@ -26,12 +26,12 @@ tags:
    [How To Use Dig, Whois, & Ping on an Ubuntu VPS to Query DNS Data
   ](https://www.digitalocean.com/community/tutorials/how-to-use-dig-whois-ping-on-an-ubuntu-vps-to-query-dns-data)
 
-## 安装 nginx & 设置 server block (virtual hosts)
+## 安装 nginx & 设置 server block (virtual hosts) {#nginx-and-server-block}
 
 - [How To Install Nginx on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)，注意 ufw 防火墙设置
 - [Nginx Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html) Nginx 官方教程
 
-## SSH 常见的问题
+## SSH 常见的问题 {#ssh}
 
 - 创建新用户，并加入 sudo 用户组  
    [Initial Server Setup with Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04) step 2  
@@ -58,30 +58,30 @@ tags:
         User <your_username>
   ```
 
-## 关于 HTTPS 证书
+## 关于 HTTPS 证书 {#https}
 
 - 使用免费的 lets encrypt  
   [How To Secure Nginx with Let's Encrypt on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
 - [目前不支持通配符（wildcard），要增加 subdomain 怎么做](https://community.letsencrypt.org/t/how-can-i-add-more-subdomains-to-my-ssl-certificate/33711)  
 
 
-## 关于 Github Pages 的 custom domain 设置
+## 关于 Github Pages 的 custom domain 设置 {#github-pages-custom-domain}
 
 - 分为 subdomain 和 apex domain，生效需要时间  
   [Configuring a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
-## 关于 Github Actions
+## 关于 Github Actions {#github-actions}
 
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 
-## 关于 mogodb
+## 关于 mogodb {#mongodb}
 
 - 参考官方文档（community version）
 
-## 关于 docker
+## 关于 docker {#docker}
 
 - [How To Install and Use Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
   
-## 总结
+## 总结 {#summary}
 
 Digital Ocean 的文档真香！
