@@ -6,7 +6,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      textOpacity: ['dark']
+      textOpacity: ['dark'],
+      textColor: ['dark'],
+      backgroundColor: ['dark']
     },
   },
   plugins: [],
