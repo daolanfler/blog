@@ -6,6 +6,8 @@ import anchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
 import Components from 'unplugin-vue-components/vite'
 
+import viteCompression from 'vite-plugin-compression'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -15,6 +17,7 @@ export default defineConfig({
 
     Markdown({
       markdownItSetup(md) {
+        // this line put first
         md.use(markdownItAttrs)
         md.use(anchor, {
          level: 1,
@@ -26,6 +29,7 @@ export default defineConfig({
 
     Components({
       dts: true
-    })
+    }),
+    viteCompression()
   ],
 });
