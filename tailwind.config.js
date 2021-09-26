@@ -3,6 +3,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {},
+    fontFamily: {
+      'serif': ['Noto Serif SC', 'serif']
+    }
   },
   variants: {
     extend: {

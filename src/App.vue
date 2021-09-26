@@ -13,11 +13,11 @@ import { colors } from './store';
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  @apply font-serif;
 }
 
 body {
   @apply dark:bg-gray-800 dark:text-white bg-white;
-  @apply  m-auto antialiased;
+  @apply  m-auto antialiased ;
 }
 </style>
