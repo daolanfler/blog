@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { computed, defineAsyncComponent, defineComponent, ref, watchEffect } from "vue-demi";
+import { computed, defineAsyncComponent, defineComponent, ref, watch, watchEffect } from "vue-demi";
 import { useRoute } from "vue-router";
 import { formatDate } from "../../utils/datetime";
 // import blogList from "../../mds/blog";
@@ -15,14 +15,22 @@ const id = computed(() => route.params.name)
 
 const md = ref<ReturnType<typeof defineComponent>>(null)
 const createDate = ref('')
-watchEffect(() => {
-  if (md) {
-    const date = md.value?.frontmatter.date
-    if (!date) return
+
+// watchEffect(() => {
+//   if (md.value) {
+//     const date = md.value.frontmatter?.date
+//     if (!date) return
+//     createDate.value = formatDate(date, 'll')
+//   }
+// })
+
+watch(md, (val) => {
+  if (val) {
+    const date = md.value.frontmatter?.date
+    if (!date) return 
     createDate.value = formatDate(date, 'll')
   }
 })
-
 
 </script>
 
