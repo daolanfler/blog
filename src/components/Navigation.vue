@@ -26,5 +26,9 @@ import {Icon} from '@iconify/vue'
 .nav {
   grid-template-columns: auto max-content;
   padding: 2em;
+  @apply dark:text-gray-400 text-gray-800;
+}
+.nav span, svg {
+  @apply dark:hover:text-gray-100 hover:text-blue-500;
 }
 </style>
