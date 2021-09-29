@@ -33,7 +33,7 @@ tags:
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     ```
 
-    安装语法高亮插件[`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting.git)
+    安装历史记录建议插件[`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
 
     ```bash
     # Clone this repository into $ZSH_CUSTOM/plugins (by default ~/.oh-my-zsh/custom/plugins)
@@ -42,14 +42,14 @@ tags:
     # Add the plugin to the list of plugins for Oh My Zsh to load (inside ~/.zshrc):
     plugins=(
             git
-            zsh-syntax-highlighting
+            zsh-syntax-autosuggestions
             )
 
     # 配置生效
     source ~/.zshrc
     ```
 
-    安装历史记录建议插件[`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
+    安装语法高亮插件[`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting.git)
 
     ```bash
     # Clone this repository in oh-my-zsh's plugins directory:
@@ -161,7 +161,7 @@ source ~/.zshrc
 
 1. proxy 设置不生效：可能是 windows 防火墙设置有问题
 2. 设置 Windows Terminal 中 wsl 默认启动路径为 home `"//wsl$/Ubuntu/home/<yourname>/"`
-3. 无法 ping 通 windows host IP，可能原因 https://github.com/microsoft/WSL/issues/5437
+3. 无法 ping 通 windows host IP，可能原因 <https://github.com/microsoft/WSL/issues/5437>
 4. 关于获取 host ip 很多都是通过 `/etc/resolv.conf` 来获取的，但我这里这个文件内容是 `nameserve 8.8.8.8`，修改`/etc/wsl.conf`中 `network.generateResolvConf`为`false`，还是 `8.8.8.8` 这个 google 的 DNS 解析服务器。
 5. windows 上的 docker 是可以在 wsl 里面运行的，需要将 docker desktop 中相关设置打开。
 6. windows 和 wsl 的 localhost 映射并不是相互的，详见[issue](https://github.com/microsoft/WSL/issues/5211#issuecomment-628565569)
