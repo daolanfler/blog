@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import {Icon} from '@iconify/vue'
+import {Icon, addIcon} from '@iconify/vue/dist/offline'
+import bookmarkIcon from '@iconify-icons/ic/outline-bookmark-border'
+import snippetIcon from '@iconify-icons/ic/outline-text-snippet'
 
 </script>
 <template>
@@ -11,10 +13,10 @@ import {Icon} from '@iconify/vue'
           <span class="font-bold ">Blog</span>
         </router-link>
         <router-link :to="{ path: '/bookmarks' }">
-        <Icon icon="ic:outline-bookmark-border" class="text-2xl" />
+        <Icon :icon="bookmarkIcon" class="text-2xl" />
         </router-link>
         <router-link :to="{ path: '/snippets' }">
-        <Icon icon="ic:outline-text-snippet" class="text-2xl"/>
+        <Icon :icon="snippetIcon" class="text-2xl"/>
         </router-link>
         <ChangeTheme></ChangeTheme>
       </div>

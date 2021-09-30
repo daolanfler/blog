@@ -62,6 +62,11 @@
   resolved "https://registry.nlark.com/@emmetio/scanner/download/@emmetio/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha1-Blsq9iM/50dNRII+PeuJckr0K18=
 
+"@iconify-icons/ic@^1.1.11":
+  version "1.1.11"
+  resolved "https://registry.npmmirror.com/@iconify-icons/ic/download/@iconify-icons/ic-1.1.11.tgz#5c9ab9e666bb2fdf4f3a82dade200834dd1648af"
+  integrity sha1-XJq55ma7L99POoLa3iAINN0WSK8=
+
 "@iconify/vue@^3.0.0":
   version "3.0.0"
   resolved "https://registry.npmmirror.com/@iconify/vue/download/@iconify/vue-3.0.0.tgz#7e2fa8a515aea4e50313d41acdb3cc0b3492829d"
