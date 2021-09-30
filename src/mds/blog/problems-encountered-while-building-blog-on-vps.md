@@ -30,6 +30,7 @@ tags:
 
 - [How To Install Nginx on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)，注意 ufw 防火墙设置
 - [Nginx Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html) Nginx 官方教程
+- 注意在开启 ufw 防火墙之前要允许**ssh**端口
 
 ## SSH 常见的问题 {#ssh}
 
@@ -74,7 +75,7 @@ tags:
 
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 
-## 关于 mogodb {#mongodb}
+## 关于 mongodb {#mongodb}
 
 - 参考官方文档（community version）
 
