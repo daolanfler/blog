@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import {
   defineAsyncComponent,
   defineComponent,
@@ -6,6 +7,7 @@ import {
   watch,
 watchEffect,
 } from "vue-demi";
+
 import { useRoute } from "vue-router";
 import { formatDate } from "../../utils/datetime";
 
@@ -23,6 +25,7 @@ watch(md, (val) => {
 watchEffect(() => {
   console.log(md)
 })
+
 </script>
 
 <template>
