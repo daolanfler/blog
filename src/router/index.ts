@@ -1,32 +1,18 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import routes from "virtual:generated-pages";
 
-const routes: RouteRecordRaw[] =[
-    {
-        path: '/',
-        component: () => import('../pages/home/index.vue')
-    },
-    {
-        path: '/bookmarks',
-        component: () => import('../pages/bookmarks/index.vue')
-    },
-    {
-        path: '/snippets',
-        component: () => import('../pages/snippets/index.vue')
-    },
-    {
-        path: '/post/:name',
-        component: () => import('../pages/post/index.vue')
-    }
-]
+// see  https://github.com/hannoeru/vite-plugin-pages
 
-export default createRouter({
-    history: createWebHistory(),
-    routes,
-    scrollBehavior(to, from, savedPosition) {
-        if (to.hash) {
-            return {
-                el: to.hash
-            }
-        }
-    }
-})
+export { routes };
+
+// export default{
+//     history: createWebHistory(),
+//     routes,
+//     scrollBehavior(to, from, savedPosition) {
+//         if (to.hash) {
+//             return {
+//                 el: to.hash
+//             }
+//         }
+//     }
+// }

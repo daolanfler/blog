@@ -1,20 +1,33 @@
 <script setup lang="ts">
-
-import { computed, defineAsyncComponent, defineComponent, ref, watch, watchEffect } from "vue-demi";
-import { useRoute } from "vue-router";
+import {
+  computed,
+  defineAsyncComponent,
+  defineComponent,
+  ref,
+  watch,
+  defineProps,
+  toRefs,
+} from "vue-demi";
+// import { useRoute } from "vue-router";
 import { formatDate } from "../../utils/datetime";
 // import blogList from "../../mds/blog";
 
-const route = useRoute()
+// const route = useRoute()
 
-const markdown = defineAsyncComponent(() => import(`../../mds/blog/${route.params.name}.md`))
+const props = defineProps<{ name: string }>();
 
-const id = computed(() => route.params.name)
+const { name } = toRefs(props);
 
-// const blog = blogList.find(item => item.path === id.value)
+const modules = import.meta.glob("../../mds/blog/*.md");
 
-const md = ref<ReturnType<typeof defineComponent>>(null)
-const createDate = ref('')
+const markdown = defineAsyncComponent(
+  // () => import(`../../mds/blog/${name.value}.md`)
+  modules[`../../mds/blog/${name.value}.md`]
+);
+
+const md = ref<ReturnType<typeof defineComponent>>(null);
+
+const createDate = ref("");
 
 // watchEffect(() => {
 //   if (md.value) {
@@ -26,19 +39,21 @@ const createDate = ref('')
 
 watch(md, (val) => {
   if (val) {
-    const date = md.value.frontmatter?.date
-    if (!date) return 
-    createDate.value = formatDate(date, 'll')
+    const date = md.value.frontmatter?.date;
+    if (!date) return;
+    createDate.value = formatDate(date, "ll");
   }
-})
-
+});
 </script>
 
 <template>
   <div class="px-8">
-    <h1 class="text-3xl text-center font-bold mb-8">{{ md?.frontmatter.title }}</h1>
+    <h1 class="text-3xl text-center font-bold mb-8">
+      {{ md?.frontmatter.title }}
+    </h1>
     <p class="text-right">{{ createDate }}</p>
     <markdown ref="md" />
+    {{ name }}
   </div>
 </template>
 
