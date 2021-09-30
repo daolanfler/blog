@@ -3,25 +3,25 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite-ssg build",
     "serve": "vite preview"
   },
   "dependencies": {
     "@vueuse/components": "^6.4.1",
     "@vueuse/core": "^6.4.1",
+    "@vueuse/head": "^0.6.0",
     "dayjs": "^1.10.7",
     "markdown-it-anchor": "^8.3.1",
     "markdown-it-attrs": "^4.0.0",
     "markdown-it-prism": "^2.2.1",
     "prism-theme-vars": "^0.2.2",
     "vite-plugin-md": "^0.11.1",
-    "vue": "^3.2.6",
-    "vue-router": "4"
+    "vue": "^3.2.19",
+    "vue-router": "^4.0.11"
   },
   "devDependencies": {
     "@iconify/vue": "^3.0.0",
     "@vitejs/plugin-vue": "^1.6.1",
-    "@vue/compiler-sfc": "^3.2.6",
     "autoprefixer": "^10.3.4",
     "postcss": "^8.3.6",
     "tailwindcss": "^2.2.15",
@@ -29,6 +29,8 @@
     "unplugin-vue-components": "^0.15.1",
     "vite": "^2.5.4",
     "vite-plugin-compression": "^0.3.5",
+    "vite-plugin-pages": "^0.18.1",
+    "vite-ssg": "^0.15.4",
     "vue-tsc": "^0.2.2"
   }
 }

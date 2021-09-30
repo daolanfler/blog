@@ -1,10 +1,11 @@
-import { defineConfig } from "vite";
+import { build, defineConfig } from "vite";
 import Vue from "@vitejs/plugin-vue";
 import Markdown from 'vite-plugin-md'
 import prism from 'markdown-it-prism'
 import anchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
 import Components from 'unplugin-vue-components/vite'
+import Pages from 'vite-plugin-pages'
 
 import viteCompression from 'vite-plugin-compression'
 
@@ -14,6 +15,8 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/]
     }),
+
+    Pages(),
 
     Markdown({
       markdownItSetup(md) {
@@ -32,4 +35,9 @@ export default defineConfig({
     }),
     viteCompression()
   ],
+  ssgOptions: {
+    script: "async",
+    dirStyle: 'nested',
+    includeAllRoutes: true
+  },
 });

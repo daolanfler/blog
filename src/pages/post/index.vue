@@ -1,44 +1,39 @@
 <script setup lang="ts">
-
-import { computed, defineAsyncComponent, defineComponent, ref, watch, watchEffect } from "vue-demi";
+import {
+  defineAsyncComponent,
+  defineComponent,
+  ref,
+  watch,
+watchEffect,
+} from "vue-demi";
 import { useRoute } from "vue-router";
 import { formatDate } from "../../utils/datetime";
-// import blogList from "../../mds/blog";
 
-const route = useRoute()
+const md = ref<ReturnType<typeof defineComponent>>(null);
 
-const markdown = defineAsyncComponent(() => import(`../../mds/blog/${route.params.name}.md`))
-
-const id = computed(() => route.params.name)
-
-// const blog = blogList.find(item => item.path === id.value)
-
-const md = ref<ReturnType<typeof defineComponent>>(null)
-const createDate = ref('')
-
-// watchEffect(() => {
-//   if (md.value) {
-//     const date = md.value.frontmatter?.date
-//     if (!date) return
-//     createDate.value = formatDate(date, 'll')
-//   }
-// })
+const createDate = ref("");
 
 watch(md, (val) => {
   if (val) {
-    const date = md.value.frontmatter?.date
-    if (!date) return 
-    createDate.value = formatDate(date, 'll')
+    const date = md.value.frontmatter?.date;
+    if (!date) return;
+    createDate.value = formatDate(date, "ll");
   }
+});
+watchEffect(() => {
+  console.log(md)
 })
-
 </script>
 
 <template>
   <div class="px-8">
-    <h1 class="text-3xl text-center font-bold mb-8">{{ md?.frontmatter.title }}</h1>
+    <h1 class="text-3xl text-center font-bold mb-8">
+      {{ md?.frontmatter.title }}
+    </h1>
     <p class="text-right">{{ createDate }}</p>
-    <markdown ref="md" />
+    <router-view v-slot="{Component}">
+      <component ref="md" :is="Component"></component>
+    </router-view>
   </div>
 </template>
 
@@ -55,8 +50,8 @@ h1 {
   text-decoration: underline;
 }
 .header-anchor:hover::before {
-  content: "#";
   position: relative;
+  content: "#";
   float: left;
   width: 0;
   height: 0;
