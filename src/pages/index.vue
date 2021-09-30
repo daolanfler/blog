@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
 import { reactive } from 'vue-demi';
-import blogList from '../../mds/blog/'
+import blogList from '../mds/blog'
 
 const list = reactive(blogList)
 list.sort((a, b) => dayjs(b.date).valueOf() - dayjs(a.date).valueOf())

@@ -1,32 +1,36 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-const routes: RouteRecordRaw[] =[
-    {
-        path: '/',
-        component: () => import('../pages/home/index.vue')
-    },
-    {
-        path: '/bookmarks',
-        component: () => import('../pages/bookmarks/index.vue')
-    },
-    {
-        path: '/snippets',
-        component: () => import('../pages/snippets/index.vue')
-    },
-    {
-        path: '/post/:name',
-        component: () => import('../pages/post/index.vue')
-    }
-]
+const blogs = import.meta.globEager('../mds/blog/*.md')
 
-export default createRouter({
-    history: createWebHistory(),
-    routes,
-    scrollBehavior(to, from, savedPosition) {
-        if (to.hash) {
-            return {
-                el: to.hash
-            }
-        }
-    }
+const blogRoutes: RouteRecordRaw[] = Object.keys(blogs).map(key => {
+  return {
+    path: /\/([^/]+)\.md$/.exec(key)![1],
+    component: blogs[key].default
+  }
 })
+
+
+// see  https://github.com/hannoeru/vite-plugin-pages
+const routes: RouteRecordRaw[] = [
+  {
+    path: "/",
+    component: () => import("../pages/index.vue"),
+  },
+  {
+    path: "/bookmarks",
+    component: () => import("../pages/bookmarks/index.vue"),
+  },
+  {
+    path: "/snippets",
+    component: () => import("../pages/snippets/index.vue"),
+  },
+  {
+    path: "/post",
+    component: () => import("../pages/post/index.vue"),
+    children: [
+      ...blogRoutes
+    ],
+  },
+];
+
+export { routes };

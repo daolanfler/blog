@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+/// <reference types="vite-plugin-pages/client" />
 
 declare module '*.vue' {
   import { DefineComponent } from 'vue'
@@ -12,4 +13,8 @@ declare module '*.md' {
 
   const Component: ReturnType<typeof defineComponent>
   export default Component
+}
+
+declare module "markdown-it-attrs" {
+
 }
