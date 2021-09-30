@@ -6,6 +6,7 @@ import anchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
 import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
+import WindiCSS from 'vite-plugin-windicss'
 
 import viteCompression from 'vite-plugin-compression'
 
@@ -15,7 +16,8 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/]
     }),
-
+    WindiCSS(),
+    
     Pages(),
 
     Markdown({
