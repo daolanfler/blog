@@ -7,8 +7,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@vueuse/components": "^6.4.1",
-    "@vueuse/core": "^6.4.1",
+    "@vueuse/components": "^6.5.3",
+    "@vueuse/core": "^6.5.3",
     "@vueuse/head": "^0.6.0",
     "dayjs": "^1.10.7",
     "markdown-it-anchor": "^8.3.1",
@@ -22,9 +22,11 @@
   "devDependencies": {
     "@iconify-icons/ic": "^1.1.11",
     "@iconify/vue": "^3.0.0",
+    "@types/fs-extra": "^9.0.13",
     "@vitejs/plugin-vue": "^1.6.1",
     "autoprefixer": "^10.3.4",
     "critters": "^0.0.10",
+    "gray-matter": "^4.0.3",
     "postcss": "^8.3.6",
     "postcss-nested": "^5.0.6",
     "prismjs": "^1.25.0",

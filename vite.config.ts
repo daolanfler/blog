@@ -8,6 +8,9 @@ import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
 import WindiCSS from 'vite-plugin-windicss'
 import viteCompression from 'vite-plugin-compression'
+import {resolve} from 'path'
+import fs from 'fs-extra'
+import matter from 'gray-matter'
 
 import 'prismjs/components/prism-regex'
 import 'prismjs/components/prism-javascript'
@@ -31,22 +34,39 @@ export default defineConfig({
     
     Pages({
       extensions: ['vue', 'md'],
+      extendRoute(route) {
+        const path = resolve(__dirname, route.component.slice(1))
+        if (path.endsWith('.md')) {
+          const md = fs.readFileSync(path, 'utf-8')
+          const {data} = matter(md)
+          route.meta = Object.assign(route.meta || {}, {frontmatter: data})
+        }
+        return route
+      }
     }),
 
     Markdown({
+      wrapperComponent: 'PostWrapper',
       markdownItSetup(md) {
         // this line put first
         md.use(markdownItAttrs)
+
         md.use(anchor, {
          level: 1,
          permalink: anchor.permalink.headerLink()
         })
+
         md.use(prism)
       }
     }),
 
     Components({
-      dts: true
+      extensions: ['vue', 'md'],
+      dts: true,
+      include: [/\.vue$/, /\.md$/],
+      // resolvers: IconsResolver({
+      //   componentPrefix: '',
+      // }),
     }),
     viteCompression()
   ],

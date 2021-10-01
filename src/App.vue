@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { colors } from './store';
 
-
 </script>
 
 <template>

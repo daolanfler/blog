@@ -5,8 +5,10 @@
 declare module 'vue' {
   export interface GlobalComponents {
     ChangeTheme: typeof import('./src/components/ChangeTheme.vue')['default']
+    Fuck: typeof import('./src/components/Fuck.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Navigation: typeof import('./src/components/Navigation.vue')['default']
+    PostWrapper: typeof import('./src/components/PostWrapper.vue')['default']
   }
 }
 
