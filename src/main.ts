@@ -1,9 +1,13 @@
+import './styles/main.postcss'
+import './styles/markdown.postcss'
 import "./index.css";
 import "virtual:windi.css";
 
 import { ViteSSG } from "vite-ssg";
 import App from "./App.vue";
 import { routes } from "./router";
+import dayjs from 'dayjs';
+import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 
 export const createApp = ViteSSG(
   // the root component
@@ -13,5 +17,6 @@ export const createApp = ViteSSG(
   // function to have custom setups
   ({ app, router, routes, isClient, initialState }) => {
     // install plugins etc.
+    dayjs.extend(LocalizedFormat)
   }
 );

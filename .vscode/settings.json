@@ -4,7 +4,7 @@
     },
     "volar.codeLens.pugTools": false,
     "typescript.tsdk": "node_modules/typescript/lib",
-    "css.validate": false,
+    // "css.validate": false,
     "editor.quickSuggestions": {
         "strings": true
     }

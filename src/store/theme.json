@@ -38,7 +38,6 @@
       "--prism-marker-font-size": "0.8em",
       "--prism-font-size": "1em",
       "--prism-line-height": "1.5em",
-      "--prism-font-family": "monospace",
       "--prism-inline-font-size": "var(--prism-font-size)",
       "--prism-block-font-size": "var(--prism-font-size)",
       "--prism-tab-size": "2",
