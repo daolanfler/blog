@@ -11,6 +11,12 @@ import LocalizedFormat from "dayjs/plugin/localizedFormat";
 import { RouterScrollBehavior } from "vue-router";
 import allPages from 'virtual:generated-pages'
 
+declare module "vue-router" {
+  interface RouteMeta {
+    frontmatter: any
+  }
+}
+
 const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
     return savedPosition;

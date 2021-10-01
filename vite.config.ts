@@ -30,12 +30,6 @@ import 'prismjs/components/prism-jsdoc'
 export default defineConfig({
   optimizeDeps: {
     include: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-      '@iconify/iconify',
-      'dayjs',
-      'dayjs/plugin/localizedFormat'
     ]
   },
   plugins: [
