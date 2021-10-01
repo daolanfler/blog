@@ -1,11 +1,14 @@
 {
-    "[vue]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "volar.codeLens.pugTools": false,
-    "typescript.tsdk": "node_modules/typescript/lib",
-    // "css.validate": false,
-    "editor.quickSuggestions": {
-        "strings": true
-    }
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "volar.codeLens.pugTools": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  // "css.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "windicss.includeLanguages": {
+    "postcss": "css"
+  }
 }
