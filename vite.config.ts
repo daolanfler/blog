@@ -11,6 +11,8 @@ import viteCompression from 'vite-plugin-compression'
 import {resolve} from 'path'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
+import AutoImport from 'unplugin-auto-import/vite'
+
 
 import 'prismjs/components/prism-regex'
 import 'prismjs/components/prism-javascript'
@@ -26,6 +28,16 @@ import 'prismjs/components/prism-jsdoc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vue-router',
+      '@vueuse/core',
+      '@iconify/iconify',
+      'dayjs',
+      'dayjs/plugin/localizedFormat'
+    ]
+  },
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/]
@@ -58,6 +70,15 @@ export default defineConfig({
 
         md.use(prism)
       }
+    }),
+    
+    AutoImport({
+      imports: [
+        'vue',
+        'vue-router',
+        '@vueuse/core',
+        '@vueuse/head',
+      ],
     }),
 
     Components({

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { isClient } from "@vueuse/core";
-import { onMounted } from "vue-demi";
 import { formatDate } from "../utils/datetime";
 
 const { frontmatter } = defineProps<{ frontmatter: any }>();

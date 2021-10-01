@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { colors } from './store';
 
 </script>
 
@@ -9,14 +8,3 @@ import { colors } from './store';
     <router-view></router-view>
   </main>
 </template>
-
-<style>
-/* #app {
-  @apply font-serif;
-}
-
-body {
-  @apply dark:bg-gray-800 dark:text-white bg-white;
-  @apply  m-auto antialiased ;
-} */
-</style>

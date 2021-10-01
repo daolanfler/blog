@@ -3,3 +3,6 @@ node_modules
 dist
 dist-ssr
 *.local
+.vite-ssg-temp
+components.d.ts
+auto-imports.d.ts

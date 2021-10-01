@@ -2610,6 +2610,18 @@ universalify@^2.0.0:
   resolved "https://registry.npm.taobao.org/universalify/download/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=
 
+unplugin-auto-import@^0.4.10:
+  version "0.4.10"
+  resolved "https://registry.npmmirror.com/unplugin-auto-import/download/unplugin-auto-import-0.4.10.tgz#f38b1423dc61b0d73feb426b35810b5adae19be8"
+  integrity sha1-84sUI9xhsNc/60JrNYELWtrhm+g=
+  dependencies:
+    "@antfu/utils" "^0.3.0"
+    "@rollup/pluginutils" "^4.1.1"
+    local-pkg "^0.1.0"
+    magic-string "^0.25.7"
+    resolve "^1.20.0"
+    unplugin "^0.2.15"
+
 unplugin-vue-components@^0.15.1:
   version "0.15.6"
   resolved "https://registry.npmmirror.com/unplugin-vue-components/download/unplugin-vue-components-0.15.6.tgz#cd4e06e507c9dd7b6469e345b6812b3843e86d63"
@@ -2626,7 +2638,7 @@ unplugin-vue-components@^0.15.1:
     resolve "^1.20.0"
     unplugin "^0.2.13"
 
-unplugin@^0.2.13:
+unplugin@^0.2.13, unplugin@^0.2.15:
   version "0.2.16"
   resolved "https://registry.npmmirror.com/unplugin/download/unplugin-0.2.16.tgz#6f34e9f5068ca3ec92a36b016f47b5ad8bb875ca"
   integrity sha1-bzTp9QaMo+ySo2sBb0e1rYu4dco=
