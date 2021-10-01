@@ -10,7 +10,7 @@ tags:
 
 字体一般只要是等宽就行了。推荐一款很好用的等宽字体 [FiraCode](https://github.com/tonsky/FiraCode)，可以开启 Font Legatures（连字符），只需在设置里面打开就行：
 
-```JSON
+```json
 "editor.fontLigatures": true,
 ```
 
@@ -20,7 +20,7 @@ ctrl + shift + p ，输入 shortcut，可以看到[快捷键参考](https://code
 
 [Emmet](https://code.visualstudio.com/docs/editor/emmet)。可以自定义很多操作，具体可以看文档。这里是一个绑定快捷键进行数学运算的例子：
 
-```JSON
+```json
 {
   "key": "ctrl+shift+u",
   "command": "editor.emmet.action.evaluateMathExpression"

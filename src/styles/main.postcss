@@ -3,6 +3,20 @@
 }
 
 body {
-  @apply dark:bg-gray-800 dark:text-white bg-white;
+  @apply dark:bg-dark-900 dark:text-white bg-white;
   @apply  m-auto antialiased ;
+}
+
+.blog-title {
+  @apply text-lg font-semibold hover:underline text-gray-700 hover:text-black;
+  @apply dark:text-gray-300 dark:hover:text-white;
+}
+
+.nav {
+  grid-template-columns: auto max-content;
+  padding: 2em;
+  @apply dark:text-gray-400 text-gray-800;
+}
+.nav span, svg {
+  @apply dark:hover:text-gray-100 hover:text-blue-500;
 }

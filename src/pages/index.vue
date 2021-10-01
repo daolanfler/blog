@@ -28,10 +28,3 @@ const posts = computed(() => routes.filter(i => i))
     </div>
   </div>
 </template>
-
-<style scoped>
-.blog-title {
-  @apply text-lg font-semibold hover:underline text-gray-700 hover:text-black;
-  @apply dark:text-gray-300 dark:hover:text-white;
-}
-</style>
