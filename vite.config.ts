@@ -5,7 +5,7 @@ import prism from 'markdown-it-prism'
 import anchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
 import Components from 'unplugin-vue-components/vite'
-// import Pages from 'vite-plugin-pages'
+import Pages from 'vite-plugin-pages'
 import WindiCSS from 'vite-plugin-windicss'
 import viteCompression from 'vite-plugin-compression'
 
@@ -29,7 +29,9 @@ export default defineConfig({
     }),
     WindiCSS(),
     
-    // Pages(),
+    Pages({
+      extensions: ['vue', 'md'],
+    }),
 
     Markdown({
       markdownItSetup(md) {
@@ -49,8 +51,8 @@ export default defineConfig({
     viteCompression()
   ],
   ssgOptions: {
-    script: "async",
-    dirStyle: 'nested',
-    includeAllRoutes: true
+    // script: "async",
+    // dirStyle: 'nested',
+    // includeAllRoutes: true
   },
 });
