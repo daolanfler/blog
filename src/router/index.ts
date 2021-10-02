@@ -18,11 +18,11 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: "/bookmarks",
-    component: () => import("../pages/bookmarks/index.vue"),
+    component: () => import("../pages/bookmarks/index.md"),
   },
   {
     path: "/snippets",
-    component: () => import("../pages/snippets/index.vue"),
+    component: () => import("../pages/snippets/index.md"),
   },
   {
     path: "/post",

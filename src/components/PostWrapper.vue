@@ -6,6 +6,8 @@ import { formatDate } from '../utils/datetime'
 const { frontmatter } = defineProps<{ frontmatter: any }>()
 
 const createDate = formatDate(frontmatter.date, 'll')
+const route = useRoute()
+
 if (isClient) {
   const navigate = () => {
     if (location.hash) {
@@ -32,12 +34,14 @@ if (isClient) {
 
 <template>
   <div class="px-8">
-    <h1 class="text-3xl text-center font-bold mb-8">
-      {{ frontmatter.title }}
-    </h1>
-    <p class="text-right">
-      {{ createDate }}
-    </p>
+    <template v-if="route.path.startsWith('/post')">
+      <h1 class="text-3xl text-center font-bold mb-8">
+        {{ frontmatter.title }}
+      </h1>
+      <p class="text-right">
+        {{ createDate }}
+      </p>
+    </template>
     <slot />
   </div>
 </template>

@@ -1,13 +1,13 @@
-import { defineConfig } from "@windicss/plugin-utils";
-import colors from "windicss/colors";
-import typography from "windicss/plugin/typography";
+import { defineConfig } from '@windicss/plugin-utils'
+import colors from 'windicss/colors'
+import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
-  darkMode: "class",
+  darkMode: 'class',
   extract: {
-    include: ["src/**/*.{html,vue,jsx,tsx,svelte}"],
+    include: ['src/**/*.{html,vue,jsx,tsx,svelte}'],
   },
-  safelist: ["prose", "prose-sm", "m-auto"],
+  safelist: ['prose', 'prose-sm', 'm-auto'],
   plugins: [typography()],
   theme: {
     extend: {
@@ -16,7 +16,7 @@ export default defineConfig({
       },
     },
     fontFamily: {
-      serif: ["Noto Serif SC", "serif"],
+      serif: ['Noto Serif SC', 'serif'],
     },
   },
-});
+})
