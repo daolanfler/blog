@@ -15,7 +15,6 @@ declare module '*.md' {
   export default Component
 }
 
-declare module "markdown-it-attrs" {
+declare module 'markdown-it-attrs' {
 
 }
-
