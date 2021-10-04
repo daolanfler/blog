@@ -1,6 +1,9 @@
-# Snippets
+---
+title: Snippets
+date: 2021-10-04 20:51
+---
 
-## 检测元素是否超出了边界
+## 检测元素是否超出了边界 {#check-if-element-exceeds}
 
 参考 Element UI el-table 中 [showOverflowTooltip](https://github.com/ElemeFE/element/blob/50a464ea555c0711d1c47efa31c3cff742ededf1/packages/table/src/table-body.js#L252) 的实现：
 
