@@ -37,12 +37,13 @@ export const createApp = ViteSSG(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ app, router, routes, isClient, initialState }) => {
     dayjs.extend(LocalizedFormat)
-
-    router.beforeEach(() => {
-      NProgress.start()
-    })
-    router.afterEach(() => {
-      NProgress.done()
-    })
+    if (isClient) {
+      router.beforeEach(() => {
+        NProgress.start()
+      })
+      router.afterEach(() => {
+        NProgress.done()
+      })
+    }
   },
 )
