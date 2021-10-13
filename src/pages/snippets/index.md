@@ -3,6 +3,10 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+## $$ in Chrome Devtools
+
+`$$` is a shortcut `document.querySelectAll`，[参考这里](https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4)，但不是完全相等。
+
 ## 使用 [JSDoc](https://jsdoc.app/) 对 js 代码注释以获得类型提示 {#using-jsdoc-to-comment-js-code}
 
 需要项目中有相应的 `.d.ts` 文件定义的类型，引入`@types/pkgName`或者有些库会自带 `ts declaration`或则自己定义。示例：
