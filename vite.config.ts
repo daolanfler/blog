@@ -1,17 +1,19 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Markdown from 'vite-plugin-md'
 import prism from 'markdown-it-prism'
 import anchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
 import Components from 'unplugin-vue-components/vite'
-import Pages from 'vite-plugin-pages'
-import WindiCSS from 'vite-plugin-windicss'
-import viteCompression from 'vite-plugin-compression'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
 import AutoImport from 'unplugin-auto-import/vite'
+
+import Markdown from 'vite-plugin-md'
+import Pages from 'vite-plugin-pages'
+import WindiCSS from 'vite-plugin-windicss'
+import ViteCompression from 'vite-plugin-compression'
+import ViteComponents from 'vite-plugin-components'
 
 import 'prismjs/components/prism-regex'
 import 'prismjs/components/prism-javascript'
@@ -64,7 +66,10 @@ export default defineConfig({
         md.use(prism)
       },
     }),
-
+    ViteComponents({
+      extensions: ['vue', 'md'],
+      customLoaderMatcher: path => path.endsWith('.md'),
+    }),
     AutoImport({
       imports: [
         'vue',
@@ -82,7 +87,7 @@ export default defineConfig({
       //   componentPrefix: '',
       // }),
     }),
-    viteCompression(),
+    ViteCompression(),
   ],
   ssgOptions: {
     // script: "async",
