@@ -16,9 +16,9 @@ import snippetIcon from '@iconify-icons/ic/outline-text-snippet'
         <router-link :to="{ path: '/' }">
           <span class="font-bold">Blog</span>
         </router-link>
-        <router-link :to="{ path: '/bookmarks' }">
+        <!-- <router-link :to="{ path: '/bookmarks' }">
           <Icon :icon="bookmarkIcon" class="text-2xl" />
-        </router-link>
+        </router-link> -->
         <router-link :to="{ path: '/snippets' }">
           <Icon :icon="snippetIcon" class="text-2xl" />
         </router-link>

@@ -6,8 +6,10 @@ title: Terms 术语
 
 - wip: work-in-progress
 
-## Dev
+## 名词
 
 - tree-shaking
 
 - JAM stack
+
+- hydration 脱水

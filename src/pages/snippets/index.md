@@ -3,9 +3,32 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+## Optional chaining {#optional-chaining}
+
+即将到来的运算符：`?.` 和 `??`
+
+```javascript
+const adventurer = {
+  name: "Alice",
+  cat: {
+    name: "Dinah",
+  },
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName);
+// expected output: undefined
+```
+
+参考 [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)，以及 [nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)，coalescing: 合并、凝聚
+
+## Github "dot" shortcut {#github-shortcuts}
+
+在 github 的仓库页面点击 `.` 即可打开 vscode web 版
+
 ## $$ in Chrome Devtools
 
-`$$` is a shortcut `document.querySelectAll`，[参考这里](https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4)，但不是完全相等。
+`$$` is a shortcut `document.querySelectAll`，[参考这里](https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4)，但不是 `===` 的相等
 
 ## 使用 [JSDoc](https://jsdoc.app/) 对 js 代码注释以获得类型提示 {#using-jsdoc-to-comment-js-code}
 
