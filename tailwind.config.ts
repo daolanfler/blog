@@ -15,8 +15,5 @@ export default defineConfig({
         teal: colors.teal,
       },
     },
-    fontFamily: {
-      serif: ['Noto Serif SC', 'serif'],
-    },
   },
 })

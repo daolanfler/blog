@@ -1,5 +1,16 @@
 #app {
-  @apply font-serif;
+  @apply font-sans flex flex-col;
+  header {
+    @apply w-full;
+  }
+  main {
+    flex: 1;
+    min-height: calc(100vh - 10em);
+    @apply w-full;
+  }
+  footer {
+    @apply w-full;
+  }
 }
 
 body {
