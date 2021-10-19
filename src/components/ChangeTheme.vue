@@ -10,7 +10,7 @@ import { isDark, toggleDark } from '../store'
   <div class="inline-flex">
     <Icon
       v-if="isDark"
-      class="text-2xl cursor-pointer align-middle"
+      class="text-2xl cursor-pointer"
       :icon="iconDark"
       @click="toggleDark()"
     />

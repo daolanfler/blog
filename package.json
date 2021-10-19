@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.9.0",
+    "@iconify-icons/el": "^1.1.0",
     "@iconify-icons/ic": "^1.1.11",
     "@iconify/vue": "^3.0.0",
     "@types/fs-extra": "^9.0.13",

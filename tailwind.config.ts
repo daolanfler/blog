@@ -14,6 +14,9 @@ export default defineConfig({
       colors: {
         teal: colors.teal,
       },
+      maxWidth: {
+        'screen-read': '900px',
+      },
     },
   },
 })

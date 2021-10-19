@@ -306,6 +306,11 @@
   resolved "https://registry.nlark.com/@humanwhocodes/object-schema/download/@humanwhocodes/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha1-h956+cIxgm/daKxyWPd8Qp4OX88=
 
+"@iconify-icons/el@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/el/-/el-1.1.0.tgz#6e15e9b8352ce0e09339ef863eed16f85572a645"
+  integrity sha512-wh0N6rAmqzI1Jpn2zIPVvjjFPbSnMGNku+ac3FsRDPC65ZcgKwvK5Xxyjn5EFiCjrVwZD6p/g5Qy3+AZjqRCiA==
+
 "@iconify-icons/ic@^1.1.11":
   version "1.1.11"
   resolved "https://registry.npmmirror.com/@iconify-icons/ic/download/@iconify-icons/ic-1.1.11.tgz#5c9ab9e666bb2fdf4f3a82dade200834dd1648af"
@@ -313,8 +318,8 @@
 
 "@iconify/vue@^3.0.0":
   version "3.0.0"
-  resolved "https://registry.npmmirror.com/@iconify/vue/download/@iconify/vue-3.0.0.tgz#7e2fa8a515aea4e50313d41acdb3cc0b3492829d"
-  integrity sha1-fi+opRWupOUDE9QazbPMCzSSgp0=
+  resolved "https://registry.yarnpkg.com/@iconify/vue/-/vue-3.0.0.tgz#7e2fa8a515aea4e50313d41acdb3cc0b3492829d"
+  integrity sha512-7heVMHkpB3d7l+/ofAQ+f9k5mETi/FWEnI5dXFQqsDmc/yuO2Nz5D9XkSDvO1b6TRVawf/kleN8JXRaClTM4nQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
