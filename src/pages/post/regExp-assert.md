@@ -100,7 +100,7 @@ tags:
 
 ### 总结
 
-`lookahead` or `lookbehind` 指的是 _匹配字符串_ 相对于括号里面的正则的位置。`lookbehind` 则还需要再 `?` 后加一个 `<` 符号
+`lookahead` or `lookbehind` 指的是 _匹配字符串_ 相对于括号里面的正则的位置。`lookbehind` 则还需要在 `?` 后加一个 `<` 符号
 
 `Positive` or `Negative` 分表表示 `是` or `否` 匹配括号里的正则。符号分别为 `=` 和 `!`
 
