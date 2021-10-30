@@ -8,6 +8,11 @@ const { frontmatter } = defineProps<{ frontmatter: any }>()
 const createDate = formatDate(frontmatter.date, 'll')
 const route = useRoute()
 
+// set document's title
+useHead({
+  title: `天方夜坛 - ${frontmatter.title}`,
+})
+
 if (isClient) {
   const navigate = () => {
     if (location.hash) {
