@@ -48,7 +48,7 @@ tags:
   [vscode ssh remote 官方文档](https://code.visualstudio.com/blogs/2019/10/03/remote-ssh-tips-and-tricks)
 
   ```yaml
-    # dont use root@<ip address> as HOST fuck!!! vscode will treat is as as server instead of a name 
+    # dont use root@<ip address> as HOST, caution!!! vscode will treat is as as server instead of a name 
     Host root
         HostName <your_host_ip_address>
         User root
