@@ -4,11 +4,13 @@ import './index.css'
 import 'virtual:windi.css'
 
 import { ViteSSG } from 'vite-ssg'
-import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import { RouterScrollBehavior } from 'vue-router'
 import allPages from 'virtual:generated-pages'
 import NProgress from 'nprogress'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
 import App from './App.vue'
 
 declare module 'vue-router' {
@@ -37,6 +39,8 @@ export const createApp = ViteSSG(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ app, router, routes, isClient, initialState }) => {
     dayjs.extend(LocalizedFormat)
+    dayjs.extend(utc)
+    dayjs.extend(timezone)
     if (isClient) {
       router.beforeEach(() => {
         NProgress.start()

@@ -10,4 +10,6 @@ parserOptions:
 plugins:
   - vue
   - '@typescript-eslint'
-rules: {}
+rules: {
+  curly: ['error', 'all']
+}

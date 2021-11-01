@@ -1,7 +1,7 @@
 ---
 title: 正则表达式预检查
 date: 2019-12-17 14:14:14
-update_date: 2021-10-30 16:53:00
+updateDate: 2021-10-30 16:53:00
 tags:
   - 正则表达式
 ---
@@ -10,13 +10,13 @@ tags:
 
 以下都是预检查，类似于`(?:)`非捕获型分组，匹配到的内容不会被捕获
 
-`(?=pattern)` look ahead positive assert 正向肯定预检查
+`(?=pattern)` _Positive Lookahead Assert_ 正向肯定预检查
 
-`(?!pattern)` look ahead negative assert 正向否定预检查
+`(?!pattern)` *Negative Lookahead Assert* 正向否定预检查
 
-`(?<=pattern)` look behind positive assert 反向肯定预检查
+`(?<=pattern)` *Positive Lookbehind Assert* 反向肯定预检查
 
-`(?<!pattern)` look behind negative assert 反向否定预检查
+`(?<!pattern)` *Negative Lookbehind Assert* 反向否定预检查
 
 ## 温习相关知识
 

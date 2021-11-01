@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import { isClient } from '@vueuse/core'
-import { formatDate } from '../utils/datetime'
+import { formatPostDate } from '../utils/datetime'
 
 // eslint-disable-next-line vue/no-setup-props-destructure
 const { frontmatter } = defineProps<{ frontmatter: any }>()
 
-const createDate = formatDate(frontmatter.date, 'll')
+const createDate = formatPostDate(frontmatter.date, 'YYYY-MM-DD HH:mm')
+
+let updateDate = ''
+
+if (frontmatter.updateDate) {
+  updateDate = formatPostDate(frontmatter.updateDate, 'YYYY-MM-DD HH:mm')
+}
+
 const route = useRoute()
 
 // set document's title
@@ -43,10 +50,14 @@ if (isClient) {
       <h1 class="text-3xl text-center font-bold mb-8">
         {{ frontmatter.title }}
       </h1>
-      <p class="text-right">
-        {{ createDate }}
+      <p class="text-right italic">
+        created at {{ createDate }}
       </p>
     </template>
     <slot />
+
+    <p v-if="updateDate" class="text-right italic">
+      updated at {{ updateDate }}
+    </p>
   </div>
 </template>

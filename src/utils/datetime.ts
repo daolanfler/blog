@@ -1,8 +1,9 @@
 import dayjs from 'dayjs'
 
-export function formatDate(
+export function formatPostDate(
   date: dayjs.ConfigType,
   format = 'YYYY-MM-DD',
 ) {
-  return dayjs(date).format(format)
+  // vite-plugin-md 提取 date 的时候，是 utc 时间
+  return dayjs.utc(date).format(format)
 }
