@@ -1,0 +1,58 @@
+---
+title: Use husy and lint-staged linting code before commit
+date: 2021-11-17 19:42
+tags:
+  - git
+---
+
+git 提供了一系列的 hook，这些钩子会在 commit, pull, push 这些操作的之前或之后的世纪执行。这些 hook 定义在 `.git/hooks` 文件夹，详见文档
+
+## husky
+
+husky 可以让 gitHook 写起来更简单
+
+```bash
+
+npm install -D husky
+
+# 添加 npm script prepare (prepare 会在发布前或 npm install 之后执行)
+npm set-script prepare "husky install"
+# 执行 & 生成 .husky 文件夹
+npm run prepare
+
+# 添加一个 pre-commit hook, 内容是 `npm test`
+npx husky add .husky/pre-commit "npm test"
+git add .husky/pre-commit
+
+# 提交刚才的改动
+git commit -m "Keep calm and commit"
+```
+
+如果很不幸，你的项目文件夹不是你的 git 仓库的根目录：
+
+## lint-staged
+
+顾名思义，这个库是用来 lint 那些位于 staged (暂存) 状态的文件。lint-staged 接受一个配置，配置中可定义脚本，lint-staged 会将暂存区的文件传递给脚本。这个配置可以在 package.json 中定义，也可以单独有一个配置文件。以 package.json 为例：
+
+```json
+{
+  "lint-staged": {
+    "*.{js,vue}": ["env FORCE_COLOR=1 npm run script:lint"]
+  }
+}
+```
+执行 `npx lint-staged`，程序会读取相应的配置，执行 `npm run script:lint`，而在这个 npm script 中，可以定义 js 脚本使用 eslint 的 node api 去做一些校验，staged 状态的文件可以通过 `process.argv.slice(2)` 拿到。结合上面提到的 husky，我们不必手动调用 `npx lint-staged`，在 `.husky/pre-commit` 文件中，加入 `npx lint-staged --verbose` 这样在每次提交之前都会执行 `lint-staged` 命令，这个命令又会去执行我们自己定义的脚本。
+
+## 备注
+
+如果是 vue 用户，而且是使用 vue-cli 创建的项目，那么有很大可能项目已经自带了 yorkie ，那么你不需要使用 husky 。在 package.json 中加入：
+
+```json
+{
+  "gitHooks": {
+    "pre-commit": "lint-staged --verbose"
+  }
+}
+```
+
+在安装 yorkie 的时候，会执行相应的 npm script: `node bin/install.js`，在 .git/hooks 文件夹中写入 pre-commit 文件
