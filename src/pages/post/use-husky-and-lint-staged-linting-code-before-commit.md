@@ -1,6 +1,6 @@
 ---
-title: Use husy and lint-staged linting code before commit
-date: 2021-11-17 19:42
+title: Use husky and lint-staged linting code before commit
+date: 2021-11-17 19:42:00
 tags:
   - git
   - eslint
