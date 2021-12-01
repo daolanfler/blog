@@ -18,7 +18,7 @@
     "prism-theme-vars": "^0.2.2",
     "vite-plugin-components": "^0.13.3",
     "vite-plugin-md": "^0.11.4",
-    "vue": "^3.2.19",
+    "vue": "^3.2.23",
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
