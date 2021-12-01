@@ -160,7 +160,7 @@ source ~/.zshrc
 
 ### 使用 Clash for Windows 如何配置 wsl2 代理 {#cfw-wsl2-proxy}
 
-首选需要上面提到的 set_proxy 脚本。感谢[这个帖子和回复](https://v2ex.com/t/677083#r_9057511)
+首选不需要上面提到的 set_proxy 脚本。感谢[这个帖子和回复](https://v2ex.com/t/677083#r_9057511)
 
 - 开启 mixin
 - 开启 Tap Device
