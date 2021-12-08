@@ -47,7 +47,7 @@ if (isClient) {
 <template>
   <div class="px-8">
     <template v-if="route.path.startsWith('/post')">
-      <h1 class="text-3xl text-center font-bold mb-8">
+      <h1 class="text-2xl text-center font-bold mb-8 text-gray-200">
         {{ frontmatter.title }}
       </h1>
       <p class="text-right italic">

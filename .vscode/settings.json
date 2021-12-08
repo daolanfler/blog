@@ -10,5 +10,8 @@
   },
   "windicss.includeLanguages": {
     "postcss": "css"
-  }
+  },
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "avoid"
 }

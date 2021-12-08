@@ -8,20 +8,19 @@ interface Props {
   defaultTab?: string
 }
 
-const props = withDefaults(
-  defineProps<Props>(),
-  {
-    defaultTab: 'css,result',
-    editable: false,
-    userName: 'daolanfler',
-    height: '300',
-  },
-)
+const props = withDefaults(defineProps<Props>(), {
+  defaultTab: 'css,result',
+  editable: false,
+  userName: 'daolanfler',
+  height: '300',
+})
 const { defaultTab, editable, height, slug, userName } = toRefs(props)
 
 onMounted(() => {
   // 确保只引入一次
-  if (codePenLoaded.value) return
+  if (codePenLoaded.value) {
+    return
+  }
   codePenLoaded.value = true
   const s = document.createElement('script')
   s.src = 'https://cpwebassets.codepen.io/assets/embed/ei.js'
@@ -53,8 +52,6 @@ onMounted(() => {
       <a :href="`https://codepen.io/${userName}/pen/${slug}`">
         overflow-hidden-with-absolute-position-1
       </a>
-      by {{ userName }} (<a
-        :href="`https://codepen.io/${userName}`"
-      >@{{ userName }}</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+      by {{ userName }} (<a :href="`https://codepen.io/${userName}`">@{{ userName }}</a>) on <a href="https://codepen.io">CodePen</a>.</span>
   </p>
 </template>

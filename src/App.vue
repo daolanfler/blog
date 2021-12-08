@@ -4,8 +4,8 @@
 
 <template>
   <Navigation />
-  <main class="m-auto py-10">
-    <router-view></router-view>
+  <main class="m-auto py-8">
+    <router-view />
   </main>
   <Footer />
 </template>

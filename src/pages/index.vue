@@ -5,14 +5,16 @@ const router = useRouter()
 const routes = router
   .getRoutes()
   .filter(i => i.path.startsWith('/post') && i.meta.frontmatter.date)
-  .sort((a, b) => +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date))
+  .sort(
+    (a, b) =>
+      +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date),
+  )
 
 const posts = computed(() => routes.filter(i => i))
-
 </script>
 
 <template>
-  <div class="pl-16">
+  <div class="px-16">
     <div v-for="item in posts" :key="item.path" class="mb-4">
       <router-link
         class="text-lg"
