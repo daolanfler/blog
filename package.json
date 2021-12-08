@@ -17,6 +17,7 @@
     "markdown-it-prism": "^2.2.1",
     "nprogress": "^0.2.0",
     "prism-theme-vars": "^0.2.2",
+    "v-viewer": "^3.0.10",
     "vite-plugin-components": "^0.13.3",
     "vite-plugin-md": "^0.11.4",
     "vue": "^3.2.23",

@@ -16,5 +16,7 @@ declare module '*.md' {
 }
 
 declare module 'markdown-it-attrs' {
-
+  import {PluginSimple} from 'markdown-it'
+  const plugin: PluginSimple
+  export default plugin
 }

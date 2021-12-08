@@ -55,7 +55,6 @@ export default defineConfig({
     Markdown({
       wrapperComponent: 'PostWrapper',
       markdownItSetup(md) {
-        // @ts-ignore this line put first
         md.use(markdownItAttrs)
 
         md.use(anchor, {
