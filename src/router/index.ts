@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { RouteRecordRaw } from 'vue-router'
 
 const blogs = import.meta.globEager('../mds/blog/*.md')
 
