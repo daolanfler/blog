@@ -5,7 +5,7 @@
 
 const router = useRouter()
 
-const isActiveRoute = (path: string) => router.currentRoute.value.path === path
+const isActiveRoute = (path: string): boolean => router.currentRoute.value.path === path
 
 </script>
 

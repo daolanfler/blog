@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite-ssg build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint src/ --fix --ext .ts,.vue"
   },
   "dependencies": {
     "@vueuse/components": "^6.8.0",
