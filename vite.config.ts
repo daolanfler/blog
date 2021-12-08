@@ -30,10 +30,11 @@ import 'prismjs/components/prism-jsdoc'
 // https://vitejs.dev/config/
 export default defineConfig({
   optimizeDeps: {
-    include: [
-    ],
+    include: [],
   },
   plugins: [
+    ViteCompression(),
+
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
@@ -67,15 +68,10 @@ export default defineConfig({
     }),
     ViteComponents({
       extensions: ['vue', 'md'],
-      customLoaderMatcher: path => path.endsWith('.md'),
+      customLoaderMatcher: (path) => path.endsWith('.md'),
     }),
     AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        '@vueuse/core',
-        '@vueuse/head',
-      ],
+      imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
     }),
 
     Components({
@@ -86,11 +82,6 @@ export default defineConfig({
       //   componentPrefix: '',
       // }),
     }),
-    ViteCompression(),
   ],
-  ssgOptions: {
-    // script: "async",
-    // dirStyle: 'nested',
-    // includeAllRoutes: true
-  },
+  ssgOptions: {},
 })
