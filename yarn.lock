@@ -80,10 +80,10 @@
   resolved "https://registry.npmmirror.com/@iconify-icons/el/download/@iconify-icons/el-1.1.0.tgz#6e15e9b8352ce0e09339ef863eed16f85572a645"
   integrity sha1-bhXpuDUs4OCTOe+GPu0W+FVypkU=
 
-"@iconify-icons/ic@^1.1.14":
-  version "1.1.14"
-  resolved "https://registry.npmmirror.com/@iconify-icons/ic/download/@iconify-icons/ic-1.1.14.tgz#5a6d1560833cd495dc9be3e010c1971993fda3a7"
-  integrity sha512-IrqAlja0C6ioGOHSWE+F0RjPNNNjaZ1vTH4VhXbhTv0vxt5pg06knzIdCZp1Kh3Ri4cxkx4pWQJS+gYZGC7WvQ==
+"@iconify-icons/ic@^1.1.17":
+  version "1.1.17"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/ic/-/ic-1.1.17.tgz#7ac62dc69c1679065d9f228074c00a56389ffc38"
+  integrity sha512-hEzeHtKGNUTWKcjfmjfKFUQYWz+ukQdMG66Ya7zAgRPPsxXWZEtU+KPW6A3V+kWwxFA9icPyfqqCJTCw4ZYFPg==
 
 "@iconify/vue@^3.1.0":
   version "3.1.0"
@@ -813,10 +813,10 @@ constantinople@^4.0.1:
     "@babel/parser" "^7.6.0"
     "@babel/types" "^7.6.1"
 
-critters@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.npmmirror.com/critters/download/critters-0.0.14.tgz#08e585ce9cb9b9a3eab88cafda7bde7f6cd0763f"
-  integrity sha1-COWFzpy5uaPquIyv2nvef2zQdj8=
+critters@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/critters/-/critters-0.0.15.tgz#b1c8d18fd18e614471733d7d749deac0f386b738"
+  integrity sha512-AE7hkXb3eZUbEvS1SKZa+OU4o2kUOXtzVeE/2E/mjU/0mV1wpBT1HfUCWVRS4zwvkBNJ0AQYsVjAoFm+kIhfdw==
   dependencies:
     chalk "^4.1.0"
     css-select "^4.1.3"
