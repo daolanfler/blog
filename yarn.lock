@@ -2897,10 +2897,10 @@ vite-plugin-components@^0.13.3:
     magic-string "^0.25.7"
     minimatch "^3.0.4"
 
-vite-plugin-compression@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.npmmirror.com/vite-plugin-compression/download/vite-plugin-compression-0.3.5.tgz#1e5338eb43e60128de6d6f22b2aabf0e3dc0c17f"
-  integrity sha1-HlM460PmASjebW8isqq/Dj3AwX8=
+vite-plugin-compression@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/vite-plugin-compression/-/vite-plugin-compression-0.3.6.tgz#85e3ce5047ae6747bc3952177177a852fac901be"
+  integrity sha512-aSskQCJsP3VQ8PsnY+vO7UfD5qoFMOEuzg0PG2E9Zqyx+ARmc3wr9KCgOFraZOFW1Y4UAa5BR0SMTjoxHRMJoQ==
   dependencies:
     chalk "^4.1.2"
     debug "^4.3.2"
