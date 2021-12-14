@@ -813,10 +813,10 @@ constantinople@^4.0.1:
     "@babel/parser" "^7.6.0"
     "@babel/types" "^7.6.1"
 
-critters@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.npmmirror.com/critters/download/critters-0.0.14.tgz#08e585ce9cb9b9a3eab88cafda7bde7f6cd0763f"
-  integrity sha1-COWFzpy5uaPquIyv2nvef2zQdj8=
+critters@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/critters/-/critters-0.0.15.tgz#b1c8d18fd18e614471733d7d749deac0f386b738"
+  integrity sha512-AE7hkXb3eZUbEvS1SKZa+OU4o2kUOXtzVeE/2E/mjU/0mV1wpBT1HfUCWVRS4zwvkBNJ0AQYsVjAoFm+kIhfdw==
   dependencies:
     chalk "^4.1.0"
     css-select "^4.1.3"
@@ -2021,6 +2021,13 @@ local-pkg@^0.1.0:
   dependencies:
     mlly "^0.2.2"
 
+local-pkg@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/local-pkg/-/local-pkg-0.4.0.tgz#e6221171813d5a0812dd84fa80ffb1c8fcc00531"
+  integrity sha512-2XBWjO/v63JeR1HPzLJxdTVRQDB84Av2p2KtBA5ahvpyLUPubcAU6iXlAJrONcY7aSqgJhXxElAnKtnYsRolPQ==
+  dependencies:
+    mlly "^0.2.2"
+
 lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.npmmirror.com/lodash.merge/download/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
@@ -2807,17 +2814,17 @@ universalify@^2.0.0:
   resolved "https://registry.npmmirror.com/universalify/download/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=
 
-unplugin-auto-import@^0.4.14:
-  version "0.4.14"
-  resolved "https://registry.npmmirror.com/unplugin-auto-import/download/unplugin-auto-import-0.4.14.tgz#378da5aeaffabf2d4ba7e865de7156292d42d632"
-  integrity sha512-ui+M+E30xrdbXGt0+MMEM4fKhDqoBlv+xVKiYllVqUplqg/sFuXe28DBxM2xi2zAbwd/Vw3KUcLdvSmjzpA7+A==
+unplugin-auto-import@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/unplugin-auto-import/-/unplugin-auto-import-0.5.3.tgz#7eb5251b83075941ae2a316c735ddded50f3523d"
+  integrity sha512-jXs0rnKTS+/TyXOild6RkVp73yz1DeLXVJWR6VRn+oageEsvHgW6zofvc2BmpAm/pTSANxZ48kLi12wOa/iwdw==
   dependencies:
     "@antfu/utils" "^0.3.0"
     "@rollup/pluginutils" "^4.1.1"
-    local-pkg "^0.1.0"
+    local-pkg "^0.4.0"
     magic-string "^0.25.7"
     resolve "^1.20.0"
-    unplugin "^0.2.15"
+    unplugin "^0.2.21"
 
 unplugin-vue-components@^0.17.2:
   version "0.17.2"
@@ -2835,10 +2842,10 @@ unplugin-vue-components@^0.17.2:
     resolve "^1.20.0"
     unplugin "^0.2.13"
 
-unplugin@^0.2.13, unplugin@^0.2.15:
-  version "0.2.20"
-  resolved "https://registry.npmmirror.com/unplugin/download/unplugin-0.2.20.tgz?cache=0&sync_timestamp=1636076765606&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Funplugin%2Fdownload%2Funplugin-0.2.20.tgz#fd579b8f302459eb1ae3616f71c2ba93e6076187"
-  integrity sha1-/VebjzAkWesa42FvccK6k+YHYYc=
+unplugin@^0.2.13, unplugin@^0.2.21:
+  version "0.2.21"
+  resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-0.2.21.tgz#7852cddd9f78f0b32881812fd2efd5a39dcc64e5"
+  integrity sha512-IJ15/L5XbhnV7J09Zjk0FT5HEkBjkXucWAXQWRsmEtUxmmxwh23yavrmDbCF6ZPxWiVB28+wnKIHePTRRpQPbQ==
   dependencies:
     webpack-virtual-modules "^0.4.3"
 
