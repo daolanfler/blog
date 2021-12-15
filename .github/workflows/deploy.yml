@@ -1,6 +1,8 @@
 name: Build & Deploy to DO
 on:
   push:
+    paths: 
+      - 'src/'
     branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
