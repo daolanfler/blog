@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@iconify-icons/el": "^1.1.0",
-    "@iconify-icons/ic": "^1.1.14",
+    "@iconify-icons/ic": "^1.1.17",
     "@iconify/vue": "^3.1.0",
     "@types/fs-extra": "^9.0.13",
     "@types/nprogress": "^0.2.0",
