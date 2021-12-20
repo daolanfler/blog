@@ -85,10 +85,10 @@
   resolved "https://registry.yarnpkg.com/@iconify-icons/ic/-/ic-1.1.17.tgz#7ac62dc69c1679065d9f228074c00a56389ffc38"
   integrity sha512-hEzeHtKGNUTWKcjfmjfKFUQYWz+ukQdMG66Ya7zAgRPPsxXWZEtU+KPW6A3V+kWwxFA9icPyfqqCJTCw4ZYFPg==
 
-"@iconify/vue@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.npmmirror.com/@iconify/vue/download/@iconify/vue-3.1.0.tgz#cd1b7b198ca43202ab355c9cf01857ca4ac73f31"
-  integrity sha512-3vyIxu/Oq8VBoR9LRLMvPt/Ia6kdp9aydGRbTbvnHoREFp6B/RFLR1U64mtPVdOWNTj6DebjTun4yOx4vBkhsg==
+"@iconify/vue@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@iconify/vue/-/vue-3.1.1.tgz#3516b320680756cc9c38b49438af5a315619dca9"
+  integrity sha512-lpRis4y8XHx0LQG1pbD71BuDlYKzCG3xKNsTs6svajQQe1DgkBbt1PEERnJTnmo9UzihTR0Bq7OwPQt7zR25RQ==
   dependencies:
     cross-fetch "^3.1.4"
 
