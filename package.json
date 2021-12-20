@@ -47,7 +47,7 @@
     "vite-plugin-compression": "^0.3.6",
     "vite-plugin-pages": "^0.18.2",
     "vite-plugin-windicss": "^1.5.4",
-    "vite-ssg": "^0.15.6",
+    "vite-ssg": "^0.17.2",
     "vue-tsc": "^0.29.8",
     "windicss": "^3.2.1"
   }
