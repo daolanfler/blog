@@ -13,7 +13,7 @@
     "@vueuse/head": "^0.6.0",
     "dayjs": "^1.10.7",
     "markdown-it-anchor": "^8.4.1",
-    "markdown-it-attrs": "^4.1.0",
+    "markdown-it-attrs": "^4.1.1",
     "markdown-it-prism": "^2.2.1",
     "nprogress": "^0.2.0",
     "prism-theme-vars": "^0.2.2",
