@@ -3,20 +3,31 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+## Pipe wsl command line out put to windows clipboard
+
+```bash
+alias copylog="git log --after="yesterday" --oneline  | clip.exe"
+```
+
+## Neovim's faq on clipboard in wsl
+
+<https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl>  
+_might be related to xclip_
+
 ## Optional chaining {#optional-chaining}
 
 即将到来的运算符：`?.` 和 `??`
 
 ```javascript
 const adventurer = {
-  name: "Alice",
+  name: 'Alice',
   cat: {
-    name: "Dinah",
+    name: 'Dinah',
   },
-};
+}
 
-const dogName = adventurer.dog?.name;
-console.log(dogName);
+const dogName = adventurer.dog?.name
+console.log(dogName)
 // expected output: undefined
 ```
 
@@ -36,14 +47,14 @@ console.log(dogName);
 
 ```javascript
 /** @type {BMap.Map} */
-const map = this.bmap;
+const map = this.bmap
 // 这样在输入 map. 的时候（vscode的）intellisense 即可触发
 
 /**
  * @returns {import("node_modules/element-ui/types/table-column.js").ElTableColumn[]}
  */
 export default function (customHeaders = []) {
-  return xxxx;
+  return xxxx
 }
 ```
 
@@ -55,15 +66,15 @@ export default function (customHeaders = []) {
 export function isContentOverflow(el) {
   // use range width instead of scrollWidth to determine whether the text is overflowing
   // to address a potential FireFox bug: https://bugzilla.mozilla.org/show_bug.cgi?id=1074543#c3
-  const range = document.createRange();
-  range.setStart(el, 0);
-  range.setEnd(el, el.childNodes.length);
-  const rangeWidth = range.getBoundingClientRect().width;
+  const range = document.createRange()
+  range.setStart(el, 0)
+  range.setEnd(el, el.childNodes.length)
+  const rangeWidth = range.getBoundingClientRect().width
   const padding =
     (parseInt(getComputedStyle(el).paddingLeft, 10) || 0) +
-    (parseInt(getComputedStyle(el).paddingRight, 10) || 0);
+    (parseInt(getComputedStyle(el).paddingRight, 10) || 0)
   return (
     rangeWidth + padding > el.offsetWidth || el.scrollWidth > el.offsetWidth
-  );
+  )
 }
 ```
