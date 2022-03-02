@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { codePenLoaded } from '../store'
+import { storeToRefs } from 'pinia';
+import { useFlagStore } from '../store/pinia';
+
 interface Props {
   userName?: string
   slug: string
@@ -16,11 +18,16 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const { defaultTab, editable, height, slug, userName } = toRefs(props)
 
+const {codePenLoaded} = storeToRefs(useFlagStore())
+
 onMounted(() => {
   // 确保只引入一次
   if (codePenLoaded.value) {
-    return
+    // @ts-expect-error codepen 脚本方法 https://blog.codepen.io/documentation/embedded-pens/#delayed-embeds-6
+    window.__CPEmbed && window.__CPEmbed(); 
+    return 
   }
+  // is this going to work and change the pinia store state ? 
   codePenLoaded.value = true
   const s = document.createElement('script')
   s.src = 'https://cpwebassets.codepen.io/assets/embed/ei.js'
