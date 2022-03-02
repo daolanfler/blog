@@ -12,6 +12,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 import App from './App.vue'
+import { createPinia } from 'pinia'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -49,5 +50,7 @@ export const createApp = ViteSSG(
         NProgress.done()
       })
     }
+
+    app.use(createPinia())
   },
 )
