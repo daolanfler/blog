@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { isClient } from '@vueuse/core'
-import { api } from 'v-viewer'
 import { formatPostDate } from '../utils/datetime'
-import 'viewerjs/dist/viewer.css'
 
 
 // eslint-disable-next-line vue/no-setup-props-destructure
@@ -39,17 +37,17 @@ if (isClient) {
         if (target.src && postBody.value?.contains(target)) {
           const index = imageList.value.indexOf(target.src)
           if (index > -1) {
-            api({
-              options: {
-                toolbar: false,
-                title: true,
-                zoomable: false,
-                movable: false,
-                fullscreen: true,
-                initialViewIndex: index,
-              },
-              images: imageList.value,
-            })
+            // api({
+            //   options: {
+            //     toolbar: false,
+            //     title: true,
+            //     zoomable: false,
+            //     movable: false,
+            //     fullscreen: true,
+            //     initialViewIndex: index,
+            //   },
+            //   images: imageList.value,
+            // })
           }
         }
       }
