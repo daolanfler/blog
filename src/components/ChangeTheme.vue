@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue/dist/offline'
-import iconDark from '@iconify-icons/ic/outline-dark-mode'
-import iconLight from '@iconify-icons/ic/outline-light-mode'
+import { Icon } from '@iconify/vue/dist/offline.js'
+import iconDark from '@iconify-icons/ic/outline-dark-mode.js'
+import iconLight from '@iconify-icons/ic/outline-light-mode.js'
 import { isDark, toggleDark } from '../store'
 
 </script>

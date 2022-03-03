@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue/dist/offline'
-import heartIcon from '@iconify-icons/el/heart'
+import { Icon } from '@iconify/vue/dist/offline.js'
+import heartIcon from '@iconify-icons/el/heart.js'
 </script>
 
 <template>
