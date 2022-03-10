@@ -52,7 +52,7 @@ export default defineConfig({
         }
         return route
       },
-      onRoutesGenerated: routes => (generateSitemap({ routes })),
+      onRoutesGenerated: routes => (generateSitemap({ routes , hostname: 'https://vite.dagladefler.xyz/'})),
     }),
 
     Markdown({
