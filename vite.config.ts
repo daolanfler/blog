@@ -14,6 +14,7 @@ import Pages from 'vite-plugin-pages'
 import WindiCSS from 'vite-plugin-windicss'
 import ViteCompression from 'vite-plugin-compression'
 import ViteComponents from 'vite-plugin-components'
+import generateSitemap from 'vite-plugin-pages-sitemap'
 
 import 'prismjs/components/prism-regex'
 import 'prismjs/components/prism-javascript'
@@ -51,6 +52,7 @@ export default defineConfig({
         }
         return route
       },
+      onRoutesGenerated: routes => (generateSitemap({ routes })),
     }),
 
     Markdown({

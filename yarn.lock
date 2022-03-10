@@ -2871,6 +2871,11 @@ vite-plugin-md@^0.11.4:
     gray-matter "^4.0.3"
     markdown-it "^12.3.2"
 
+vite-plugin-pages-sitemap@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/vite-plugin-pages-sitemap/-/vite-plugin-pages-sitemap-1.1.11.tgz#e3d401baaa73b7671e4276e5ab2a7b2f2f630010"
+  integrity sha512-GvC4SXiDCO4WXJCVNHwKKUoUSMiF0ofIb1iI9yokDpYUAeJMFj3hH4BH+Xdv2AH+OIMeh1yY7Xnh8RUUICZ4WQ==
+
 vite-plugin-pages@^0.18.2:
   version "0.18.2"
   resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.18.2.tgz#b214f7a166e74dd55adc90a5e774c6543c3abdb3"
