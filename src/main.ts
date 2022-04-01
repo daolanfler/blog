@@ -9,10 +9,10 @@ import 'virtual:windi.css'
 import { ViteSSG } from 'vite-ssg'
 import { RouterScrollBehavior } from 'vue-router'
 import App from './App.vue'
+import 'nprogress/nprogress.css'
 import './index.css'
 import './styles/main.postcss'
 import './styles/markdown.postcss'
-
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -23,8 +23,7 @@ declare module 'vue-router' {
 const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
     return savedPosition
-  }
-  else {
+  } else {
     return {
       top: 0,
     }
@@ -43,14 +42,19 @@ export const createApp = ViteSSG(
     dayjs.extend(utc)
     dayjs.extend(timezone)
     if (isClient) {
+      console.log({ isClient })
       router.beforeEach(() => {
         NProgress.start()
+        console.log('before Each')
       })
       router.afterEach(() => {
-        NProgress.done()
+        NProgress.done();
+        // setTimeout(() => {
+        //   console.log('after Each')
+        // }, 1000)
       })
     }
 
     app.use(createPinia())
-  },
+  }
 )
