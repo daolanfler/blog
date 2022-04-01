@@ -57,6 +57,7 @@ export default defineConfig({
           routes,
           hostname: 'https://vite.dagladefler.xyz/',
           readable: true,
+          dest: 'dist'
         }),
     }),
 
