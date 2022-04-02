@@ -9,6 +9,7 @@ declare module 'vue' {
     Footer: typeof import('./src/components/Footer.vue')['default']
     Navigation: typeof import('./src/components/Navigation.vue')['default']
     PostWrapper: typeof import('./src/components/PostWrapper.vue')['default']
+    Stackblitz: typeof import('./src/components/Stackblitz.vue')['default']
   }
 }
 

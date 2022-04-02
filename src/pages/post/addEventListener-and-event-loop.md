@@ -26,6 +26,8 @@ tags:
 
 ## 例子验证一下
 
+<Stackblitz id="js-hmjac3" />
+
 [stackblitz example](https://stackblitz.com/edit/js-hmjac3?file=index.js)
 
 通过 `appDiv.click()` 触发事件，log 如下：

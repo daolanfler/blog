@@ -140,6 +140,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@stackblitz/sdk@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@stackblitz/sdk/-/sdk-1.6.0.tgz#b53ff39058943b7db5a1aeb640498fac8b1cbe57"
+  integrity sha512-PPB9m1zywojv6sOGSiHv+tvnb4Zc00Jce9yjUG0BzTymUdFf9AP+gKJRlc0iq9vbEEEXfYv1bgKa5KTn4gAzbQ==
+
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
