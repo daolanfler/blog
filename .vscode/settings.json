@@ -1,6 +1,6 @@
 {
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "johnsoncodehk.volar"
   },
   "volar.codeLens.pugTools": false,
   "typescript.tsdk": "node_modules/typescript/lib",
