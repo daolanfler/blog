@@ -11,8 +11,7 @@ alias copylog="git log --after="yesterday" --oneline  | clip.exe"
 
 ## Neovim's faq on clipboard in wsl
 
-<https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl>  
-_might be related to xclip_
+[相关issue](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
 
 ## Optional chaining {#optional-chaining}
 
