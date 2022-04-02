@@ -1,6 +1,7 @@
 ---
 title: VS Code 配置
 date: 2019-03-21 21:43:56
+updateDate: 2022-04-02 13:44:00
 tags:
   - VS Code
   - 编辑器
@@ -33,15 +34,12 @@ ctrl + shift + p，输入主题，选择主题即可。`One Dark Pro` 和 `GitHu
 
 ## 插件 (前端、Vue 相关) {#extensions}
 
-- Vetur 不多说了
-- Eslint // 不多说了
-- Prettier // facebook 的格式化插件 [An opinionated code formatter](https://prettier.io/)
-- GitLens // git blame
-- TypeScript Extension Pack // 一些提升 ts 开发体验的插件
-- Partial Intellisense // 选择两段代码做 diff
-- Path Intellisense // 优化路径智能提示，如 webpack alias
-- Settings Sync // 同步你的设置 & 插件 & 自定义快捷键 到 github gist
-- Document this // 给函数加注释
+- Vetur // for Vue2
+- Volar // for Vue3
+- Eslint
+- Prettier
+- GitLens
+- Partial Intellisense // diff 剪贴板上的文本
 
 ## 集成终端 {#terminal}
 
@@ -117,103 +115,58 @@ ctrl + shift + p，输入主题，选择主题即可。`One Dark Pro` 和 `GitHu
 },
 ```
 
-## 同步你的配置 {#settings-sync}
+## 同步配置 {#settings-sync}
 
-用 `settings sync` ，使用说明参见其文档。
+登录 GitHub 或微软账号即可。
 
-下面是我的设置，仅供参考：
+## vim config {#vim-config}
 
 ```json
 {
-  "editor.tabSize": 2,
-  "editor.fontLigatures": true,
-  "editor.fontFamily": "'Fira Code', Consolas, monospace, 'Segoe UI Emoji'",
-  "editor.formatOnPaste": false,
-  "workbench.iconTheme": "material-icon-theme",
-  "files.autoSave": "onFocusChange",
-  "eslint.autoFixOnSave": true,
-  "eslint.alwaysShowStatus": true,
-  "eslint.validate": [
-    "javascriptreact",
+  "vim.insertModeKeyBindings": [
     {
-      "language": "vue",
-      "autoFix": true
-    },
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "html",
-      "autoFix": true
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     }
   ],
-  "eslint.options": {
-    "extensions": [".html", ".js", ".vue", ".jsx"]
+  "vim.handleKeys": {
+    "<C-w>": false,
+    "<C-b>": false,
+    "<C-k>": false,
+    "<C-f>": false,
+    "<C-n>": false,
+    "<C-c>": false,
+    "<C-x>": false,
+    "<C-a>": false
+    // "<C-d>": false,
+    // normal 模式下，进入visual block 需要使用
+    // "<C-v>": false,
   },
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "material-icon-theme.folders.theme": "classic",
-  "window.zoomLevel": 0,
-  "files.associations": {
-    "*.vue": "vue",
-    "*.wxss": "css",
-    "*.wxml": "html",
-    "*.cjson": "jsonc",
-    "*.wxs": "javascript"
-  },
-  "explorer.openEditors.visible": 0,
-  "emmet.includeLanguages": {
-    "vue-html": "html",
-    "wxml": "html"
-  },
-  "prettier.disableLanguages": [],
-  "prettier.printWidth": 120,
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
-  "material-icon-theme.showReloadMessage": false,
-  "path-intellisense.mappings": {
-    "/": "${workspaceRoot}",
-    "@": "${workspaceRoot}/src"
-  },
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
-  "sync.gist": "",
-  "sync.quietSync": false,
-  "sync.askGistName": false,
-  "sync.removeExtensions": true,
-  "sync.syncExtensions": true,
-  "sync.autoDownload": false,
-  "sync.autoUpload": false,
-  "sync.forceDownload": false,
-  "diffEditor.ignoreTrimWhitespace": true,
-  "python.jediEnabled": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "One Dark Pro Vivid",
-  "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "vetur.format.defaultFormatterOptions": {
-    "prettier": {
-      "semi": false,
-      "singleQuote": true,
-      "tabWidth": 2
+  "vim.foldfix": true,
+  "vim.smartRelativeLine": true,
+  "vim.mouseSelectionGoesIntoVisualMode": false,
+  "vim.ignorecase": false,
+  "vim.smartcase": true,
+  // https://stackoverflow.com/a/11993928/8947428
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["leader", "p"],
+      "after": ["\"", "_", "d", "P"]
     }
-  },
-  "vetur.completion.useScaffoldSnippets": true,
-  "vetur.validation.template": false,
-  "diffEditor.renderSideBySide": false,
-  "files.eol": "\n",
-  "editor.minimap.enabled": true,
-  "editor.suggest.localityBonus": true,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.enabled": false,
-  "tslint.autoFixOnSave": true,
-  "explorer.confirmDelete": false,
-  "breadcrumbs.enabled": false,
-  "git.enableSmartCommit": true,
-  "git.autofetch": true,
-  "editor.suggestSelection": "first",
-  "workbench.settings.openDefaultSettings": true,
-  "vetur.format.defaultFormatter.html": "prettier"
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["m"],
+      "after": ["i", " ", "<Esc>"]
+    }
+  ]
 }
 ```
