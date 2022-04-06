@@ -68,7 +68,9 @@ type test3 = Animal2 extends Cat ? true : false // false
 type test4 = Animal2 extends Dog ? true : false // false
 ```
 
-通过 test1~4 的结果可以得知，经过 _intersection_ 操作得到的 Animal1 既是 Cat 也是 Dog ，而经过 _union_ 操作得到的 Animal2 既不是 Dog 也不是 Cat 。虽然直观上难以理解，但是从代码来看就是这样。
+通过 test1~4 的结果可以得知，经过 _intersection_ 操作得到的 Animal1 既是 Cat 也是 Dog ，而经过 _union_ 操作得到的 Animal2 既不是 Dog 也不是 。
+其实如果把这两个单词翻译一下，从集合的角度来解释，那就很清楚了。intersection 是交集，union 是并集，如果数学教材是英文的或者专业名词有英文解释，那这些
+概念理解起来是不是更容易一些呢？
 
 ### 2. Example when having conficts
 
@@ -122,7 +124,13 @@ type test3 = Animal2 extends Cat ? true : false // false
 type test4 = Animal2 extends Dog ? true : false // false
 ```
 
-可以看到，当有冲突时，在 _intersection_ 得到的 Animal1 中，age 是 `never`，不管是 `number` 还是 `string` 都会报错。而 _union_ 得到的 Animal2 中，age 既可以是 `number` 又可以是 `string`。
+可以看到，`Dog` 的 age 是 `string`, `Cat` 的 age 是 `number` ，二者存在冲突。
+在 _intersection_ 得到的 Animal1 中，age 是 `never`，不管是 `number` 还是 `string` 都会报错。
+而 _union_ 得到的 Animal2 中，age 既可以是 `number` 又可以是 `string`。
+从集合的角度来理解：
+
+- intersection 就是求交集：number ⋂ string = ∅
+- union 就是求并集：number ⋃ string = number + string
 
 ### 3. More examples
 
@@ -148,3 +156,4 @@ type D = A & B // never
 
 1. [What does the ampersand (&) mean in a TypeScript type definition?](https://stackoverflow.com/questions/38317625/what-does-the-ampersand-mean-in-a-typescript-type-definition)
 2. [The Art of Type Programming](https://mistlog.medium.com/the-art-of-type-programming-cfd933bdfff7)
+3. [复制特殊符号的网站](https://copychar.cc/math/)
