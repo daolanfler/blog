@@ -57,7 +57,7 @@ export default defineConfig({
           routes,
           hostname: 'https://vite.dagladefler.xyz/',
           readable: true,
-          dest: 'dist'
+          dest: 'dist',
         }),
     }),
 
@@ -67,7 +67,6 @@ export default defineConfig({
         md.use(markdownItAttrs)
 
         md.use(anchor, {
-          level: 1,
           permalink: anchor.permalink.headerLink(),
         })
 

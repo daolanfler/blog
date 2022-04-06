@@ -25,37 +25,37 @@ useHead({
 if (isClient) {
   let imageList = ref<string[]>([])
 
-    const handleDocumentClick = (e: Event) => {
-      const target = e.target as HTMLImageElement
-      if (!imageList.value.length) {
-        const list = Array.from(document.querySelectorAll('img')).map(
-          (item) => item.src
-        )
-        imageList.value = [...list]
-      }
-      if (target.tagName.toLowerCase() === 'img') {
-        if (target.src && postBody.value?.contains(target)) {
-          const index = imageList.value.indexOf(target.src)
-          if (index > -1) {
-            // api({
-            //   options: {
-            //     toolbar: false,
-            //     title: true,
-            //     zoomable: false,
-            //     movable: false,
-            //     fullscreen: true,
-            //     initialViewIndex: index,
-            //   },
-            //   images: imageList.value,
-            // })
-          }
+  const handleDocumentClick = (e: Event) => {
+    const target = e.target as HTMLImageElement
+    if (!imageList.value.length) {
+      const list = Array.from(document.querySelectorAll('img')).map(
+        (item) => item.src
+      )
+      imageList.value = [...list]
+    }
+    if (target.tagName.toLowerCase() === 'img') {
+      if (target.src && postBody.value?.contains(target)) {
+        const index = imageList.value.indexOf(target.src)
+        if (index > -1) {
+          // api({
+          //   options: {
+          //     toolbar: false,
+          //     title: true,
+          //     zoomable: false,
+          //     movable: false,
+          //     fullscreen: true,
+          //     initialViewIndex: index,
+          //   },
+          //   images: imageList.value,
+          // })
         }
       }
     }
+  }
   const navigate = () => {
     if (location.hash) {
       document
-        .querySelector(decodeURIComponent(location.hash))
+        .getElementById(location.hash.slice(1))
         ?.scrollIntoView({ behavior: 'smooth' })
     }
   }
@@ -86,7 +86,9 @@ if (isClient) {
 <template>
   <div ref="postBody" class="px-4 sm:px-8">
     <template v-if="route.path.startsWith('/post')">
-      <h1 class="text-2xl text-center font-bold mb-8 dark:text-gray-200 text-dark-100">
+      <h1
+        class="text-2xl text-center font-bold mb-8 dark:text-gray-200 text-dark-100"
+      >
         {{ frontmatter.title }}
       </h1>
       <p class="text-right italic">
