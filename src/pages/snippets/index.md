@@ -3,6 +3,11 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+## 如何在 vscode 中 debug vue-cli 项目
+
+在 vscode 的 Vue Tutorial [Debugging](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial#_debugging)
+这一章节中，提到了[这一教程](https://github.com/microsoft/vscode-recipes/tree/main/vuejs-cli)
+
 ## Pipe wsl command line out put to windows clipboard
 
 ```bash
@@ -11,7 +16,7 @@ alias copylog="git log --after="yesterday" --oneline  | clip.exe"
 
 ## Neovim's faq on clipboard in wsl
 
-[相关issue](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
+[相关 issue](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
 
 ## Optional chaining {#optional-chaining}
 
