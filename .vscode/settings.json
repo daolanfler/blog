@@ -13,4 +13,7 @@
   },
   "prettier.semi": false,
   "prettier.singleQuote": true,
+  "css.customData": [
+    "./css-data.json"
+  ],
 }
