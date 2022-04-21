@@ -140,6 +140,14 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@rollup/pluginutils@^4.2.0":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
+  integrity sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==
+  dependencies:
+    estree-walker "^2.0.1"
+    picomatch "^2.2.2"
+
 "@stackblitz/sdk@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@stackblitz/sdk/-/sdk-1.6.0.tgz#b53ff39058943b7db5a1aeb640498fac8b1cbe57"
@@ -412,6 +420,13 @@
   dependencies:
     "@vue/shared" "3.2.31"
 
+"@vue/reactivity@3.2.33":
+  version "3.2.33"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.2.33.tgz#c84eedb5225138dbfc2472864c151d3efbb4b673"
+  integrity sha512-62Sq0mp9/0bLmDuxuLD5CIaMG2susFAGARLuZ/5jkU1FCf9EDbwUuF+BO8Ub3Rbodx0ziIecM/NsmyjardBxfQ==
+  dependencies:
+    "@vue/shared" "3.2.33"
+
 "@vue/runtime-core@3.2.31":
   version "3.2.31"
   resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.2.31.tgz#9d284c382f5f981b7a7b5971052a1dc4ef39ac7a"
@@ -419,6 +434,14 @@
   dependencies:
     "@vue/reactivity" "3.2.31"
     "@vue/shared" "3.2.31"
+
+"@vue/runtime-core@^3.2.31":
+  version "3.2.33"
+  resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.2.33.tgz#2df8907c85c37c3419fbd1bdf1a2df097fa40df2"
+  integrity sha512-N2D2vfaXsBPhzCV3JsXQa2NECjxP3eXgZlFqKh4tgakp3iX6LCGv76DLlc+IfFZq+TW10Y8QUfeihXOupJ1dGw==
+  dependencies:
+    "@vue/reactivity" "3.2.33"
+    "@vue/shared" "3.2.33"
 
 "@vue/runtime-dom@3.2.31":
   version "3.2.31"
@@ -441,6 +464,11 @@
   version "3.2.31"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.31.tgz#c90de7126d833dcd3a4c7534d534be2fb41faa4e"
   integrity sha512-ymN2pj6zEjiKJZbrf98UM2pfDd6F2H7ksKw7NDt/ZZ1fh5Ei39X5tABugtT03ZRlWd9imccoK0hE8hpjpU7irQ==
+
+"@vue/shared@3.2.33":
+  version "3.2.33"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.33.tgz#69a8c99ceb37c1b031d5cc4aec2ff1dc77e1161e"
+  integrity sha512-UBc1Pg1T3yZ97vsA2ueER0F6GbJebLHYlEi4ou1H5YL4KWvMOOWwpYo9/QpWq93wxKG6Wo13IY74Hcn/f7c7Bg==
 
 "@vueuse/components@^6.8.0":
   version "6.9.2"
@@ -2865,14 +2893,15 @@ vite-plugin-compression@^0.3.6:
     debug "^4.3.2"
     fs-extra "^10.0.0"
 
-vite-plugin-md@^0.11.4:
-  version "0.11.8"
-  resolved "https://registry.yarnpkg.com/vite-plugin-md/-/vite-plugin-md-0.11.8.tgz#3fc0282895dd0a42e1b18af07cde812e2f5c5253"
-  integrity sha512-eFk4Ox8IKuT+7benAcwLvGcYt/T4We2UDmQmxvCrhABJpQSbh44MitD1Wu6w733VKgSZAO7wd8IuoA20yXkXVQ==
+vite-plugin-md@^0.12.4:
+  version "0.12.4"
+  resolved "https://registry.yarnpkg.com/vite-plugin-md/-/vite-plugin-md-0.12.4.tgz#93cefea68e64ba36224b10619d8e7765194e7dca"
+  integrity sha512-qtkzpHAvdp/Zo/2ntmCpfph2JD4F0+tOl1vK3QVAZztpWyoO7Yi8Y2Dqu7Urrnh/fPH7PnIWlrrQy1XV/D92Pg==
   dependencies:
     "@antfu/utils" "^0.5.0"
-    "@rollup/pluginutils" "^4.1.2"
+    "@rollup/pluginutils" "^4.2.0"
     "@types/markdown-it" "^12.2.3"
+    "@vue/runtime-core" "^3.2.31"
     gray-matter "^4.0.3"
     markdown-it "^12.3.2"
 
