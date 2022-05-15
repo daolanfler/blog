@@ -1,4 +1,4 @@
-import { defineConfig } from '@windicss/plugin-utils'
+import { defineConfig } from 'vite-plugin-windicss'
 import colors from 'windicss/colors'
 import typography from 'windicss/plugin/typography'
 
@@ -7,7 +7,6 @@ export default defineConfig({
   extract: {
     include: ['src/**/*.{html,vue,jsx,tsx,svelte}'],
   },
-  safelist: ['prose', 'prose-sm', 'm-auto'],
   plugins: [typography()],
   theme: {
     extend: {

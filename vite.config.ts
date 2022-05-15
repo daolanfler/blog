@@ -13,7 +13,7 @@ import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
 import WindiCSS from 'vite-plugin-windicss'
 import ViteCompression from 'vite-plugin-compression'
-import ViteComponents from 'vite-plugin-components'
+import ViteComponents from 'unplugin-vue-components/vite'
 import generateSitemap from 'vite-plugin-pages-sitemap'
 
 import 'prismjs/components/prism-regex'
@@ -75,7 +75,7 @@ export default defineConfig({
     }),
     ViteComponents({
       extensions: ['vue', 'md'],
-      customLoaderMatcher: (path) => path.endsWith('.md'),
+      include: [/\.vue$/, /\.md$/],
     }),
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
