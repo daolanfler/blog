@@ -3,6 +3,11 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+
+### github credential propblem
+
+github 在2021年禁止了密码登录，可以使用 personal access token 替代 (literally 即原来要输入密码的地方直接输入 token 即可) 密码（可以配置 token 的有效期限、权限范围等）。
+
 ### 如何在 vscode 中 debug vue-cli 项目
 
 在 vscode 的 Vue Tutorial [Debugging](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial#_debugging) 这一章节中，提到了[这一教程](https://github.com/microsoft/vscode-recipes/tree/main/vuejs-cli)
