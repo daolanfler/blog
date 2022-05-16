@@ -12,12 +12,12 @@ const isActiveRoute = (path: string): boolean =>
 <template>
   <header class="m-auto">
     <nav class="grid nav h-24 items-center dark:text-gray-200">
-      <div class="leading-8 font-bold text-xl">
+      <div class="leading-8 font-bold text-3xl">
         <router-link :to="{ path: '/' }">
           天方夜坛
         </router-link>
       </div>
-      <div class="grid grid-flow-col gap-x-5 items-center">
+      <div class="grid grid-flow-col gap-x-5 items-center font-serif">
         <router-link :to="{ path: '/' }">
           <span class="font-bold" :class="{ 'active-route': isActiveRoute('/') }">Blog</span>
         </router-link>

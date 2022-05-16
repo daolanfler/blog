@@ -47,7 +47,7 @@ console.log(dogName)
 
 ### $$ in Chrome Devtools
 
-`$$` is a shortcut `document.querySelectAll`，[参考这里](https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4)，但不是 `===` 的相等
+`$$` is a shortcut for `document.querySelectAll`，[参考这里](https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4)，但不是 `===` 的相等
 
 ### 使用 [JSDoc](https://jsdoc.app/) 对 js 代码注释以获得类型提示 {#using-jsdoc-to-comment-js-code}
 

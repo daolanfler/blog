@@ -9,7 +9,7 @@ h1 {
     text-decoration: underline;
     &::before {
       position: relative;
-      content: "#";
+      content: '#';
       float: left;
       width: 0;
       height: 0;
@@ -27,6 +27,13 @@ h1 {
   p {
     @apply my-5 break-words;
   }
+  p,
+  li {
+    font-family: 'Georgia', serif, 'lxgw wenkai';
+    > code {
+      @apply px-1 rounded-sm dark:(text-red-500 bg-dark-200) text-red-500 bg-light-700;
+    }
+  }
 
   img {
     max-width: 100%;
@@ -35,7 +42,7 @@ h1 {
   blockquote {
     opacity: 0.8;
     @apply py-2 px-4 my-6 border-l-4 border-gray-300 dark:border-gray-700;
-    quotes: "\201c""\201d""\2018""\2019";
+    quotes: '\201c''\201d''\2018''\2019';
     margin-inline-start: 0;
     margin-inline-end: 0;
     p {
@@ -47,12 +54,11 @@ h1 {
     padding-left: 1.5ch;
     list-style: decimal;
   }
-  
+
   :not(h1, h2, h3, h4, h5, h6) a {
     @apply text-blue-500 dark:text-blue-200 break-all;
     text-decoration: underline;
   }
-
 }
 
 code {
