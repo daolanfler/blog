@@ -6,11 +6,21 @@ tags:
   - event-loop
 ---
 
-之前看到的这篇 Jake Archibald [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) 关于 event-loop 的文章，有一个疑惑，同样是 addEventListener，如果是用户点击触发的，那事件回调就是异步的，如果通过 `el.click()` 这种 javascript 触发的方式则是[同步的](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/#:~:text=event%20to%20dispatch-,synchronously,-%2C%20so%20the%20script)，那事件冒泡的回调和时间触发元素的回调是不是在同一个 task 中执行呢？
+之前看到的这篇 Jake Archibald [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) 关于 event-loop 的文章，有一个疑惑，同样是 addEventListener，如果是用户点击触发的，那事件回调就是异步的，如果通过 `el.click()` 这种 javascript 触发的方式则是[同步的](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/#:~:text=event%20to%20dispatch-,synchronously,-%2C%20so%20the%20script)，那冒泡事件的回调和原始事件的回调是不是在同一个 task 中执行呢？
 
-然后前几天看 《Vue.js 设计与实现》中关于绑定事件处理函数是需要做一个判断：[事件的触发事件早于处理函数绑定的时间则不执行处理函数](https://github.com/daolanfler/misc/blob/f0c0478b367c625750f8b4ddccee582ba32a58db/apps/learn-vue3/renderer/main.js#L143)。在这个例子的上下文中，修改响应式数据会同步地触发 patchElement 去修改父级元素的 HTML Attributes 和事件监听，顺序是这样的：用户点击事件触发 --> 子元素的 onClick callback 执行 --> 响应式数据的副作用同步触发 --> 修改父元素的事件监听(本来是没有的) --> 事件冒泡到父元素 --> 父元素的 onClick callback 执行。这就导致了事件的触发事件实际上是早于回调的绑定时间。
+然后前几天看 《Vue.js 设计与实现》中关于绑定事件处理函数是需要做一个判断：[事件的触发时间早于处理函数绑定的时间则不执行处理函数](https://github.com/daolanfler/misc/blob/f0c0478b367c625750f8b4ddccee582ba32a58db/apps/learn-vue3/renderer/main.js#L143)。意思就是：假如我们在原始事件的回调中 _动态地_ 去给父元素添加事件绑定，那在这个事件绑定地回调中，要忽略这次事件，那如何区分呢？在这个例子的上下文中，修改响应式数据会同步地触发 `patchElement` 去修改父级元素的 HTML Attributes 和事件监听，顺序是这样的：
 
-这样似乎可以确定，对于用户点击事件，对应的事件处理函数是会放到同一个 eventloop 的 task 中的。有一点要注意的是 microtask 不仅会在 event-loop 中 task 之后执行也会在 JavaScript excuction context empty 的时候执行：
+- 用户点击，触发 `click` 事件
+- --> 子元素的 _onClick callback_ 执行
+- --> 响应式数据的副作用同步触发
+- --> 修改父元素的事件监听 (本来是没有的)
+- --> 事件冒泡到父元素
+- --> 父元素的 _onClick callback_ 执行。
+
+在这里，原始事件的触发时间实际上是早于父元素上 `click` 回调的绑定时间。  
+这样可以确定，对于用户点击事件，原始事件处理函数和冒泡事件地处理函数是在同一个 eventloop 的 task 中的。  
+
+有一点要注意的是 microtask 不仅会在 event-loop 中 task 之后执行也会在 JavaScript excuction context empty 的时候执行：
 
 > If the [stack of script settings objects](https://html.spec.whatwg.org/multipage/webappapis.html#stack-of-script-settings-objects) is now empty, [perform a microtask checkpoint](https://html.spec.whatwg.org/multipage/webappapis.html#perform-a-microtask-checkpoint)
 > — [HTML: Cleaning up after a callback](https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-a-callback) step 3
