@@ -42,16 +42,11 @@ export const createApp = ViteSSG(
     dayjs.extend(utc)
     dayjs.extend(timezone)
     if (isClient) {
-      console.log({ isClient })
       router.beforeEach(() => {
         NProgress.start()
-        console.log('before Each')
       })
       router.afterEach(() => {
         NProgress.done();
-        // setTimeout(() => {
-        //   console.log('after Each')
-        // }, 1000)
       })
     }
 

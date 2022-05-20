@@ -2,7 +2,6 @@
 import { isClient } from '@vueuse/core'
 import { formatPostDate } from '../utils/datetime'
 
-
 // eslint-disable-next-line vue/no-setup-props-destructure
 const { frontmatter } = defineProps<{ frontmatter: any }>()
 
@@ -17,9 +16,15 @@ if (frontmatter.updateDate) {
 const route = useRoute()
 const postBody = ref<HTMLElement>()
 
+const pageTitle = computed(() => {
+  if (route.path.startsWith('/post') || route.path.startsWith('/snippets') ) {
+    return `天方夜坛 - ${frontmatter.title}`
+  }
+  return "天方夜坛"
+})
 // set document's title
 useHead({
-  title: `天方夜坛 - ${frontmatter.title}`,
+  title: pageTitle,
 })
 
 if (isClient) {
@@ -86,9 +91,7 @@ if (isClient) {
 <template>
   <div ref="postBody" class="px-4 sm:px-8">
     <template v-if="route.path.startsWith('/post')">
-      <h1
-        class="text-2xl text-center font-bold mb-8 dark:text-gray-200 text-dark-100"
-      >
+      <h1 class="text-2xl text-center font-bold mb-8 dark:text-gray-200 text-dark-100">
         {{ frontmatter.title }}
       </h1>
       <p class="text-right italic">

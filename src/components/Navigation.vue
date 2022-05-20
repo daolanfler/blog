@@ -12,7 +12,7 @@ const isActiveRoute = (path: string): boolean =>
 <template>
   <header class="m-auto">
     <nav class="grid nav h-24 items-center dark:text-gray-200">
-      <div class="leading-8 font-bold text-3xl">
+      <div class="title">
         <router-link :to="{ path: '/' }">
           天方夜坛
         </router-link>
@@ -40,5 +40,9 @@ const isActiveRoute = (path: string): boolean =>
 .nav {
   grid-template-columns: auto max-content;
   @apply dark:text-gray-400 text-gray-800 py-8 px-4 sm:px-8;
+}
+.title {
+  @apply leading-8 font-bold text-3xl font-serif;
+
 }
 </style>

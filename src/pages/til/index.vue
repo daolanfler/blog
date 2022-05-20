@@ -1,6 +1,8 @@
 <template>
-  <h2>TIL: Today I learned</h2>
-  <div>Has CodePen Loaded? {{ codePenLoaded }} </div>
+  <div class="p-8 font-mono">
+    <p>TIL: Today I learned</p>
+    <p>Has CodePen Loaded? <span class="code">{{ codePenLoaded }}</span></p>
+  </div>
 </template>
 
 <script setup lang="ts">
