@@ -2,6 +2,18 @@
   <div class="p-8 font-mono">
     <p>TIL: Today I learned</p>
     <p>Has CodePen Loaded? <span class="code">{{ codePenLoaded }}</span></p>
+
+    <div class="mt-6">
+      <router-link :to="{path: '/lyrics'}" class="underline block">
+        Lyrics
+      </router-link>
+      <router-link :to="{path: '/bookmarks'}" class="underline block">
+        Bookmarks
+      </router-link>
+      <router-link :to="{path: '/terms'}" class="underline block">
+        Terms
+      </router-link>
+    </div>
   </div>
 </template>
 
