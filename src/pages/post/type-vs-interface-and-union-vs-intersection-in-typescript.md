@@ -6,8 +6,8 @@ tags:
 ---
 
 初看 [TypeScript 文档](https://www.typescriptlang.org/docs/handbook/intro.html)时，时常疑惑 type 和 interface ，
-[_Union Types_](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) ( "|" ) 和
-[_Intersection Types_](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) ( "&" ) 的区别。
+[_Union Types_](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) ( `|` ) 和
+[_Intersection Types_](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) ( `&` ) 的区别。
 
 ## Type vs Interface
 
@@ -25,8 +25,8 @@ visit [Official Doc](https://www.typescriptlang.org/docs/handbook/2/everyday-typ
 
 ## Intersection Types vs Union Types
 
-- "|" in type position means _Union Types_
-- "&" in type position means _Intersection Types_
+- `|` in type position means _Union Types_
+- `&` in type position means _Intersection Types_
 
 ### 1. Example when no conflicts
 

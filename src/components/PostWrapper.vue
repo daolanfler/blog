@@ -42,17 +42,7 @@ if (isClient) {
       if (target.src && postBody.value?.contains(target)) {
         const index = imageList.value.indexOf(target.src)
         if (index > -1) {
-          // api({
-          //   options: {
-          //     toolbar: false,
-          //     title: true,
-          //     zoomable: false,
-          //     movable: false,
-          //     fullscreen: true,
-          //     initialViewIndex: index,
-          //   },
-          //   images: imageList.value,
-          // })
+          location.href = target.src;
         }
       }
     }

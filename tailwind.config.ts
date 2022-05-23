@@ -17,10 +17,10 @@ export default defineConfig({
         'screen-read': '900px',
       },
       fontFamily: {
-        sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['ui-serif', 'Georgia', 'serif'],
+        sans: ['LXGW WenKai', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Georgia', 'serif', 'ui-serif'],
         mono: ['Fira Code', 'ui-monospace', 'SFMono-Regular', 'mono'],
-      }
+      },
     },
   },
 })
