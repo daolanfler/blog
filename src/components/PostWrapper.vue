@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { isClient } from '@vueuse/core'
 import { formatPostDate } from '../utils/datetime'
+import { FrontMatter } from '../utils/types';
 
 // eslint-disable-next-line vue/no-setup-props-destructure
-const { frontmatter } = defineProps<{ frontmatter: any }>()
+const { frontmatter } = defineProps<{ frontmatter: FrontMatter }>()
 
 const createDate = formatPostDate(frontmatter.date, 'YYYY-MM-DD HH:mm')
 
@@ -17,7 +18,7 @@ const route = useRoute()
 const postBody = ref<HTMLElement>()
 
 const pageTitle = computed(() => {
-  if (route.path.startsWith('/post') || route.path.startsWith('/snippets') ) {
+  if (route.path.startsWith('/post') || route.path.startsWith('/snippets')) {
     return `天方夜坛 - ${frontmatter.title}`
   }
   return "天方夜坛"
@@ -79,7 +80,7 @@ if (isClient) {
 </script>
 
 <template>
-  <div ref="postBody" class="px-4 sm:px-8">
+  <div ref="postBody" class="px-4 sm:px-8" :class="{ lyrics: frontmatter.type === 'lyrics' }">
     <template v-if="route.path.startsWith('/post')">
       <h1 class="text-2xl text-center font-bold mb-8 dark:text-gray-200 text-dark-100">
         {{ frontmatter.title }}
@@ -95,3 +96,9 @@ if (isClient) {
     </p>
   </div>
 </template>
+
+<style>
+.lyrics {
+  @apply text-lg;
+}
+</style>

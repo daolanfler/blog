@@ -1,5 +1,6 @@
 ---
 date:
+type: lyrics
 ---
 
 # Señor (Tales of Yankee Power)

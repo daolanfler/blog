@@ -1,5 +1,6 @@
 ---
 date:
+type: lyrics
 ---
 
 # My Back Pages
