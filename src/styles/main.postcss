@@ -19,12 +19,16 @@ body {
   @apply m-auto antialiased;
 }
 
-.blog-title {
-  @apply text-lg font-semibold hover:underline text-gray-700 hover:text-black;
+h1.blog-title {
+  @apply text-xl font-500 mb-0 hover:underline text-gray-700 hover:text-black;
   @apply dark:text-gray-300 dark:hover:text-white;
+  font-family: 'Georgia', 'LXGW WenKai';
 }
 
 .nav span,
 svg {
   @apply dark:hover:text-gray-100 hover:text-blue-500;
 }
+
+/* binding css intellisense to .postcss file seems to be "incorrect" */
+/* https://github.com/microsoft/vscode/issues/17419 */

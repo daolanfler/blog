@@ -42,7 +42,7 @@ const isActiveRoute = (path: string): boolean =>
   @apply dark:text-gray-400 text-gray-800 py-8 px-4 sm:px-8;
 }
 .title {
-  @apply leading-8 font-bold text-3xl font-sans;
+  @apply leading-8 font-bold text-3xl font-wenkai;
 
 }
 </style>

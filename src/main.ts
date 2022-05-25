@@ -13,10 +13,11 @@ import 'nprogress/nprogress.css'
 import './index.css'
 import './styles/main.postcss'
 import './styles/markdown.postcss'
+import { FrontMatter } from './utils/types'
 
 declare module 'vue-router' {
   interface RouteMeta {
-    frontmatter: any
+    frontmatter: FrontMatter
   }
 }
 
