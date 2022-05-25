@@ -13,6 +13,9 @@
       <router-link :to="{path: '/terms'}" class="underline block">
         Terms
       </router-link>
+      <router-link :to="{path: '/color'}" class="underline block">
+        Color
+      </router-link>
     </div>
   </div>
 </template>
