@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { isDev } from '../utils/common';
 import { formatPostDate } from '../utils/datetime'
 
 const router = useRouter()
 const routes = router
   .getRoutes()
-  .filter((i) => i.path.startsWith('/post') && i.meta.frontmatter.date)
+  .filter((i) => {
+    if (isDev()) {
+      return i.path.startsWith('/post') && i.meta.frontmatter.date
+    } else {
+      return /^\/post(?!\/draft)/.test(i.path) && i.meta.frontmatter.date
+    }
+  })
   .sort(
     (a, b) =>
       +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date)
