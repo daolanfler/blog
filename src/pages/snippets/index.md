@@ -5,14 +5,14 @@ date: 2021-10-04 20:51
 
 ### git rebase/merge 中接受某一方的改动
 
-如果存在冲突，某些文件的冲突可能太多了，不想一个个区解决，可以使用以下方法，其中 `ours` 表示 _current change_ `theirs` 表示 _incomming change_
+如果存在冲突，某些文件的冲突可能太多了，不想一个个区解决，可以使用以下方法，其中 `ours` 表示 _current change_ `theirs` 表示 _incomming change_。[参考](https://linuxpip.org/git-accept-all-incoming-changes/)
 
 ```bash
 git checkout --ours pnpm-lock.json
 git add pnpm-lock.json
 ```
 
-### github credential propblem
+### github credential problem
 
 github 在 2021 年禁止了密码登录，可以使用 personal access token 替代 (literally 即原来要输入密码的地方直接输入 token 即可) 密码（可以配置 token 的有效期限、权限范围等）。
 

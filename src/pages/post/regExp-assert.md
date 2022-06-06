@@ -12,11 +12,11 @@ tags:
 
 `(?=pattern)` _Positive Lookahead Assert_ 正向肯定预检查
 
-`(?!pattern)` *Negative Lookahead Assert* 正向否定预检查
+`(?!pattern)` _Negative Lookahead Assert_ 正向否定预检查
 
-`(?<=pattern)` *Positive Lookbehind Assert* 反向肯定预检查
+`(?<=pattern)` _Positive Lookbehind Assert_ 反向肯定预检查
 
-`(?<!pattern)` *Negative Lookbehind Assert* 反向否定预检查
+`(?<!pattern)` _Negative Lookbehind Assert_ 反向否定预检查
 
 ## 温习相关知识
 
@@ -31,7 +31,7 @@ tags:
 ### 1. 普通的捕获型正则
 
 ```js
-/windows(95|NT|xp)/.exec("windows95OtherString");
+;/windows(95|NT|xp)/.exec('windows95OtherString')
 ```
 
 **console：**
@@ -45,7 +45,7 @@ tags:
 ### 2. 正向肯定预检查 Postive Lookahead
 
 ```js
-/windows(?=95|NT|xp)/.exec("windows95hahahah");
+;/windows(?=95|NT|xp)/.exec('windows95hahahah')
 ```
 
 **console：**
@@ -59,7 +59,7 @@ tags:
 ### 3. 正向否定预检查 Negative Lookahead
 
 ```js
-/windows(?!95|NT|xp)/.exec("windows10heihei");
+;/windows(?!95|NT|xp)/.exec('windows10heihei')
 ```
 
 **console：**
@@ -73,7 +73,7 @@ tags:
 ### 4. 反向肯定预检查 Positive Lookbehind
 
 ```js
-/(?<=95|NT|xp)windows/.exec("NTwindows");
+;/(?<=95|NT|xp)windows/.exec('NTwindows')
 ```
 
 **console：**
@@ -84,10 +84,10 @@ tags:
 
 ![Positive Lookbehind regex101](../../assets/images/regexp/positive-lookbehind101.jpg)
 
-### 反向否定预检查 Negative Lookbehind
+### 5. 反向否定预检查 Negative Lookbehind
 
 ```js
-/(?<!95|NT|xp)windows/.exec("haha10windows");
+;/(?<!95|NT|xp)windows/.exec('haha10windows')
 ```
 
 **console：**
@@ -100,21 +100,33 @@ tags:
 
 ### 总结
 
-`lookahead` or `lookbehind` 指的是 _匹配字符串_ 相对于括号里面的正则的位置。`lookbehind` 则还需要在 `?` 后加一个 `<` 符号
+其中 `?` 表示非捕获型匹配
+
+以从左到右为正方向，`lookahead` 指的是 _括号里面的正则_ 在 _匹配字符串_ 前方。`lookbehind` 则表示 _括号里面的正则_ 在 _匹配字符串_ 后方，使用`<`来表示在后方。
 
 `Positive` or `Negative` 分表表示 `是` or `否` 匹配括号里的正则。符号分别为 `=` 和 `!`
 
-由于都是 `non-capturing-group`(非捕获型分组)，所以结果匹配到的字符串，都不会包括括号里面的，即上面的例子中的 `windows`
+由于都是 `non-capturing-group`(非捕获型分组)，所以结果匹配到的字符串，都不会包括括号里面的，即上面的例子中的 `windows`。
 
 ## 例子 2：千位分隔符 Look Ahead Positive Assert {#example2}
 
 ```javascript
-"12345678.32423432".replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+'12345678.32423432'.replace(/(\d)(?=(\d{3})+\.)/g, '$1,')
 ```
 
 **解释：**
 
 ![Negative Lookbehind regex101](../../assets/images/regexp/thousand-delimiter.jpg)
+
+上面的千分位分隔正则表达式对没有小数点部分的字符串无效，更完整的可以使用如下的方法：
+
+```javascript
+export function toThousands(num) {
+  return num.toString().replace(/\d+/, (n) => {
+    return n.replace(/\B(?=((\d{3})+\b))/g, ',')
+  })
+}
+```
 
 ## Reference {#reference}
 
