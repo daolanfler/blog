@@ -3,6 +3,14 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+### webpack inline loader
+
+使用 `raw-loader` 加载 svg 文件，获取其中的代码为字符串。[来源](https://github.com/codesandbox/codesandbox-client/issues/747#issuecomment-443996080) 以及 [inline loader 语法](https://webpack.js.org/concepts/loaders/#inline)
+
+```javascript
+import earthSvg from '!raw-loader!./icons/earth.svg'
+```
+
 ### git rebase/merge 中接受某一方的改动
 
 如果存在冲突，某些文件的冲突可能太多了，不想一个个区解决，可以使用以下方法，其中 `ours` 表示 _current change_ `theirs` 表示 _incomming change_。[参考](https://linuxpip.org/git-accept-all-incoming-changes/)
@@ -62,9 +70,11 @@ console.log(dogName)
 需要项目中有相应的 `.d.ts` 文件定义的类型，引入`@types/pkgName`或者有些库会自带 `ts declaration`或则自己定义。示例：
 
 ```javascript
-/** @type {BMap.Map} */
+/** 
+ * @description 这样在输入 map. 的时候（vscode的）intellisense 即可触发
+ * @type {BMap.Map}
+ */
 const map = this.bmap
-// 这样在输入 map. 的时候（vscode的）intellisense 即可触发
 
 /**
  * @returns {import("node_modules/element-ui/types/table-column.js").ElTableColumn[]}
