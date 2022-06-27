@@ -1,7 +1,7 @@
 ---
 title: Windows wsl2 开发环境搭建
 date: 2021-08-12 21:02:55
-updateDate: 2021-12-01 11:26:00
+updateDate: 2022-06-27 09:20:00
 tags:
   - wsl
   - proxy
@@ -206,7 +206,8 @@ generateResolvConf = false
 3. 无法 ping 通 windows host IP，可能原因 <https://github.com/microsoft/WSL/issues/5437>
 4. 关于获取 host ip 很多都是通过 `/etc/resolv.conf` 来获取的，但我这里这个文件内容是 `nameserve 8.8.8.8`，修改`/etc/wsl.conf`中 `network.generateResolvConf`为`false`，还是 `8.8.8.8` 这个 google 的 DNS 解析服务器。
 5. windows 上的 docker 是可以在 wsl 里面运行的，需要将 docker desktop 中相关设置打开。
-6. windows 和 wsl 的 localhost 映射并不是相互的，详见[issue](https://github.com/microsoft/WSL/issues/5211#issuecomment-628565569)
+6. windows 和 wsl 的 localhost 映射并不是 **相互** 的，详见[issue](https://github.com/microsoft/WSL/issues/5211#issuecomment-628565569)
+7. 如何设置 wsl 静态 ip：<https://github.com/microsoft/WSL/issues/4150#issuecomment-1018524753>
 
 ## 参考链接 {#reference}
 
@@ -216,3 +217,5 @@ generateResolvConf = false
 4. [BEST Web Dev Setup? Windows & Linux at the same time (WSL)
    ](https://www.youtube.com/watch?v=-atblwgc63E)
 5. [Clash for Windows 文档](https://docs.cfw.lbyczf.com/contents/quickstart.html#%E5%90%AF%E5%8A%A8)
+6. [wsl config 文档](https://docs.microsoft.com/en-us/windows/wsl/wsl-config)
+7. [C 盘不够用，如何迁移到其他磁盘](https://github.com/MicrosoftDocs/WSL/issues/412)
