@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { isClient } from '@vueuse/core'
 import { formatPostDate } from '../utils/datetime'
-import { FrontMatter } from '../utils/types';
+import { FrontMatter } from '../utils/types'
+import { $ref } from 'vue/macros'
 
 // eslint-disable-next-line vue/no-setup-props-destructure
 const { frontmatter } = defineProps<{ frontmatter: FrontMatter }>()
@@ -15,13 +16,13 @@ if (frontmatter.updateDate) {
 }
 
 const route = useRoute()
-const postBody = ref<HTMLElement>()
+const postBody = $ref<HTMLElement>()
 
 const pageTitle = computed(() => {
   if (route.path.startsWith('/post') || route.path.startsWith('/snippets')) {
     return `天方夜坛 - ${frontmatter.title}`
   }
-  return "天方夜坛"
+  return '天方夜坛'
 })
 // set document's title
 useHead({
@@ -29,21 +30,21 @@ useHead({
 })
 
 if (isClient) {
-  let imageList = ref<string[]>([])
+  let imageList = $ref<string[]>([])
 
   const handleDocumentClick = (e: Event) => {
     const target = e.target as HTMLImageElement
-    if (!imageList.value.length) {
+    if (!imageList.length) {
       const list = Array.from(document.querySelectorAll('img')).map(
         (item) => item.src
       )
-      imageList.value = [...list]
+      imageList = [...list]
     }
     if (target.tagName.toLowerCase() === 'img') {
-      if (target.src && postBody.value?.contains(target)) {
-        const index = imageList.value.indexOf(target.src)
+      if (target.src && postBody?.contains(target)) {
+        const index = imageList.indexOf(target.src)
         if (index > -1) {
-          location.href = target.src;
+          location.href = target.src
         }
       }
     }
@@ -80,9 +81,15 @@ if (isClient) {
 </script>
 
 <template>
-  <div ref="postBody" class="px-4 sm:px-8" :class="{ lyrics: frontmatter.type === 'lyrics' }">
+  <div
+    ref="postBody"
+    class="px-4 sm:px-8"
+    :class="{ lyrics: frontmatter.type === 'lyrics' }"
+  >
     <template v-if="route.path.startsWith('/post')">
-      <h1 class="text-2xl text-center font-bold mb-8 dark:text-gray-200 text-dark-100">
+      <h1
+        class="text-2xl text-center font-bold mb-8 dark:text-gray-200 text-dark-100"
+      >
         {{ frontmatter.title }}
       </h1>
       <p class="text-right italic">

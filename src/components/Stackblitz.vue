@@ -4,14 +4,14 @@
 
 <script setup lang="ts">
 import sdk from '@stackblitz/sdk'
-import { ref } from 'vue'
+import {$ref} from 'vue/macros'
 
-const blitzRef = ref<HTMLElement>()
+const blitzRef = $ref<HTMLElement>()
 
 const props = defineProps<{id: string}>()
 
 onMounted(() => {
-  sdk.embedProjectId(blitzRef.value!, props.id, {
+  sdk.embedProjectId(blitzRef, props.id, {
     forceEmbedLayout: true,
     openFile: 'index.js',
     height: 500,

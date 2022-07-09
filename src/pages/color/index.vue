@@ -12,11 +12,13 @@
 
 
 <script setup lang="ts">
-const colorstr = ref<string>("")
-const colorList = ref<string[]>([])
+import { $ref } from 'vue/macros';
+
+const colorstr = $ref<string>("")
+let colorList = $ref<string[]>([])
 
 const getColorList = () => {
-  colorList.value = colorstr.value.split(/[,\r\n\s]/).map(str => {
+  colorList = colorstr.split(/[,\r\n\s]/).map(str => {
     const a = str.trim();
     return a.replace(/\"?(.*)\"?/, "$1");
   }).filter(a => a)
