@@ -24,8 +24,8 @@ const isActiveRoute = (path: string): boolean =>
         <router-link :to="{ path: '/snippets' }">
           <span class="font-bold" :class="{ 'active-route': isActiveRoute('/snippets') }">Snippets</span>
         </router-link>
-        <router-link :to="{ path: '/til' }">
-          <span class="font-bold" :class="{ 'active-route': isActiveRoute('/til') }">TIL</span>
+        <router-link :to="{ path: '/about' }">
+          <span class="font-bold" :class="{ 'active-route': isActiveRoute('/about') }">About</span>
         </router-link>
         <ChangeTheme />
       </div>
