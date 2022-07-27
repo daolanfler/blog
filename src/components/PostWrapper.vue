@@ -83,7 +83,7 @@ if (isClient) {
 <template>
   <div
     ref="postBody"
-    class="px-4 sm:px-8"
+    class="<md:px-6"
     :class="{ lyrics: frontmatter.type === 'lyrics' }"
   >
     <template v-if="route.path.startsWith('/post')">
