@@ -17,7 +17,7 @@ const isActiveRoute = (path: string): boolean =>
           天方夜坛
         </router-link>
       </div>
-      <div class="grid grid-flow-col gap-x-5 items-center font-serif">
+      <div class="grid grid-flow-col gap-x-5 items-center">
         <router-link :to="{ path: '/' }">
           <span class="font-bold" :class="{ 'active-route': isActiveRoute('/') }">Blog</span>
         </router-link>
@@ -39,10 +39,10 @@ const isActiveRoute = (path: string): boolean =>
 }
 .nav {
   grid-template-columns: auto max-content;
-  @apply dark:text-gray-400 text-gray-800 py-8 px-4 sm:px-8;
+  @apply dark:text-gray-400 text-gray-800 py-8 <md:px-6;
 }
 .title {
-  @apply leading-8 font-bold text-3xl font-wenkai;
+  @apply leading-8 font-semibold text-3xl dark:text-gray-300;
 
 }
 </style>

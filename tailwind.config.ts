@@ -16,11 +16,6 @@ export default defineConfig({
       maxWidth: {
         'screen-read': '900px',
       },
-      fontFamily: {
-        serif: ['Georgia', 'serif', 'ui-serif'],
-        mono: ['Fira Code', 'ui-monospace', 'SFMono-Regular', 'mono'],
-        wenkai: ['LXGW WenKai']
-      },
     },
   },
 })

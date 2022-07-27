@@ -1,6 +1,5 @@
 #app {
-  @apply flex flex-col max-w-screen-read m-auto;
-  font-family: sans-serif, "LXGW WenKai";
+  @apply flex flex-col max-w-screen-md m-auto;
   header {
     @apply w-full;
   }
@@ -15,14 +14,13 @@
 }
 
 body {
-  @apply dark:bg-dark-900 dark:text-white bg-white;
   @apply m-auto antialiased;
+  @apply dark:bg-dark-900 dark:text-white bg-white;
 }
 
 h1.blog-title {
   @apply text-xl font-500 mb-0 hover:underline text-gray-700 hover:text-black;
   @apply dark:text-gray-300 dark:hover:text-white;
-  font-family: 'Georgia', 'LXGW WenKai';
 }
 
 .nav span,

@@ -24,7 +24,7 @@ import 'prismjs/components/prism-yaml'
 import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-markdown'
 import 'prismjs/components/prism-java'
-import 'prismjs/components/prism-javadoclike'
+import 'prismjs/components/prism-javadoclike' // for some reason prism needs this one
 import 'prismjs/components/prism-javadoc'
 import 'prismjs/components/prism-jsdoc'
 

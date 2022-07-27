@@ -57,5 +57,5 @@ tags:
   core-js 的一些模块进行了重命名，安装了一下最新版，[解决了问题](https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md)
 - 一个 resolve-url-loader 报错
 
-  ![resolve-url-loader-warning](../../assets/images/resolve-url-loader-warning.png)
+  ![resolve-url-loader-warning](../../assets/images/resolve-url-loader-warning.png)  
   由于 在 `index.scss` 文件中引入了 `tailwind.var.css` ，没有检测到相关的 sourceMap ， 把 `tailwind.car.css` 的引入放到 `main.js` 中去即可

@@ -20,18 +20,18 @@ h1 {
 }
 
 .markdown-body {
-  @apply pb-10;
+  @apply pb-10 <md:px-6 dark:text-gray-300 ;
+  
   h2 {
-    @apply text-2xl font-bold mb-6 mt-10;
+    @apply text-2xl font-bold mb-6 mt-10 dark:text-gray-200;
   }
   p {
     @apply my-5 break-words;
   }
   p,
   li {
-    font-family: 'Georgia', 'LXGW WenKai', serif;
     > code {
-      @apply px-1 rounded-sm dark:(text-red-500 bg-dark-200) text-red-500 bg-light-700;
+      @apply px-2 rounded-sm dark:(text-light-100 bg-dark-200) text-red-500 bg-light-700;
     }
   }
 
