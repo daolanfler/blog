@@ -1,19 +1,20 @@
+import fs from 'fs-extra'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
+
 import prism from 'markdown-it-prism'
 import anchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
-import Components from 'unplugin-vue-components/vite'
-import fs from 'fs-extra'
 import matter from 'gray-matter'
-import AutoImport from 'unplugin-auto-import/vite'
 
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+
+import Vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
 import WindiCSS from 'vite-plugin-windicss'
 import ViteCompression from 'vite-plugin-compression'
-import ViteComponents from 'unplugin-vue-components/vite'
 import generateSitemap from 'vite-plugin-pages-sitemap'
 
 import 'prismjs/components/prism-regex'
@@ -73,10 +74,6 @@ export default defineConfig({
 
         md.use(prism)
       },
-    }),
-    ViteComponents({
-      extensions: ['vue', 'md'],
-      include: [/\.vue$/, /\.md$/],
     }),
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
