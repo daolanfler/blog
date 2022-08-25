@@ -62,9 +62,9 @@ alias copylog="git log --after="yesterday" --oneline  | clip.exe"
 
 ---
 
-### Neovim's faq on clipboard in wsl
+### wsl 使用 neovim 时剪贴板的配置
 
-[相关 issue](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
+neovim 的剪贴板是有一个优先级的，详见 [相关 issue](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)
 
 ---
 
