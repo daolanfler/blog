@@ -33,7 +33,7 @@ Too serious to fool
 Spouted out that liberty is just equality in school  
 "Equality," I spoke the word  
 As if a wedding vow  
-Ah, but I was so musch older then, I'm younger thant that now 
+Ah, but I was so much older then, I'm younger thant that now  
 
 In a soldier's stance, I aimed my hand  
 At the mongrel dogs who teach  
