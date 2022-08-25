@@ -43,7 +43,7 @@ tags:
    # Add the plugin to the list of plugins for Oh My Zsh to load (inside ~/.zshrc):
    plugins=(
            git
-           zsh-syntax-autosuggestions
+           zsh-autosuggestions
            )
 
    # 配置生效
@@ -77,7 +77,7 @@ tags:
 
    然后再 `.zshrc` 中设置 `ZSH_THEME="spaceship"`
 
-## proxy 配置 {#proxy-config}
+## 命令行代理配置 {#proxy-config}
 
 在 Windows host 上开启了代理服务，如何在 wsl 上也能使用？在 `~/set_proxy`建一个 shell 脚本 ，内容如下：
 

@@ -65,7 +65,7 @@ tcp_mux = true
 
 创建 `fprs.servcie` 文件在 frp 目录，这里我把 frp 解压后的文件放在 `/root/frp`。
 
-```
+```plaintext
 [Unit]
 Description=frps daemon
 After=syslog.target network.target
@@ -117,7 +117,7 @@ remote_port = 6001
 
 首先被 ssh 的 wsl 需要开启 sshd 服务，由于 wsl2 被砍掉了 system init 服务，无法设置开机自启，所以需要手动启动服务 `sudo service sshd start`。不过在启动之前，需要先编辑一下 `/etc/ssh/sshd_config` 配置文件，在末尾加入（或者 uncomment）下面两个配置，注意 `AllowUsers` 后面是个 _tab_。
 
-```
+```plaintext
 PasswordAuthentication yes
 AllowUsers    username
 ```
@@ -178,7 +178,7 @@ custom_domains = project-api.cusotm.doamin # 再加一个 A record
 
 然后再公司服务器开启一个 nginx 服务，主要配置如下：
 
-```
+```plaintext
 server {
     listen 8000; # 穿透的端口
     location / {
