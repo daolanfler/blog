@@ -1,5 +1,5 @@
 ---
-title: A bite of cookie
+title: A Bite of Cookie
 date: 2021-10-29 23:30:00
 tags:
   - Cookie

@@ -1,5 +1,5 @@
 ---
-title: Use husky and lint-staged linting code before commit
+title: 使用 husky 和 lint-staged 在提交前做代码检查
 date: 2021-11-17 19:42:00
 tags:
   - git

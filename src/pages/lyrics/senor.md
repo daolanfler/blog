@@ -35,7 +35,7 @@ Well, give me a minute, let me get it together
 I just gotta pick myself up off the floor  
 I am ready when you are, señor
 
-Señor, señor, let's overturn these tables
+Señor, señor, let's overturn these tables  
 Disconnect these cables  
 This place don't make sense to me no more  
 Can you tell me what we're waiting for, señor?

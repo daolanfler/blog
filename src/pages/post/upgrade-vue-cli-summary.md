@@ -39,7 +39,7 @@ tags:
     应用场景，比如前端代码中使用到了 lowdb
   - webpackDevServer 的 api 更改
 - sass-loader 升级到最新 13.x.x
-  由于项目中用到了 url 定义的 scss 变量，在这个版本中 url() 存在问题，如果产生的 css 传递给了 `css-loader` 则陆军必须是和 entry-file 相对的路径。[根据repo的README](https://github.com/webpack-contrib/sass-loader#problems-with-url) ，这里需要做修改。所以这里的绝对路径不被支持，只能使用相对路径，以 `LOGIN_LOGO_IMG` 为例，这张图片放在 public assets 中，需要使用这个变量的时候，并不知道它的 entry-file 相对于 public assets 路径的位置。所幸 [resolve-url-loader](https://github.com/bholloway/resolve-url-loader) 可以解决这个问题，这个 [issue comment](https://github.com/vuejs/vue-cli/issues/2099#issuecomment-639613478) 提供了在 vue.config.js 中配置 resolve-url-loader 的代码
+  由于项目中用到了 url 定义的 scss 变量，在这个版本中 url() 存在问题，如果产生的 css 传递给了 `css-loader` 则路径必须是和 entry-file 相对的路径。[根据repo的README](https://github.com/webpack-contrib/sass-loader#problems-with-url) ，这里需要做修改。所以这里的绝对路径不被支持，只能使用相对路径，以 `LOGIN_LOGO_IMG` 为例，这张图片放在 public assets 中，需要使用这个变量的时候，并不知道它的 entry-file 相对于 public assets 路径的位置。所幸 [resolve-url-loader](https://github.com/bholloway/resolve-url-loader) 可以解决这个问题，这个 [issue comment](https://github.com/vuejs/vue-cli/issues/2099#issuecomment-639613478) 提供了在 vue.config.js 中配置 resolve-url-loader 的代码
 
   ![absolute-scss-url](../../assets/images/absolute-sass-url.png)
 
