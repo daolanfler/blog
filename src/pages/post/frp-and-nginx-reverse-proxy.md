@@ -215,8 +215,10 @@ server {
 
 1. 如果云服务器开启了防火墙，比如 ufw (Ubuntu)，需要 `sudo ufw enable port` 来开启相应的端口
 2. 以上的 wsl 都是 Ubuntu
+3. Windows 上无法访问 nginx 反向代理暴露的端口的服务，可能是被 windows 防火墙规则阻止，打开 _高级安全 Windows Defender 防火墙_ 允许 nginx.exe 的入站与出站流量
 
 ## 参考
 
 1. 视频教程 <https://www.youtube.com/watch?v=UeuPNkDK84o>
 2. frp github 项目地址 <https://github.com/fatedier/frp>
+3. websocket 的 nginx 反向代理 <https://www.xncoding.com/2018/03/12/fullstack/nginx-websocket.html>
