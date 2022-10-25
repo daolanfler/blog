@@ -57,7 +57,7 @@ export default defineConfig({
       onRoutesGenerated: (routes) =>
         generateSitemap({
           routes,
-          hostname: 'https://vite.dagladefler.xyz/',
+          hostname: 'https://vite.daolanfler.xyz/',
           readable: true,
           dest: 'dist',
         }),

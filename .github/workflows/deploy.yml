@@ -31,7 +31,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           rm: true
           source: "dist/*"
-          target: "/var/www/vite.dagladefler.xyz/html/"
+          target: "/var/www/vite.daolanfler.xyz/html/"
           strip_components: 1
       - name: Success bark notify
         uses: daolanfler/bark-action@v1
@@ -39,7 +39,7 @@ jobs:
           host: ${{ secrets.BARK_HOST }}
           key: ${{ secrets.BARK_KEY }}
           title: 部署成功
-          url: https://vite.dagladefler.xyz
+          url: https://vite.daolanfler.xyz
           body: ${{ github.repository }}[${{ github.sha }}]部署成功
         if: ${{ success() }}
       - name: Failed Bark notify
@@ -48,6 +48,6 @@ jobs:
           host: ${{ secrets.BARK_HOST }}
           key: ${{ secrets.BARK_KEY }}
           title: 部署失败
-          url: https://vite.dagladefler.xyz
+          url: https://vite.daolanfler.xyz
           body: ${{ github.repository }}[${{ github.sha }}]部署失败
         if: ${{ failure() }}
