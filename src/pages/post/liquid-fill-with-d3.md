@@ -10,7 +10,7 @@ tags:
 
 可交互性的示例，请访问 [observehq notebook](https://observablehq.com/d/70713e198a9a835b)
 
-![人and](../../assets/images/liquidfill.gif)
+![liquidfill gif](../../assets/images/liquidfill.gif)
 
 1. 圆环
 
@@ -52,7 +52,7 @@ tags:
 
 ## 性能问题的解决
 
-在项目的某个大屏展示页面上使用了该水球图之后发现，长时间切换到其他浏览器 tab 之后再回到这个页面，或者需要几秒钟才能恢复响应，或者直接崩溃。下面是一个 debug 的记录：
+在项目的某个大屏展示页面上使用了该水球图（5个实例）, 每隔 5s 水球图的数据会更新一次，之后发现，长时间切换到其他浏览器 tab 之后再回到这个页面，或者需要几秒钟才能恢复响应，或者直接崩溃。下面是一个 debug 的记录：
 
 通过观察发现，当页面一直可见时，半小时、一小时之后，页面都没有卡，用浏览器的 performance 查看每一帧（16.6ms) 中水球图动画运行的时间（AnimationFrameFired）只有 0.14ms 左右，也都很均衡，。
 
