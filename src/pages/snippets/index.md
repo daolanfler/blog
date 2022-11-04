@@ -7,6 +7,8 @@ date: 2021-10-04 20:51
 
 `'` won't interpolate anything while `"` will [参考](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash) 
 
+---
+
 ### Windows 终止进程
 
 有一次在配置 nginx 反向代理的时候，从 windows 命令行启动了多次 nginx.exe，关闭了 termial，以为已经同时终止了 nginx.exe 进程，导致浪费了不少时间。此时可以 cd 到 nginx 目录
