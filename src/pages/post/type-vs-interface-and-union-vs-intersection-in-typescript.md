@@ -1,5 +1,5 @@
 ---
-title: TypeScript 联合类型、交叉类型
+title: TypeScript 联合、交叉类型 & 代数类型
 date: 2021-11-01 20:08:03
 tags:
   - typescript
@@ -166,7 +166,30 @@ type test4 = Animal2 extends Dog ? true : false // false
 
 `Dog` 的 age 是 `string`, `Cat` 的 age 是 `number` ，二者存在冲突。
 在 _intersection_ 得到的 Animal1 中，age 是 `never`，不管是 `number` 还是 `string` 都会报错。
-而 _union_ 得到的 Animal2 中，age 既可以是 `number` 又可以是 `string`。  
+而 _union_ 得到的 Animal2 中，age 既可以是 `number` 又可以是 `string`。
+
+### 其它的一些例子
+
+[playground link](https://www.typescriptlang.org/play?#code/C4TwDgpgBAglC8UDkAnAhgOwCYHsC2SUAPsgMYAWAlgDZZIBQ9okUAQgsuRNdToSUgDuOFLQZNw0AMIc4Jdo2bRgEAM7AAjBxkQAHiuyrk6bPkIB+KMBQBXaAC4oAMzTVV0APQfnr91EWSVmrAAEwcUDr6EIbGmLgExGRUYolIXDx8qcKidFCW1nZQji5unt4F0AEsKuoAzNpQegZYRqhxZqkUNLn5tg4+pVBQXgN+VdAAIrJQAGRsw94YEABuEChQQA)
+
+```ts
+type A = 'random' | 'child'
+
+type B = 'hello' | 'world'
+
+type C = A | B
+
+type test1 = C extends 'random' ? true : false // false
+
+type test2 = C extends 'random' | 'child' | 'hello' | 'world' ? true : false // true
+
+type test3 = C extends 'random' | 'child' ? true : false // false
+
+type D = A & B // never
+```
+
+## any/never/unkown
+
 在 TypeSript 中存在 3 个特殊的类型，`any` `unknown` `never`，他们的区别如下：
 
 - `any` 可以赋值给任何类型，也可以被任何类型赋值，用来绕过类型检查
@@ -192,25 +215,27 @@ const getCar = () => {
 const myCar: Car = getCar()
 ```
 
-### 其它的一些例子
+## 代数类型
 
-[playground link](https://www.typescriptlang.org/play?#code/C4TwDgpgBAglC8UDkAnAhgOwCYHsC2SUAPsgMYAWAlgDZZIBQ9okUAQgsuRNdToSUgDuOFLQZNw0AMIc4Jdo2bRgEAM7AAjBxkQAHiuyrk6bPkIB+KMBQBXaAC4oAMzTVV0APQfnr91EWSVmrAAEwcUDr6EIbGmLgExGRUYolIXDx8qcKidFCW1nZQji5unt4F0AEsKuoAzNpQegZYRqhxZqkUNLn5tg4+pVBQXgN+VdAAIrJQAGRsw94YEABuEChQQA)
+product type / sum type
 
 ```ts
-type A = 'random' | 'child'
+enum Animal {
+  Human = 0,
+  Land = 1,
+  Water = 2,
+  Sky = 3,
+}
 
-type B = 'hello' | 'world'
+type A = bool | Animal // 和类型，它的值有 2 + 4 = 6 种可能
 
-type C = A | B
-
-type test1 = C extends 'random' ? true : false // false
-
-type test2 = C extends 'random' | 'child' | 'hello' | 'world' ? true : false // true
-
-type test3 = C extends 'random' | 'child' ? true : false // false
-
-type D = A & B // never
+interface B {
+  creature: Animal;
+  alive: bool;
+} // 积类型，它的值有 2 * 4 = 8 种类型
 ```
+
+[参考了这个回答](https://stackoverflow.com/a/17290029/8947428)
 
 ## Reference
 
