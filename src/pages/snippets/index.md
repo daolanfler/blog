@@ -3,16 +3,32 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
-### bash 中单引号和双引号的区别 
+### 批量删除 git 仓库标签
 
-`'` won't interpolate anything while `"` will [参考](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash) 
+批量删除 remote 的 tags:
+
+```bash
+git push origin --delete $(git ls-remote --tags origin | grep "someprefix.*[^}]$" | cut -f 2)
+```
+
+批量删除本地的 tags:
+
+```bash
+git tag | grep ^someprefix | xargs -n 1 -I% git tag -d %
+```
+
+---
+
+### bash 中单引号和双引号的区别
+
+`'` won't interpolate anything while `"` will [参考](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash)
 
 ---
 
 ### Windows 终止进程
 
 有一次在配置 nginx 反向代理的时候，从 windows 命令行启动了多次 nginx.exe，关闭了 termial，以为已经同时终止了 nginx.exe 进程，导致浪费了不少时间。此时可以 cd 到 nginx 目录
-执行 `TASKKILL  /f /im nginx.exe /T` 终止所有 nginx 进程。
+执行 `TASKKILL /f /im nginx.exe /T` 终止所有 nginx 进程。
 
 ---
 
