@@ -20,28 +20,16 @@ TLDR; 是的，而且是同步执行
 &ensp;&ensp;6. 父元素的 _onClick callback_ 执行 (在这里比较 attaced 时间和事件触发的时间，决定是否执行回调)
 
 由于原始事件的触发时间实际上是早于父元素上 `click` 回调的绑定时间，我们可以由此来判断是否要执行回调。
-这里刚好可以来验证一下标题中的问题，
-如果在 step4 中 queue 一个微任务（比如 promise）做一个 log，如果后于父元素中回调的 log 的话，就可以证明原始事件和冒泡事件是在同一个 event-loop 中同步执行的。
-具体例子看后文，结果证明了原始事件和冒泡事件的确是在同一个 event-loop 中同步执行的。
 
-By the way，有一点要注意的是 microtask 不仅会在 event-loop 中 task 之后执行也会在 JavaScript excuction context empty 的时候执行：
+这里刚好可以来验证一下标题中的问题，如果在原始事件地回调中 queue 一个微任务（比如 promise）做一个 log，如果后于父元素地事件回调的 log 的话，就可以证明原始事件的回调和冒泡事件的回调是在同一个 event-loop (task) 中同步执行的。
+
+不过这里有一点需要 **特别注意** 否则可能得出相反的结论: microtask 不仅会在 event-loop 中 task 之后执行也会在 JavaScript excuction context empty 的时候执行[^1]：
 
 > If the [stack of script settings objects](https://html.spec.whatwg.org/multipage/webappapis.html#stack-of-script-settings-objects) is now empty, [perform a microtask checkpoint](https://html.spec.whatwg.org/multipage/webappapis.html#perform-a-microtask-checkpoint)
 > — [HTML: Cleaning up after a callback](https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-a-callback) step 3
 
-## 文档和标准中的背景知识
-
-- [MDN 的说明](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks)
-- [HTML Standard 的说明](https://html.spec.whatwg.org/multipage/webappapis.html#generic-task-sources) 这个标准里面并没有说哪些 api 会将 task 放到 task queue，哪些会放到 mcirotask queue
-  引用 [8.1.6.1 Event Loops Definitions](https://html.spec.whatwg.org/multipage/webappapis.html#definitions-3) 中这段关于 microtask queue 的描述：
-
-  > Each [event loop](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop) has a microtask queue, which is a queue of microtasks, initially empty. A microtask is a colloquial way of referring to a task that was created via the [queue a microtask](https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-microtask) algorithm.
-
-  直白翻译一下：
-
-  > 每个事件循环有一个 mirotask queue，就是一个微任务组成的队列，开始是空的。microtask(微任务) 指的是通过 queue a mircotask 算法创建的 task 的一个口语化的表达
-
-如果一个 task 是通过 [queue a mircotask](https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-microtask) 创造的，则认为它是一个 microtask，否则是一个 task(macro-task)，比如通过 [queue a task](https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task)。微任务、宏任务只是一个口语化的表达。
+<!-- 具体例子看后文，结果证明了原始事件和冒泡事件的确是在同一个 event-loop 中同步执行的。 -->
+下面用例子验证一下。
 
 ## 例子验证一下
 
@@ -49,7 +37,7 @@ By the way，有一点要注意的是 microtask 不仅会在 event-loop 中 task
 
 [open in stackblitz](https://stackblitz.com/edit/js-hmjac3?file=index.js)
 
-通过 `appDiv.click()` 触发事件，log 如下：
+通过 `appDiv.click()` **程序式地** 触发事件，log 如下（其中 task(event-loop) 用空行分隔）：
 
 ```plaintext
 
@@ -73,7 +61,7 @@ Body: in setTimeout
 // 最后一个任务
 ```
 
-注释掉 `appDiv.click()` ，通过用户点击触发事件，log 如下：
+**注释掉** `appDiv.click()` ，通过用户点击触发事件，log 如下（其中 task(event-loop) 用空行分隔）：
 
 ```plaintext
 // 代码同步执行
@@ -95,3 +83,19 @@ Title: promise in setTimeout
 // 新的任务
 Body: in setTimeout
 ```
+
+通过程序式地触发点击，发现 3 个事件回调在同一个 event-loop 里面同步执行。如果不注意 [^1] 中 microtask 在 execution stack 为空时也会执行，通过用户点击得到的 log 我们会得出相反的结论。
+
+## 文档和标准中的背景知识
+
+- [MDN 的说明](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks)
+- [HTML Standard 的说明](https://html.spec.whatwg.org/multipage/webappapis.html#generic-task-sources) 这个标准里面并没有说哪些 api 会将 task 放到 task queue，哪些会放到 mcirotask queue
+  引用 [8.1.6.1 Event Loops Definitions](https://html.spec.whatwg.org/multipage/webappapis.html#definitions-3) 中这段关于 microtask queue 的描述：
+
+  > Each [event loop](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop) has a microtask queue, which is a queue of microtasks, initially empty. A microtask is a colloquial way of referring to a task that was created via the [queue a microtask](https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-microtask) algorithm.
+
+  直白翻译一下：
+
+  > 每个事件循环有一个 mirotask queue，就是一个微任务组成的队列，开始是空的。microtask(微任务) 指的是通过 queue a mircotask 算法创建的 task 的一个口语化的表达
+
+如果一个 task 是通过 [queue a mircotask](https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-microtask) 创造的，则认为它是一个 microtask，否则是一个 task(macro-task)，比如通过 [queue a task](https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task)。微任务、宏任务只是一个口语化的表达。
