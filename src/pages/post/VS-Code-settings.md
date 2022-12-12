@@ -119,7 +119,7 @@ ctrl + shift + p，输入主题，选择主题即可。`One Dark Pro` 和 `GitHu
 
 登录 GitHub 或微软账号即可。
 
-## vim config {#vim-config}
+## vim config {#vim-configs}
 
 ```json
 {
