@@ -3,6 +3,26 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+### TypeScript ReturnType Inferred as Array Instead of Tuple
+
+```ts
+import type L from 'leaflet'
+import { shallowRef } from 'vue'
+
+export function useMap() {
+  const map = shallowRef<L.Map>()
+  const setMap = (val: L.Map) => {
+    map.value = val
+  }
+  // return [map, setMap] // will be inferred as array
+  return [map, setMap] as [typeof map, typeof setMap]
+}
+```
+
+上述的代码，明显返回的是一个元组，但是如果不加上类型标注的话推断出的返回类型为`(ShallowRef<L.Map | undefined> | ((val: L.Map) => void))[]`，相关 issues：[#6574](https://github.com/microsoft/TypeScript/issues/6574#issuecomment-339185355), [#44309](https://github.com/microsoft/TypeScript/issues/44309)
+
+---
+
 ### 批量删除 git 仓库标签
 
 批量删除 remote 的 tags:
