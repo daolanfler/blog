@@ -3,6 +3,12 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+### vscode 无法识别 tailwindcss 的 `@` rules
+
+[详见此处](https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394)，打开用户设置 `"scss.lint.unknownAtRules": "ignore"`
+
+---
+
 ### TypeScript ReturnType Inferred as Array Instead of Tuple
 
 ```ts
