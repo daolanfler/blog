@@ -84,6 +84,13 @@ function fn({ start = 0, end = 1 } = {}) {
 import earthSvg from '!raw-loader!./icons/earth.svg'
 ```
 
+对于 webpack5，上述方法已不再适用，参考[新的配置](https://webpack.js.org/guides/asset-modules/#replacing-inline-loader-syntax)。
+如果使用 webpack-chain 则可以这样：
+
+```js
+config.module.rule().resourceQuery(/raw/).type('asset/source')
+```
+
 ---
 
 ### git rebase/merge 中接受某一方的改动
