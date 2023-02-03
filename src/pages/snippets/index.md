@@ -43,6 +43,8 @@ git push origin --delete $(git ls-remote --tags origin | grep "someprefix.*[^}]$
 git tag | grep ^someprefix | xargs -n 1 -I% git tag -d %
 ```
 
+vscode 也在[2023 年一月的更新](https://code.visualstudio.com/updates/v1_75#_new-commands)中增加了 `git tag` 相关的更新
+
 ---
 
 ### bash 中单引号和双引号的区别
