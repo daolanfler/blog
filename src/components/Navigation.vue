@@ -39,7 +39,7 @@ const isActiveRoute = (path: string): boolean =>
 }
 .nav {
   grid-template-columns: auto max-content;
-  @apply dark:text-gray-400 text-gray-800 py-8 <md:px-6;
+  @apply dark:text-gray-400 text-gray-800 py-8 lt-md:px-6;
 }
 .title {
   @apply leading-8 font-semibold text-xl sm:text-3xl dark:text-gray-300;

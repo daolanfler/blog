@@ -21,7 +21,7 @@ const posts = computed(() => routes.filter((i) => i))
 </script>
 
 <template>
-  <div class="<md:px-6">
+  <div class="lt-md:px-6">
     <div v-for="item in posts" :key="item.path" class="mb-4">
       <h1 class="blog-title">
         <router-link

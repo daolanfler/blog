@@ -1,5 +1,5 @@
 <template>
-  <div class="<md:px-6">
+  <div class="lt-md:px-6">
     <p>
       <i>Has CodePen Loaded? </i>
       <code>&nbsp;{{ codePenLoaded }}</code>
