@@ -2,7 +2,6 @@
 import { isClient } from '@vueuse/core'
 import { formatPostDate } from '../utils/datetime'
 import { FrontMatter } from '../utils/types'
-import { $ref } from 'vue/macros'
 
 // eslint-disable-next-line vue/no-setup-props-destructure
 const { frontmatter } = defineProps<{ frontmatter: FrontMatter }>()
@@ -16,7 +15,7 @@ if (frontmatter.updateDate) {
 }
 
 const route = useRoute()
-const postBody = $ref<HTMLElement>()
+const postBody = ref<HTMLElement>()
 
 const pageTitle = computed(() => {
   if (route.path.startsWith('/post') || route.path.startsWith('/snippets')) {
@@ -30,19 +29,19 @@ useHead({
 })
 
 if (isClient) {
-  let imageList = $ref<string[]>([])
+  let imageList = ref<string[]>([])
 
   const handleDocumentClick = (e: Event) => {
     const target = e.target as HTMLImageElement
-    if (!imageList.length) {
+    if (!imageList.value.length) {
       const list = Array.from(document.querySelectorAll('img')).map(
         (item) => item.src
       )
-      imageList = [...list]
+      imageList.value = [...list]
     }
     if (target.tagName.toLowerCase() === 'img') {
-      if (target.src && postBody?.contains(target)) {
-        const index = imageList.indexOf(target.src)
+      if (target.src && postBody.value?.contains(target)) {
+        const index = imageList.value.indexOf(target.src)
         if (index > -1) {
           location.href = target.src
         }

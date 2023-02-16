@@ -80,17 +80,15 @@
 </template>
 
 <script setup lang="ts">
-import { $ref } from 'vue/macros'
-
-const colorstr = $ref<string>('')
-let colorList = $ref<string[]>([])
+const colorstr = ref<string>('')
+let colorList = ref<string[]>([])
 
 const getBgColor = (hexColor: string) => {
   return hex2rgba(hexColor, 0.1)
 }
 
 const getColorList = () => {
-  colorList = colorstr
+  colorList.value = colorstr.value
     .split(/[,\r\n\s]/)
     .map((str) => {
       const a = str.trim()
@@ -105,7 +103,7 @@ const hex2rgba = (hex: string, alpha = 1) => {
 }
 
 const rgbaStr = computed(() => {
-  return colorList.map((item) => hex2rgba(item)).join('\n')
+  return colorList.value.map((item) => hex2rgba(item)).join('\n')
 })
 
 // transparency adjust color  https://stackoverflow.com/questions/15898740/how-to-convert-rgba-to-a-transparency-adjusted-hex
@@ -118,11 +116,13 @@ const taResult = computed(() => {
   const [r1, g1, b1, a1 = 1] = (
     taColor.opacityColor.match(/[\d\.]+/g) || []
   ).map((x) => parseFloat(x))
-  console.log([r1, g1, b1, a1])
+  
+  // console.log([r1, g1, b1, a1])
   const [r2, g2, b2, a2] = (taColor.bg.match(/[\d\.]+/g) || []).map((x) =>
     parseFloat(x)
   )
-  console.log([r2, g2, b2, a2])
+
+  // console.log([r2, g2, b2, a2])
   const r = Math.round(r1 * a1 + r2 * (1 - a1))
   const g = Math.round(g1 * a1 + g2 * (1 - a1))
   const b = Math.round(b1 * a1 + b2 * (1 - a1))
