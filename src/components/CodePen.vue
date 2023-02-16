@@ -1,40 +1,40 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
-import { onMounted, toRefs } from 'vue';
-import { useFlagStore } from '../store/pinia';
+import { storeToRefs } from "pinia";
+import { onMounted, toRefs } from "vue";
+import { useFlagStore } from "../store/pinia";
 
 interface Props {
-  userName?: string
-  slug: string
-  height?: string
-  editable?: boolean
-  defaultTab?: string
+  userName?: string;
+  slug: string;
+  height?: string;
+  editable?: boolean;
+  defaultTab?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  defaultTab: 'css,result',
+  defaultTab: "css,result",
   editable: false,
-  userName: 'daolanfler',
-  height: '300',
-})
-const { defaultTab, editable, height, slug, userName } = toRefs(props)
+  userName: "daolanfler",
+  height: "300",
+});
+const { defaultTab, editable, height, slug, userName } = toRefs(props);
 
-const {codePenLoaded} = storeToRefs(useFlagStore())
+const { codePenLoaded } = storeToRefs(useFlagStore());
 
 onMounted(() => {
   // 确保只引入一次
   if (codePenLoaded.value) {
     // @ts-expect-error codepen 脚本方法 https://blog.codepen.io/documentation/embedded-pens/#delayed-embeds-6
-    window.__CPEmbed && window.__CPEmbed(); 
-    return 
+    window.__CPEmbed && window.__CPEmbed();
+    return;
   }
-  // is this going to work and change the pinia store state ? 
-  codePenLoaded.value = true
-  const s = document.createElement('script')
-  s.src = 'https://cpwebassets.codepen.io/assets/embed/ei.js'
-  s.async = true
-  document.body.appendChild(s)
-})
+  // is this going to work and change the pinia store state ?
+  codePenLoaded.value = true;
+  const s = document.createElement("script");
+  s.src = "https://cpwebassets.codepen.io/assets/embed/ei.js";
+  s.async = true;
+  document.body.appendChild(s);
+});
 </script>
 
 <template>
@@ -56,10 +56,16 @@ onMounted(() => {
       padding: 1em;
     "
   >
-    <span>See the Pen
+    <span>
+      See the Pen
       <a :href="`https://codepen.io/${userName}/pen/${slug}`">
         overflow-hidden-with-absolute-position-1
       </a>
-      by {{ userName }} (<a :href="`https://codepen.io/${userName}`">@{{ userName }}</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+      by {{ userName }} (
+      <a :href="`https://codepen.io/${userName}`">@{{ userName }}</a>
+      ) on
+      <a href="https://codepen.io">CodePen</a>
+      .
+    </span>
   </p>
 </template>

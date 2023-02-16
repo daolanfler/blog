@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import { isDark, toggleDark } from '../store'
+import { Icon } from "@iconify/vue";
+import { isDark, toggleDark } from "../store";
 </script>
 
 <template>

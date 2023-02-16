@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite-ssg build",
     "serve": "vite preview",
-    "lint": "eslint src/ --fix --ext .ts,.vue"
+    "lint": "eslint src/ --fix --ext .ts,.vue",
+    "prettier": "prettier --write './**/*{ts,vue}'"
   },
   "dependencies": {
     "@stackblitz/sdk": "^1.8.2",
@@ -44,6 +45,7 @@
     "gray-matter": "^4.0.3",
     "postcss": "^8.4.13",
     "postcss-nested": "^5.0.6",
+    "prettier": "^2.8.4",
     "prismjs": "^1.28.0",
     "typescript": "^4.6.4",
     "unocss": "^0.49.4",

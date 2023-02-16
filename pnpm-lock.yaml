@@ -1,8 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@iconify-icons/el': ^1.2.2
-  '@iconify-icons/ic': ^1.2.4
   '@iconify/vue': ^3.2.1
   '@stackblitz/sdk': ^1.8.2
   '@types/fs-extra': ^11.0.1
@@ -32,6 +30,7 @@ specifiers:
   pinia: ^2.0.30
   postcss: ^8.4.13
   postcss-nested: ^5.0.6
+  prettier: ^2.8.4
   prism-theme-vars: ^0.2.4
   prismjs: ^1.28.0
   typescript: ^4.6.4
@@ -64,8 +63,6 @@ dependencies:
   vue-router: 4.1.6_vue@3.2.47
 
 devDependencies:
-  '@iconify-icons/el': 1.2.2
-  '@iconify-icons/ic': 1.2.4
   '@iconify/vue': 3.2.1_vue@3.2.47
   '@types/fs-extra': 11.0.1
   '@types/markdown-it': 12.2.3
@@ -83,6 +80,7 @@ devDependencies:
   gray-matter: 4.0.3
   postcss: 8.4.13
   postcss-nested: 5.0.6_postcss@8.4.13
+  prettier: 2.8.4
   prismjs: 1.28.0
   typescript: 4.6.4
   unocss: 0.49.4_vite@4.1.1
@@ -352,22 +350,6 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==, registry: https://r.npm.taobao.org/, tarball: https://r.npm.taobao.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz}
-    dev: true
-
-  /@iconify-icons/el/1.2.2:
-    resolution: {integrity: sha512-MGIpUsu+I2tMfpLe8IuO4mC498xetFmkU5pov9xkHMGXHp47DMoZCZJjhLWE25WfP9ugXOIRF12tNOX6ePrFWg==, registry: https://r.npm.taobao.org/, tarball: https://r.npm.taobao.org/@iconify-icons/el/-/el-1.2.2.tgz}
-    dependencies:
-      '@iconify/types': 1.1.0
-    dev: true
-
-  /@iconify-icons/ic/1.2.4:
-    resolution: {integrity: sha512-eGlOVK5F1DpWCliUlniyg0ZVazfPiPCg/i07I/f8EtRI6kjxxaI1l0lbxFPyIXY+D1TYV/xzVojlKLADjNAZyQ==, registry: https://r.npm.taobao.org/, tarball: https://r.npm.taobao.org/@iconify-icons/ic/-/ic-1.2.4.tgz}
-    dependencies:
-      '@iconify/types': 1.1.0
-    dev: true
-
-  /@iconify/types/1.1.0:
-    resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==, registry: https://r.npm.taobao.org/, tarball: https://r.npm.taobao.org/@iconify/types/-/types-1.1.0.tgz}
     dev: true
 
   /@iconify/types/2.0.0:

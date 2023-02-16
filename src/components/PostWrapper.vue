@@ -1,84 +1,84 @@
 <script setup lang="ts">
-import {useHead} from '@vueuse/head'
-import { isClient } from '@vueuse/core'
-import { computed, onMounted, onUnmounted, ref } from 'vue';
-import { useRoute } from 'vue-router';
-import { formatPostDate } from '../utils/datetime'
-import { FrontMatter } from '../utils/types'
+import { useHead } from "@vueuse/head";
+import { isClient } from "@vueuse/core";
+import { computed, onMounted, onUnmounted, ref } from "vue";
+import { useRoute } from "vue-router";
+import { formatPostDate } from "../utils/datetime";
+import { FrontMatter } from "../utils/types";
 
 // eslint-disable-next-line vue/no-setup-props-destructure
-const { frontmatter } = defineProps<{ frontmatter: FrontMatter }>()
+const { frontmatter } = defineProps<{ frontmatter: FrontMatter }>();
 
-const createDate = formatPostDate(frontmatter.date, 'YYYY-MM-DD HH:mm')
+const createDate = formatPostDate(frontmatter.date, "YYYY-MM-DD HH:mm");
 
-let updateDate = ''
+let updateDate = "";
 
 if (frontmatter.updateDate) {
-  updateDate = formatPostDate(frontmatter.updateDate, 'YYYY-MM-DD HH:mm')
+  updateDate = formatPostDate(frontmatter.updateDate, "YYYY-MM-DD HH:mm");
 }
 
-const route = useRoute()
-const postBody = ref<HTMLElement>()
+const route = useRoute();
+const postBody = ref<HTMLElement>();
 
 const pageTitle = computed(() => {
-  if (route.path.startsWith('/post') || route.path.startsWith('/snippets')) {
-    return `天方夜坛 - ${frontmatter.title}`
+  if (route.path.startsWith("/post") || route.path.startsWith("/snippets")) {
+    return `天方夜坛 - ${frontmatter.title}`;
   }
-  return '天方夜坛'
-})
+  return "天方夜坛";
+});
 // set document's title
 useHead({
   title: pageTitle,
-})
+});
 
 if (isClient) {
-  let imageList = ref<string[]>([])
+  let imageList = ref<string[]>([]);
 
   const handleDocumentClick = (e: Event) => {
-    const target = e.target as HTMLImageElement
+    const target = e.target as HTMLImageElement;
     if (!imageList.value.length) {
-      const list = Array.from(document.querySelectorAll('img')).map(
-        (item) => item.src
-      )
-      imageList.value = [...list]
+      const list = Array.from(document.querySelectorAll("img")).map(
+        item => item.src
+      );
+      imageList.value = [...list];
     }
-    if (target.tagName.toLowerCase() === 'img') {
+    if (target.tagName.toLowerCase() === "img") {
       if (target.src && postBody.value?.contains(target)) {
-        const index = imageList.value.indexOf(target.src)
+        const index = imageList.value.indexOf(target.src);
         if (index > -1) {
-          location.href = target.src
+          location.href = target.src;
         }
       }
     }
-  }
+  };
   const navigate = () => {
     if (location.hash) {
       document
         .getElementById(location.hash.slice(1))
-        ?.scrollIntoView({ behavior: 'smooth' })
+        ?.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   onMounted(() => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', (e) => {
-        e.preventDefault()
-        const href = anchor.getAttribute('href') as string
-        history.replaceState({}, '', href)
-        navigate()
-      })
-    })
-    navigate()
-    setTimeout(navigate, 500)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", e => {
+        e.preventDefault();
+        const href = anchor.getAttribute("href") as string;
+        history.replaceState({}, "", href);
+        navigate();
+      });
+    });
+    navigate();
+    setTimeout(navigate, 500);
 
-    document.addEventListener('click', handleDocumentClick, {
+    document.addEventListener("click", handleDocumentClick, {
       capture: false,
-    })
-  })
+    });
+  });
 
   onUnmounted(() => {
-    document.removeEventListener('click', handleDocumentClick)
-  })
+    document.removeEventListener("click", handleDocumentClick);
+  });
 }
 </script>
 
@@ -94,9 +94,7 @@ if (isClient) {
       >
         {{ frontmatter.title }}
       </h1>
-      <p class="text-right italic">
-        created at {{ createDate }}
-      </p>
+      <p class="text-right italic">created at {{ createDate }}</p>
     </template>
     <slot />
 

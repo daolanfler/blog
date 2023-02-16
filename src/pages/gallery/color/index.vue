@@ -1,9 +1,7 @@
 <template>
   <div class="w-full h-full">
     <div>
-      <div class="mb-2">
-        HEX input:
-      </div>
+      <div class="mb-2">HEX input:</div>
       <textarea
         v-model="colorstr"
         type="textarea"
@@ -13,9 +11,7 @@
       />
     </div>
     <div class="mt-4">
-      <div class="mb-2">
-        RGBA output:
-      </div>
+      <div class="mb-2">RGBA output:</div>
       <textarea
         v-model="rgbaStr"
         type="textarea"
@@ -53,7 +49,7 @@
         class="px-2 rounded text-gray-900 border border w-[300px]"
         type="text"
         placeholder="输入带透明度的颜色"
-      >
+      />
     </div>
     <div class="mb-2">
       <label class="mr-2" for="opcolor">底色</label>
@@ -63,76 +59,80 @@
         type="text"
         class="px-2 rounded text-gray-900 border w-[300px]"
         placeholder="输入无透明度的底色 rgba"
-      >
+      />
     </div>
     <div>
       <span>结果：</span>
       <span
         :style="{ background: taResult?.[0] }"
         class="h-8 leading-8 text-center rounded w-max inline-block ml-4 px-4"
-      >{{ taResult?.[0] }}</span>
+      >
+        {{ taResult?.[0] }}
+      </span>
       <span
         class="h-8 leading-8 text-center rounded w-max inline-block ml-4 px-4"
         :style="{ background: taResult?.[1] }"
-      >{{ taResult?.[1] }}</span>
+      >
+        {{ taResult?.[1] }}
+      </span>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref } from "vue";
 
-const colorstr = ref<string>('')
-let colorList = ref<string[]>([])
+const colorstr = ref<string>("");
+let colorList = ref<string[]>([]);
 
 const getBgColor = (hexColor: string) => {
-  return hex2rgba(hexColor, 0.1)
-}
+  return hex2rgba(hexColor, 0.1);
+};
 
 const getColorList = () => {
   colorList.value = colorstr.value
     .split(/[,\r\n\s]/)
-    .map((str) => {
-      const a = str.trim()
-      return a.replace(/\"?(.*)\"?/, '$1')
+    .map(str => {
+      const a = str.trim();
+      return a.replace(/\"?(.*)\"?/, "$1");
     })
-    .filter((a) => a)
-}
+    .filter(a => a);
+};
 
 const hex2rgba = (hex: string, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g)!.map((x) => parseInt(x, 16))
-  return `rgba(${r},${g},${b},${alpha})`
-}
+  const [r, g, b] = hex.match(/\w\w/g)!.map(x => parseInt(x, 16));
+  return `rgba(${r},${g},${b},${alpha})`;
+};
 
 const rgbaStr = computed(() => {
-  return colorList.value.map((item) => hex2rgba(item)).join('\n')
-})
+  return colorList.value.map(item => hex2rgba(item)).join("\n");
+});
 
 // transparency adjust color  https://stackoverflow.com/questions/15898740/how-to-convert-rgba-to-a-transparency-adjusted-hex
 const taColor = reactive({
-  bg: 'rbga(0,0,0,1)',
-  opacityColor: '',
-})
+  bg: "rbga(0,0,0,1)",
+  opacityColor: "",
+});
 
 const taResult = computed(() => {
   const [r1, g1, b1, a1 = 1] = (
     taColor.opacityColor.match(/[\d\.]+/g) || []
-  ).map((x) => parseFloat(x))
-  
+  ).map(x => parseFloat(x));
+
   // console.log([r1, g1, b1, a1])
-  const [r2, g2, b2, a2] = (taColor.bg.match(/[\d\.]+/g) || []).map((x) =>
+  const [r2, g2, b2, a2] = (taColor.bg.match(/[\d\.]+/g) || []).map(x =>
     parseFloat(x)
-  )
+  );
 
   // console.log([r2, g2, b2, a2])
-  const r = Math.round(r1 * a1 + r2 * (1 - a1))
-  const g = Math.round(g1 * a1 + g2 * (1 - a1))
-  const b = Math.round(b1 * a1 + b2 * (1 - a1))
-  return [`rgb(${r}, ${g}, ${b})`, `#${toHex(r)}${toHex(g)}${toHex(b)}`]
-})
+  const r = Math.round(r1 * a1 + r2 * (1 - a1));
+  const g = Math.round(g1 * a1 + g2 * (1 - a1));
+  const b = Math.round(b1 * a1 + b2 * (1 - a1));
+  return [`rgb(${r}, ${g}, ${b})`, `#${toHex(r)}${toHex(g)}${toHex(b)}`];
+});
 
 const toHex = (str: number) => {
-  const a = str.toString(16)
-  return a.length > 1 ? a : `0${a}`
-}
+  const a = str.toString(16);
+  return a.length > 1 ? a : `0${a}`;
+};
 </script>
