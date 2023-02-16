@@ -54,6 +54,7 @@
     "vite-plugin-compression": "^0.3.6",
     "vite-plugin-pages": "^0.18.2",
     "vite-plugin-pages-sitemap": "^1.4.5",
+    "vite-plugin-pwa": "^0.14.4",
     "vite-ssg": "^0.22.1"
   }
 }

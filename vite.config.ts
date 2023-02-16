@@ -2,18 +2,20 @@ import fs from "fs-extra";
 import { resolve } from "path";
 import { defineConfig } from "vite";
 
-import prism from "markdown-it-prism";
+import matter from "gray-matter";
 import anchor from "markdown-it-anchor";
 import markdownItAttrs from "markdown-it-attrs";
-import matter from "gray-matter";
+import prism from "markdown-it-prism";
+import { VitePWA } from "vite-plugin-pwa";
 
 import Vue from "@vitejs/plugin-vue";
-import Markdown from "vite-plugin-md";
-import Pages from "vite-plugin-pages";
 import UnoCSS from "unocss/vite";
 import ViteCompression from "vite-plugin-compression";
+import Markdown from "vite-plugin-md";
+import Pages from "vite-plugin-pages";
 import generateSitemap from "vite-plugin-pages-sitemap";
 
+// for some reasons the order matters here
 import "prismjs/components/prism-regex";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-typescript";
@@ -32,6 +34,12 @@ export default defineConfig({
     include: [],
   },
   plugins: [
+    VitePWA({
+      registerType: "autoUpdate",
+      devOptions: {
+        enabled: true,
+      },
+    }),
     ViteCompression(),
 
     Vue({
