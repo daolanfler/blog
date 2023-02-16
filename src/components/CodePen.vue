@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { onMounted, toRefs } from "vue";
-import { useFlagStore } from "../store/pinia";
+import { useAppStateStore } from "../store/pinia";
 
 interface Props {
   userName?: string;
@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 const { defaultTab, editable, height, slug, userName } = toRefs(props);
 
-const { codePenLoaded } = storeToRefs(useFlagStore());
+const { codePenLoaded } = storeToRefs(useAppStateStore());
 
 onMounted(() => {
   // 确保只引入一次

@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const useFlagStore = defineStore("flag", {
+export const useAppStateStore = defineStore("appState", {
   state: () => {
     return {
       codePenLoaded: false,
