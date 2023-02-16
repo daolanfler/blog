@@ -1,24 +1,27 @@
 <template>
-  <div class="">
-    <div class="flex flex-col space-y-4 items-start">
+  <div class="h-[calc(100vh-16em)] flex flex-col justify-center items-center">
+    <div class="flex items-center space-x-6 flex-wrap">
       <span class="site-link" @click="jumpTo('twitter')">
-        <Icon icon="mdi:twitter" class="text-[#1a8cd8] w-8 h-8" />
+        <Icon icon="mdi:twitter" class="text-[#1a8cd8] w-12 h-12" />
         <span class="font-mono text-[12px]">Twitter</span>
       </span>
       <span class="site-link" @click="jumpTo('github')">
-        <Icon icon="mdi:github" class="w-8 h-8" />
+        <Icon icon="mdi:github" class="w-12 h-12" />
         <span class="font-mono text-[12px]">GitHub</span>
       </span>
       <span class="site-link" @click="jumpTo('onlyfans')">
-        <img
+        <!-- <img
           src="../../assets/icons/512px-OnlyFans_Logo.svg.png"
-          class="h-8"
+          class="h-12"
           alt="onlyfans icon"
-        >
+        > -->
+        <Icon icon="tabler:brand-onlyfans" class="text-[#1a8cd8] w-12 h-12" />
         <span class="self-start font-mono text-[12px]">OnlyFans</span>
       </span>
     </div>
-    <div class="mt-8">
+    <div
+      class="mt-8 text-3xl text-gray-400 dark:hover:text-white hover:(text-blue underline)"
+    >
       <router-link :to="{ path: '/gallery' }" class="font-mono">
         Others
       </router-link>

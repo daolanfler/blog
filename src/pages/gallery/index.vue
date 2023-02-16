@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ul >
-      <li class="hover:underline mb-2" v-for="(item, index) in subpages" :key="index">
+    <ul>
+      <li v-for="(item, index) in subpages" :key="index" class="hover:underline mb-2">
         <router-link :to="`${route.path}/${item.path}`">
           {{ item.name }}
         </router-link>
