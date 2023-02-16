@@ -18,7 +18,8 @@ TLDR; 是的，而且是同步执行
 &ensp;&ensp;4. 给父元素 addEventListener (并记录下 attached 的时间)  
 &ensp;&ensp;5. 事件冒泡到父元素  
 &ensp;&ensp;6. 父元素的 _onClick callback_ 执行 (在这里比较 attaced 时间和事件触发的时间，决定是否执行回调)
-![事件绑定流程](../../assets/images/vue-event-attach.png)
+![事件绑定流程](../../assets/images/vue-event-attach.png)  
+[view on excalidraw](https://excalidraw.com/#json=eX4hjCwLoLam4-vhV0zAH,GWhL_MCYZdBHZxKZ8zxb3A)  
 由于原始事件的触发时间实际上是早于父元素上 `click` 回调的绑定时间，我们可以由此来判断是否要执行回调。
 
 这里刚好可以来验证一下标题中的问题，如果在原始事件地回调中 queue 一个微任务（比如 promise）做一个 log，如果后于父元素地事件回调的 log 的话，就可以证明原始事件的回调和冒泡事件的回调是在同一个 event-loop (task) 中同步执行的。

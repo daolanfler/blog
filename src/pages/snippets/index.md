@@ -3,6 +3,11 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+### cheatsheet
+
+当被纷繁复杂的 echarts 配置项折腾的死去活来的时候，应该早点去看看[管网上的 cheat sheet](https://echarts.apache.org/en/cheat-sheet.html)，
+同理对于其他琐碎的命令、配置，以后在一头钻进文档之前，还是先搜索一下 *关键字+cheat sheet* 吧。类似的还有 [rust cheat sheet](https://cheats.rs/), [tldr](https://tldr.sh/), [gdb cheetsheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)，以及各个网站的快捷键（如果频繁使用的话，比如白板绘图的网站 exclidraw/tldraw，快捷键都差不多，还能提升体验和效率）。
+
 ### vscode 无法识别 tailwindcss 的 `@` rules
 
 [详见此处](https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394)，打开用户设置 `"scss.lint.unknownAtRules": "ignore"`
