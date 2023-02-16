@@ -12,7 +12,9 @@ const isActiveRoute = (path: string): boolean =>
   <header class="m-auto">
     <nav class="grid nav h-24 items-center dark:text-gray-200">
       <div class="title">
-        <router-link :to="{ path: '/' }">天方夜坛</router-link>
+        <router-link :to="{ path: '/' }">
+          天方夜坛
+        </router-link>
       </div>
       <div class="grid grid-flow-col gap-x-5 items-center">
         <router-link :to="{ path: '/' }">
@@ -52,13 +54,15 @@ const isActiveRoute = (path: string): boolean =>
 
 .nav {
   grid-template-columns: auto max-content;
-  @apply dark: text-gray-400 text-gray-800 py-8 lt-md:px-6;
+  @apply dark:text-gray-400 text-gray-800 py-8 lt-md:px-6;
 }
 
+.nav span {
+  @apply dark:hover:text-gray-100 hover:text-blue-500;
+}
 :deep() {
-  .nav span,
   svg {
-    @apply dark: hover:text-gray-100 hover:text-blue-500;
+    @apply dark:hover:text-gray-100 hover:text-blue-500;
   }
 }
 
