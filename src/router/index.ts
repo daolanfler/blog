@@ -1,11 +1,11 @@
 import { RouteRecordRaw } from "vue-router";
 
-const blogs = import.meta.globEager("../mds/blog/*.md");
+const blogs = import.meta.glob("../mds/blog/*.md", { eager: true });
 
 const blogRoutes: RouteRecordRaw[] = Object.keys(blogs).map(key => {
   return {
     path: /\/([^/]+)\.md$/.exec(key)![1],
-    component: blogs[key].default,
+    component: (blogs[key] as any).default,
   };
 });
 
