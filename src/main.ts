@@ -1,3 +1,6 @@
+import "uno.css"
+import '@unocss/reset/tailwind.css'
+
 import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat.js'
 import timezone from 'dayjs/plugin/timezone.js'
@@ -5,7 +8,6 @@ import utc from 'dayjs/plugin/utc.js'
 import NProgress from 'nprogress'
 import { createPinia } from 'pinia'
 import allPages from 'virtual:generated-pages'
-import 'virtual:windi.css'
 import { ViteSSG } from 'vite-ssg'
 import { RouterScrollBehavior } from 'vue-router'
 import App from './App.vue'

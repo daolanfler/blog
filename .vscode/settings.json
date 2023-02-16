@@ -8,9 +8,9 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "windicss.includeLanguages": {
-    "postcss": "css"
-  },
+  // "windicss.includeLanguages": {
+  //   "postcss": "css"
+  // },
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "css.customData": [

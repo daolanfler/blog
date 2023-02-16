@@ -136,5 +136,5 @@ module.exports = {
 
 ## 参考
 
-1. [Dark Mode in Css](https://css-tricks.com/dark-modes-with-css/)
+1. [Dark Mode in CSS](https://css-tricks.com/dark-modes-with-css/)
 2. 各个 UI 组件库的官方文档

@@ -13,7 +13,7 @@ import Components from 'unplugin-vue-components/vite'
 import Vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
-import WindiCSS from 'vite-plugin-windicss'
+import UnoCSS from 'unocss/vite'
 import ViteCompression from 'vite-plugin-compression'
 import generateSitemap from 'vite-plugin-pages-sitemap'
 
@@ -40,7 +40,7 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
-    WindiCSS(),
+    UnoCSS(),
 
     Pages({
       extensions: ['vue', 'md'],
