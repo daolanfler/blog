@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
+import { onMounted, toRefs } from 'vue';
 import { useFlagStore } from '../store/pinia';
 
 interface Props {

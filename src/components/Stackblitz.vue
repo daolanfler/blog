@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
 import sdk from '@stackblitz/sdk'
+import { onMounted, ref } from 'vue';
 
 const blitzRef = ref<HTMLElement | null>(null)
 

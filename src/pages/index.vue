@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { isDev } from '../utils/common';
 import { formatPostDate } from '../utils/datetime'
 

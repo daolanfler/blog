@@ -7,9 +7,6 @@ import anchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
 import matter from 'gray-matter'
 
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-
 import Vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
@@ -63,7 +60,7 @@ export default defineConfig({
     }),
 
     Markdown({
-      wrapperComponent: 'PostWrapper',
+      wrapperComponent: 'post-wrapper',
       markdownItSetup(md) {
         md.use(markdownItAttrs)
 
@@ -74,18 +71,8 @@ export default defineConfig({
         md.use(prism)
       },
     }),
-    AutoImport({
-      imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
-    }),
-
-    Components({
-      extensions: ['vue', 'md'],
-      dts: true,
-      include: [/\.vue$/, /\.md$/],
-      // resolvers: IconsResolver({
-      //   componentPrefix: '',
-      // }),
-    }),
   ],
-  ssgOptions: {},
+  ssgOptions: {
+    format: 'esm'
+  },
 })

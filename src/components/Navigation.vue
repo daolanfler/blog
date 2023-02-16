@@ -1,7 +1,6 @@
 <script setup lang="ts">
-// import { Icon } from '@iconify/vue/dist/offline'
-// import bookmarkIcon from '@iconify-icons/ic/outline-bookmark-border'
-// import snippetIcon from '@iconify-icons/ic/outline-text-snippet'
+import { useRouter } from 'vue-router';
+import ChangeTheme from './ChangeTheme.vue';
 
 const router = useRouter()
 

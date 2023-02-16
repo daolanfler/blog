@@ -80,6 +80,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed, reactive, ref } from 'vue';
+
 const colorstr = ref<string>('')
 let colorList = ref<string[]>([])
 

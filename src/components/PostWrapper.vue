@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import {useHead} from '@vueuse/head'
 import { isClient } from '@vueuse/core'
+import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
 import { formatPostDate } from '../utils/datetime'
 import { FrontMatter } from '../utils/types'
 

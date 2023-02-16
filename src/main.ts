@@ -16,6 +16,9 @@ import './index.css'
 import './styles/main.postcss'
 import './styles/markdown.postcss'
 import { FrontMatter } from './utils/types'
+import PostWrapper from "./components/PostWrapper.vue"
+import CodePen from "./components/CodePen.vue"
+import Stackblitz from "./components/Stackblitz.vue"
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -41,6 +44,9 @@ export const createApp = ViteSSG(
   // function to have custom setups
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ app, router, routes, isClient, initialState }) => {
+    app.component("PostWrapper", PostWrapper)
+    app.component("CodePen", CodePen)
+    app.component("Stackblitz", Stackblitz)
     dayjs.extend(LocalizedFormat)
     dayjs.extend(utc)
     dayjs.extend(timezone)
