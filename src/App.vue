@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation.vue";
 
 <template>
   <Navigation />
-  <main class="m-auto py-8">
+  <main class="m-auto py-8 lt-md:px-6">
     <router-view />
   </main>
   <Footer />

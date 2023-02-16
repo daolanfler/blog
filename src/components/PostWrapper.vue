@@ -85,7 +85,6 @@ if (isClient) {
 <template>
   <div
     ref="postBody"
-    class="lt-md:px-6"
     :class="{ lyrics: frontmatter.type === 'lyrics' }"
   >
     <template v-if="route.path.startsWith('/post')">
@@ -94,7 +93,9 @@ if (isClient) {
       >
         {{ frontmatter.title }}
       </h1>
-      <p class="text-right italic">created at {{ createDate }}</p>
+      <p class="text-right italic">
+        created at {{ createDate }}
+      </p>
     </template>
     <slot />
 

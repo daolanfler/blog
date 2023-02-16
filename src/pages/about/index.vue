@@ -1,5 +1,5 @@
 <template>
-  <div class="lt-md:px-6">
+  <div class="">
     <div class="flex flex-col space-y-4 items-start">
       <span class="site-link" @click="jumpTo('twitter')">
         <Icon icon="mdi:twitter" class="text-[#1a8cd8] w-8 h-8" />
