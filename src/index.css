@@ -1,11 +1,1 @@
 @import url(./prism-vars.css);
-
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
-@layer utilities {
-  .code {
-    @apply px-1 rounded-sm dark:(text-red-500 bg-dark-200) text-red-500 bg-light-700;
-  }
-}
