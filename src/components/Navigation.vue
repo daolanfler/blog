@@ -1,15 +1,23 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+import { computed } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import ChangeTheme from "./ChangeTheme.vue";
 
 const router = useRouter();
+const route = useRoute();
 
 const isActiveRoute = (path: string): boolean =>
   router.currentRoute.value.path === path;
+
+const showHeader = computed(() => {
+  return (
+    !route.fullPath.includes("lyrics") || route.fullPath.endsWith("lyrics")
+  );
+});
 </script>
 
 <template>
-  <header class="m-auto">
+  <header v-show="showHeader" class="m-auto">
     <nav class="grid nav h-24 items-center dark:text-gray-200">
       <div class="title">
         <router-link :to="{ path: '/' }">
@@ -67,6 +75,6 @@ const isActiveRoute = (path: string): boolean =>
 }
 
 .title {
-  @apply leading-8 font-semibold text-xl sm: text-3xl dark:text-gray-300;
+  @apply leading-8 font-semibold text-xl sm:text-3xl dark:text-gray-300;
 }
 </style>

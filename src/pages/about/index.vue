@@ -17,15 +17,18 @@
         >
         <span class="self-start font-mono text-[12px]">OnlyFans</span>
       </span>
-
-      <!-- <router-link :to="{ path: '/gallery' }" class="underline block">
-        Gallery
-      </router-link> -->
+    </div>
+    <div class="mt-8">
+      <router-link :to="{ path: '/gallery' }" class="font-mono">
+        Others
+      </router-link>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+// TODO  spotify now playing
+// lint staged
 function jumpTo(place: string) {
   switch (place) {
     case "twitter":
@@ -44,9 +47,6 @@ function jumpTo(place: string) {
 </script>
 
 <style scoped lang="postcss">
-a {
-  width: fit-content;
-}
 .site-link {
   @apply cursor-pointer flex flex-col items-center;
   &:hover {
