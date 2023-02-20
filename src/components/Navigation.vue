@@ -76,5 +76,9 @@ const showHeader = computed(() => {
 
 .title {
   @apply leading-8 font-semibold text-xl sm:text-3xl dark:text-gray-300;
+  > a {
+    @apply bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 text-transparent;
+    @apply dark:(from-[rgba(234,11,251,84%)] to-[rgba(248,149,113,83%)]);
+  }
 }
 </style>
