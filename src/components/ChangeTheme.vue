@@ -2,7 +2,9 @@
 import { Icon } from "@iconify/vue";
 import { useDark, useToggle } from "@vueuse/core";
 
-const isDark = useDark()
+const isDark = useDark({
+  storageKey: 'theme'
+})
 const toggleDark = useToggle(isDark);
 
 

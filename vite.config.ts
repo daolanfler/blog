@@ -8,6 +8,7 @@ import markdownItAttrs from "markdown-it-attrs";
 import matter from "gray-matter";
 
 import Vue from "@vitejs/plugin-vue";
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import Markdown from "vite-plugin-md";
 import Pages from "vite-plugin-pages";
 import UnoCSS from "unocss/vite";
@@ -37,6 +38,7 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
+    VueJsx(),
     UnoCSS(),
 
     Pages({

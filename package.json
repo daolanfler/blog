@@ -38,6 +38,7 @@
     "@unocss/transformer-directives": "^0.49.4",
     "@unocss/transformer-variant-group": "^0.49.4",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "critters": "^0.0.16",
     "eslint": "^8.15.0",
