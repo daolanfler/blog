@@ -36,6 +36,7 @@ export function getScriptSrc(props: ColorModeScriptProps = {}) {
   // const cookieScript = `(function(){try{var a=function(o){var l="(prefers-color-scheme: dark)",v=window.matchMedia(l).matches?"dark":"light",e=o==="system"?v:o,d=document.documentElement,m=document.body,i="chakra-ui-light",n="chakra-ui-dark",s=e==="dark";return m.classList.add(s?n:i),m.classList.remove(s?i:n),d.style.colorScheme=e,d.dataset.theme=e,e},u=a,h="${init}",r="${key}",t=document.cookie.match(new RegExp("(^| )".concat(r,"=([^;]+)"))),c=t?t[2]:null;c?a(c):document.cookie="".concat(r,"=").concat(a(h),"; max-age=31536000; path=/")}catch(a){}})();
   // `;
 
+  // windicss / unocss 默认基于 class 的主题切换
   const localStorageScript = `
   (function () {
   try {
@@ -50,8 +51,6 @@ export function getScriptSrc(props: ColorModeScriptProps = {}) {
         return (
           o.classList.add(i ? d : l),
           o.classList.remove(i ? l : d),
-          (o.style.colorScheme = r),
-          (o.dataset.theme = r),
           r
         )
       },
