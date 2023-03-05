@@ -1,7 +1,9 @@
 <template>
   <div class="dark:text-gray-300">
     <div class="mb-6">
-      <p class="text-lg font-bold mb-2">Whoami ?</p>
+      <p class="text-lg font-bold mb-2">
+        Whoami ?
+      </p>
       <p>A wanderer by trade, a fontend developer</p>
       <p>Randomly using mac/linux/window and feels all ok</p>
       <p>Recently been learning rust (wish me good luck)</p>
@@ -10,7 +12,9 @@
       <p>Will be in many corners of this planet</p>
     </div>
     <div class="mb-6">
-      <p class="text-lg font-bold mb-2">Things that make life easier</p>
+      <p class="text-lg font-bold mb-2">
+        Things that make life easier
+      </p>
       <ul>
         <li>Vue3 + Vite</li>
         <li>Leaflet</li>
@@ -21,7 +25,9 @@
       </ul>
     </div>
     <div class="mb-6">
-      <p class="text-lg font-bold mb-2">Demo & Others</p>
+      <p class="text-lg font-bold mb-2">
+        Demo & Others
+      </p>
       <span class="inline-block hover:underline">
         <router-link
           :to="{ path: '/gallery' }"
@@ -33,7 +39,9 @@
     </div>
 
     <div>
-      <p class="text-lg font-bold mb-2">Find me here</p>
+      <p class="text-lg font-bold mb-2">
+        Find me here
+      </p>
       <div class="flex items-center space-x-6 flex-wrap">
         <a href="mailto:daolanfler@gmail.com">
           <span class="site-link">
