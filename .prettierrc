@@ -10,5 +10,6 @@
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
   "trailingComma": "es5",
-  "proseWrap": "preserve"
+  "proseWrap": "preserve",
+  "singleQuote": false
 }

@@ -3,10 +3,18 @@ title: Snippets
 date: 2021-10-04 20:51
 ---
 
+### Promise.all 错误处理
+
+使用 `Promise.all` 的时候，如果传入的 promise 其中一个 _reject_ 了，那么整个 `Promise.all` 也会 _reject_，
+并且会丢失其他 promise 的结果，错误信息也不太好处理 (因为不确定是哪一个 promise reject 了)。
+这时候可以使用 `Promise.allSetted` 来替代，[参考](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled), 不过要注意一下兼容性。
+
+---
+
 ### cheatsheet
 
 当被纷繁复杂的 echarts 配置项折腾的死去活来的时候，应该早点去看看[管网上的 cheat sheet](https://echarts.apache.org/en/cheat-sheet.html)，
-同理对于其他琐碎的命令、配置，以后在一头钻进文档之前，还是先搜索一下 *关键字+cheat sheet* 吧。类似的还有 [rust cheat sheet](https://cheats.rs/), [tldr](https://tldr.sh/), [gdb cheetsheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)，以及各个网站的快捷键（如果频繁使用的话，比如白板绘图的网站 exclidraw/tldraw，快捷键都差不多，还能提升体验和效率）。
+同理对于其他琐碎的命令、配置，以后在一头钻进文档之前，还是先搜索一下 _关键字+cheat sheet_ 吧。类似的还有 [rust cheat sheet](https://cheats.rs/), [tldr](https://tldr.sh/), [gdb cheetsheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)，以及各个网站的快捷键（如果频繁使用的话，比如白板绘图的网站 exclidraw/tldraw，快捷键都差不多，还能提升体验和效率）。
 
 ---
 
@@ -19,16 +27,16 @@ date: 2021-10-04 20:51
 ### TypeScript ReturnType Inferred as Array Instead of Tuple
 
 ```ts
-import type L from 'leaflet'
-import { shallowRef } from 'vue'
+import type L from "leaflet";
+import { shallowRef } from "vue";
 
 export function useMap() {
-  const map = shallowRef<L.Map>()
+  const map = shallowRef<L.Map>();
   const setMap = (val: L.Map) => {
-    map.value = val
-  }
+    map.value = val;
+  };
   // return [map, setMap] // will be inferred as array
-  return [map, setMap] as [typeof map, typeof setMap]
+  return [map, setMap] as [typeof map, typeof setMap];
 }
 ```
 
@@ -90,14 +98,14 @@ function fn({ start = 0, end = 1 } = {}) {
 使用 `raw-loader` 加载 svg 文件，获取其中的代码为字符串。[来源](https://github.com/codesandbox/codesandbox-client/issues/747#issuecomment-443996080) 以及 [inline loader 语法](https://webpack.js.org/concepts/loaders/#inline)
 
 ```javascript
-import earthSvg from '!raw-loader!./icons/earth.svg'
+import earthSvg from "!raw-loader!./icons/earth.svg";
 ```
 
 对于 webpack5，上述方法已不再适用，参考[新的配置](https://webpack.js.org/guides/asset-modules/#replacing-inline-loader-syntax)。
 如果使用 webpack-chain 则可以这样：
 
 ```js
-config.module.rule().resourceQuery(/raw/).type('asset/source')
+config.module.rule().resourceQuery(/raw/).type("asset/source");
 ```
 
 ---
@@ -145,14 +153,14 @@ neovim 的剪贴板是有一个优先级的，详见 [相关 issue](https://gith
 
 ```javascript
 const adventurer = {
-  name: 'Alice',
+  name: "Alice",
   cat: {
-    name: 'Dinah',
+    name: "Dinah",
   },
-}
+};
 
-const dogName = adventurer.dog?.name
-console.log(dogName)
+const dogName = adventurer.dog?.name;
+console.log(dogName);
 // expected output: undefined
 ```
 
@@ -181,13 +189,13 @@ console.log(dogName)
  * @description 这样在输入 map. 的时候（vscode的）intellisense 即可触发
  * @type {BMap.Map}
  */
-const map = this.bmap
+const map = this.bmap;
 
 /**
  * @returns {import("node_modules/element-ui/types/table-column.js").ElTableColumn[]}
  */
 export default function (customHeaders = []) {
-  return xxxx
+  return xxxx;
 }
 ```
 
@@ -201,15 +209,15 @@ export default function (customHeaders = []) {
 export function isContentOverflow(el) {
   // use range width instead of scrollWidth to determine whether the text is overflowing
   // to address a potential FireFox bug: https://bugzilla.mozilla.org/show_bug.cgi?id=1074543#c3
-  const range = document.createRange()
-  range.setStart(el, 0)
-  range.setEnd(el, el.childNodes.length)
-  const rangeWidth = range.getBoundingClientRect().width
+  const range = document.createRange();
+  range.setStart(el, 0);
+  range.setEnd(el, el.childNodes.length);
+  const rangeWidth = range.getBoundingClientRect().width;
   const padding =
     (parseInt(getComputedStyle(el).paddingLeft, 10) || 0) +
-    (parseInt(getComputedStyle(el).paddingRight, 10) || 0)
+    (parseInt(getComputedStyle(el).paddingRight, 10) || 0);
   return (
     rangeWidth + padding > el.offsetWidth || el.scrollWidth > el.offsetWidth
-  )
+  );
 }
 ```
