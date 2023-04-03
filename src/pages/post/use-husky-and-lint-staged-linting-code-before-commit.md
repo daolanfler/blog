@@ -19,16 +19,16 @@ git 提供了一系列的 [hook](https://git-scm.com/book/en/v2/Customizing-Git-
 npm install -D husky
 
 # 添加 npm script prepare (prepare 会在发布前或 npm install 之后执行)
-npm set-script prepare "husky install"
+npm pkg set scripts.prepare="husky install"
 # 执行 & 生成 .husky 文件夹
 npm run prepare
 
-# 添加一个 pre-commit hook, 内容是 `npm test`
-npx husky add .husky/pre-commit "npm test"
+# 添加一个 pre-commit hook, 内容是 `npx lint-staged`
+npx husky add .husky/pre-commit "npx lint-staged"
 git add .husky/pre-commit
 
 # 提交刚才的改动
-git commit -m "Keep calm and commit"
+git commit -m "chore: husky pre-commit init"
 ```
 
 如果很不幸，你的项目文件夹不是你的 git 仓库的根目录（即 package.json 和 .git 不在同一目录），那么可以参考[文档这里](https://typicode.github.io/husky/#/?id=custom-directory)配置。
