@@ -34,7 +34,7 @@ const list = [
     path: '05'
   },
   {
-    name: 'Pipe flow animation',
+    name: 'fabric js dash 流动动画',
     path: '06'
   }
 ];
