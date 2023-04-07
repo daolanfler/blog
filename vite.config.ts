@@ -58,7 +58,6 @@ export default defineConfig({
           hostname: "https://vite.daolanfler.xyz/",
           readable: true,
           dest: "dist",
-          filename: "sitemap-1",
         }),
     }),
 
