@@ -15,6 +15,7 @@
     "@vueuse/components": "^9.12.0",
     "@vueuse/core": "^9.12.0",
     "@vueuse/head": "^1.0.25",
+    "colorjs.io": "^0.4.3",
     "dayjs": "^1.11.7",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.4",
@@ -25,6 +26,7 @@
     "prism-theme-vars": "^0.2.4",
     "vite-plugin-md": "^0.21.5",
     "vue": "^3.2.47",
+    "vue-color-kit": "^1.0.5",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

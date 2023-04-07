@@ -22,5 +22,10 @@ declare module "markdown-it-attrs" {
 }
 
 declare module "https://cdn.jsdelivr.net/npm/fabric@5.3.0/+esm" {
-  export * from "fabric"
+  export * from "fabric";
+}
+
+declare module "https://colorjs.io/dist/color.js" {
+  import Color from "colorjs.io";
+  export default Color;
 }

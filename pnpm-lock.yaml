@@ -16,6 +16,9 @@ dependencies:
   '@vueuse/head':
     specifier: ^1.0.25
     version: 1.0.25(vue@3.2.47)
+  colorjs.io:
+    specifier: ^0.4.3
+    version: registry.npmmirror.com/colorjs.io@0.4.3
   dayjs:
     specifier: ^1.11.7
     version: 1.11.7
@@ -46,6 +49,9 @@ dependencies:
   vue:
     specifier: ^3.2.47
     version: 3.2.47
+  vue-color-kit:
+    specifier: ^1.0.5
+    version: registry.npmmirror.com/vue-color-kit@1.0.5(vue@3.2.47)
   vue-router:
     specifier: ^4.1.6
     version: 4.1.6(vue@3.2.47)
@@ -4405,6 +4411,12 @@ packages:
     dev: true
     optional: true
 
+  registry.npmmirror.com/colorjs.io@0.4.3:
+    resolution: {integrity: sha512-Jr6NiWFZCuSECl23Bhe4jvDldQsE0ErnWrdl3xIUFy+Bkp0l8r5qt/iZlNH47/xxGP5izcyC8InjoUoI4Po+Pg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/colorjs.io/-/colorjs.io-0.4.3.tgz}
+    name: colorjs.io
+    version: 0.4.3
+    dev: false
+
   registry.npmmirror.com/combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/combined-stream/-/combined-stream-1.0.8.tgz}
     name: combined-stream
@@ -5263,6 +5275,17 @@ packages:
     version: 1.0.2
     dev: true
     optional: true
+
+  registry.npmmirror.com/vue-color-kit@1.0.5(vue@3.2.47):
+    resolution: {integrity: sha512-PUQzqdpI7672YYuoHdTLENHldieVMis0u9g2n7NAxiLGdiaqCD/QaYtbDOvtASpN5oSIfKxQgPV+i45MOlkKnw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-color-kit/-/vue-color-kit-1.0.5.tgz}
+    id: registry.npmmirror.com/vue-color-kit/1.0.5
+    name: vue-color-kit
+    version: 1.0.5
+    peerDependencies:
+      vue: ^3.0.5
+    dependencies:
+      vue: 3.2.47
+    dev: false
 
   registry.npmmirror.com/w3c-hr-time@1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/w3c-hr-time/-/w3c-hr-time-1.0.2.tgz}

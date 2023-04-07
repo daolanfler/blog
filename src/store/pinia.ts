@@ -1,3 +1,4 @@
+import { useDark } from "@vueuse/core";
 import { defineStore } from "pinia";
 import { useRoute } from "vue-router";
 
@@ -8,6 +9,10 @@ export const useAppStateStore = defineStore("appState", {
     };
   },
   getters: {
+    theme() {
+      const isDark = useDark({ storageKey: "theme" });
+      return isDark.value ? "dark" : "light";
+    },
     hideHeader() {
       const route = useRoute();
       if (

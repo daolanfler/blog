@@ -8,5 +8,6 @@ export default defineConfig({
   presets: [presetUno()],
   shortcuts: {
     code: "px-1 rounded-sm dark:(text-red-500 bg-dark-200) text-red-500 bg-light-700",
+    "demo-wrapper": 'h-[calc(100vh-8rem)]'
   },
 });
