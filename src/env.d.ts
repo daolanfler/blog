@@ -20,3 +20,7 @@ declare module "markdown-it-attrs" {
   const plugin: PluginSimple;
   export default plugin;
 }
+
+declare module "https://cdn.jsdelivr.net/npm/fabric@5.3.0/+esm" {
+  export * from "fabric"
+}

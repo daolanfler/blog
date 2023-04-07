@@ -77,5 +77,10 @@ export default defineConfig({
   ],
   ssgOptions: {
     format: "esm",
+    includedRoutes(paths, routes) {
+      // 排除 challenges , cdn 引入无法 ssg, 但是刷新页面会有屏闪
+      // TODO 从 vite-ssg 升级到 nuxt
+      return paths.filter(p => !p.includes("challenge"));
+    },
   },
 });

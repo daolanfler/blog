@@ -53,6 +53,10 @@ export const createApp = ViteSSG(
     dayjs.extend(LocalizedFormat);
     dayjs.extend(utc);
     dayjs.extend(timezone);
+
+    const pinia = createPinia();
+    app.use(pinia);
+
     if (isClient) {
       router.beforeEach(() => {
         NProgress.start();
@@ -61,7 +65,5 @@ export const createApp = ViteSSG(
         NProgress.done();
       });
     }
-
-    app.use(createPinia());
   }
 );

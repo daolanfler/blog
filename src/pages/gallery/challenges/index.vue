@@ -33,6 +33,10 @@ const list = [
     name: 'SCSS Palyground',
     path: '05'
   },
+  {
+    name: 'Pipe flow animation',
+    path: '06'
+  }
 ];
 </script>
 

@@ -2,17 +2,17 @@
 import { computed } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import ChangeTheme from "./ChangeTheme.vue";
+import { useAppStateStore } from "../store/pinia";
 
 const router = useRouter();
-const route = useRoute();
 
 const isActiveRoute = (path: string): boolean =>
   router.currentRoute.value.path === path;
 
+const store = useAppStateStore();
+
 const showHeader = computed(() => {
-  return (
-    !route.fullPath.includes("lyrics") || route.fullPath.endsWith("lyrics")
-  );
+  return !store.hideHeader;
 });
 </script>
 
