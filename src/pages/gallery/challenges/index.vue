@@ -41,6 +41,10 @@ const list = [
     name: "canvas 画布",
     path: "07",
   },
+  {
+    name: 'canvas 时钟',
+    path: '08'
+  }
 ];
 </script>
 

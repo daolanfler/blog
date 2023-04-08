@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vite.daolanfler.xyz/sitemap-1.xml
+Sitemap: https://vite.daolanfler.xyz/sitemap.xml
