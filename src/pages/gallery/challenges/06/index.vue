@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full">
+  <div class="demo-wrapper pt-8">
     <canvas
       id="anime"
       width="400"
       height="300"
       style="border: 1px solid #ccc"
-    />
+    ></canvas>
   </div>
 </template>
 
@@ -60,6 +60,6 @@ onMounted(() => {
 
 <style lang="css" scoped>
 :deep(.canvas-wrapper) {
-  @apply m-auto mt-10;
+  @apply m-auto;
 }
 </style>

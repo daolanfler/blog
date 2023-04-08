@@ -30,13 +30,17 @@ const list = [
     path: "04",
   },
   {
-    name: 'SCSS Palyground',
-    path: '05'
+    name: "SCSS Palyground",
+    path: "05",
   },
   {
-    name: 'fabric js dash 流动动画',
-    path: '06'
-  }
+    name: "fabric js dash 流动动画",
+    path: "06",
+  },
+  {
+    name: "canvas 画布",
+    path: "07",
+  },
 ];
 </script>
 

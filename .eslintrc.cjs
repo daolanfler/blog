@@ -27,7 +27,6 @@ module.exports = {
     },
   ],
   rules: {
-    curly: ["error", "all"],
     // vue
     "vue/max-attributes-per-line": [
       "warn",
@@ -39,6 +38,7 @@ module.exports = {
     "vue/require-prop-types": "off",
     "vue/require-default-prop": "off",
     "vue/multi-word-component-names": "off",
+    "vue/html-self-closing": "off",
     // ts
     "@typescript-eslint/no-unused-vars": 0,
     "@typescript-eslint/no-non-null-assertion": "off",
