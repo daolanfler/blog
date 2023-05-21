@@ -72,6 +72,6 @@ export function ColorModeScript(props: ColorModeScriptProps = {}) {
   const { nonce } = props;
 
   return (
-    <script id="chakra-script" nonce={nonce} vHtml={getScriptSrc(props)} />
+    <script id="chakra-script" nonce={nonce} v-html={getScriptSrc(props)} />
   );
 }
