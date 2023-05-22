@@ -1,4 +1,4 @@
-import { useDark } from "@vueuse/core";
+import { useDark, useToggle } from "@vueuse/core";
 import { defineStore } from "pinia";
 import { useRoute } from "vue-router";
 
@@ -29,5 +29,9 @@ export const useAppStateStore = defineStore("appState", {
       }
       return false;
     },
+    toggleTheme() {
+      const isDark = useDark({ storageKey: "theme" });
+      return useToggle(isDark)
+    }
   },
 });

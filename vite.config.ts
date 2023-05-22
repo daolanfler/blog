@@ -32,6 +32,11 @@ export default defineConfig({
   optimizeDeps: {
     include: [],
   },
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+    },
+  },
   plugins: [
     ViteCompression(),
 

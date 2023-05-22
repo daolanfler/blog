@@ -1,6 +1,6 @@
 <template>
-  <div class="text-5xl young demo-wrapper">
-    <div ref="textRef" class="text m-auto">
+  <div class="demo-wrapper">
+    <div ref="textRef" class="text m-auto text-5xl">
       May you stay forever young
     </div>
     <div v-if="colorList.length" class="text-base mt-8">
@@ -29,6 +29,11 @@
         </div>
       </div>
     </div>
+    <div class="mt-4">
+      <button class="btn" @click="toggleTheme">
+        切换{{ theme ==='light' ? '暗色' : '亮色' }}
+      </button>
+    </div>
   </div>
 </template>
 
@@ -36,9 +41,12 @@
 import { ColorPicker } from "vue-color-kit";
 import { onMounted, reactive, ref, watch } from "vue";
 import "vue-color-kit/dist/vue-color-kit.css";
-import { useAppStateStore } from "../../../../store/pinia";
+import { storeToRefs } from "pinia";
+import { useAppStateStore } from "@/store/pinia";
 
-const theme = useAppStateStore().theme;
+const appStore = useAppStateStore();
+
+const { theme } = storeToRefs(appStore);
 
 const colorList = reactive<string[]>([]);
 const textRef = ref<HTMLElement>();
@@ -58,6 +66,10 @@ watch(colorList, newVal => {
   textRef.value!.style.setProperty("--un-gradient-to", newVal[1]);
 });
 
+function toggleTheme() {
+  appStore.toggleTheme();
+}
+
 onMounted(() => {
   const textStyle = getComputedStyle(textRef.value!);
   const fromColor = textStyle.getPropertyValue("--un-gradient-from");
@@ -66,15 +78,16 @@ onMounted(() => {
   colorList[0] = fromColor;
   colorList[1] = toColor;
 });
+
 </script>
 
 <style lang="postcss" scoped>
-.young {
+.demo-wrapper {
   .text {
     @apply bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 text-transparent;
     @apply dark:(from-[rgba(234,11,251,0.84)] to-[rgba(248,149,113,0.83)]);
+    line-height: 2;
   }
-  line-height: 2;
   text-align: center;
   font-style: italic;
 }
